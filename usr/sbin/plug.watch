@@ -1,0 +1,54 @@
+#!/bin/sh
+
+while [ true ] ; do 
+###########HOTPLUG###########
+	read x
+        parsed="`echo $x | egrep 'user.info kernel: *sd[a-z][1-9]|USB disconnect'`"
+        if [ "$parsed" != "" ]; then
+		devPlug="`expr match "$x" '.*\(sd[a-z][1-9]*\)'`"
+		if [ "$devPlug" != "" ]; then
+		   parts="`echo $x | cut -d':' -f4`"
+		   sleep 2  # give system a chance to mount
+		   for i in `echo $parts` ; do
+			if [ "`cat /proc/mounts | grep $i | grep '/tmp/media/usb/USB'`" == "" ]; then
+				MDEV=$i /etc/hotplug/usb.agent && logger -t plug.watch "$i hotplugged"
+			else
+			   if [ "$FW_VERSION" == "WDLXTV_G2" ] ; then
+				eval `blkid /dev/$i | cut -d':' -f2`
+				[ "$LABEL" == "" ] && LABEL=$UUID
+				[ "$LABEL" == "" ] && LABEL=$i				
+				mLoc="`cat /proc/mounts | grep $i | grep '/tmp/media/usb/USB'`"
+				if [ "`echo $i | egrep '^sd'`" != "" ] ; then
+					echo -e "[$LABEL]\n   comment         = $LABEL\n   path            = $mLoc\n   read only       = no\n   guest ok        = yes\n   use sendfile    = yes" > "/tmp/export.adds/$i"
+				fi
+			   fi
+				logger -t plug.watch "OSD mounted device /dev/$i"
+				mLoc=`cat /proc/mounts | egrep "^/dev/$i" | egrep -i "/tmp/media/usb/USB[1-2]/" -m1 | cut -d' ' -f2`
+				echo "linksheets \"$mLoc\" 0" > /tmp/sheetQueue/x.`echo $mLoc 0 | md5sum | cut -d' ' -f1`
+			fi
+		   done
+###########UNPLUG############
+		else  # must be disconnect (???)
+			sleep 2  # give system a chance to unmount 
+			mounts=`cat /proc/mounts | egrep '^/dev/sd[a-z].' | egrep 'xfs|reiserfs|ntfs|fuse|ext2|ext3|vfat|msdos|hfs|hfsplus' | cut -d' ' -f 1`
+			for i in $mounts; do 
+				y=`cat /proc/mounts | grep $i | tail -n 1`
+				PARTITION=`echo $y | cut -d' ' -f 1 | cut -d'/' -f 3`
+				DEVICE=`echo $PARTITION | sed -e 's/[0-9]*//g'`
+				MP=`echo $y | cut -d' ' -f 2`	
+				FSTYPE=`echo $y | cut -d' ' -f 3`
+				if [ ! -e /sys/block/$DEVICE ] ; then 
+					logger -t plug.watch "/dev/$DEVICE unplugged, cleaning up $MP"
+					umount -f "$MP" && rmdir "$MP"
+					if [ $? != 0 ] ; then
+						logger -p warn -t plug.watch "unplug cleanup failed! did you unplug a system drive?"
+						[ -f /tmp/export.adds/$DEVICE ] && rm -f /tmp/export.adds/$DEVICE
+#					else
+#						cat /etc/fstab | grep -v $MP > /tmp/fstab.new  # removes custom /conf/fstab entries!
+#						awk ' !x[$0]++' /tmp/fstab.new > /etc/fstab
+					fi
+				fi
+			done
+		fi
+	fi
+done

@@ -1,0 +1,772 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "Видео"
+
+msgid "Music"
+msgstr "Музыка"
+
+msgid "Photos"
+msgstr "Фото"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "All Video"
+msgstr "Все видео"
+
+msgid "Date"
+msgstr "По дате"
+
+msgid "Folders"
+msgstr "По папке"
+
+msgid "Recent"
+msgstr "Последние"
+
+msgid "Playlist"
+msgstr "Плейлист"
+
+msgid "All Music"
+msgstr "Вся музыка"
+
+msgid "Artist"
+msgstr "По исполнителю"
+
+msgid "Genre"
+msgstr "По жанру"
+
+msgid "Album"
+msgstr "По альбому"
+
+msgid "All Photos"
+msgstr "Все фотографии"
+
+msgid "Now Playing"
+msgstr "Проигрывается"
+
+msgid "New firmware found"
+msgstr "Обнаружено обновление встроенного ПО"
+
+msgid "No storage present"
+msgstr "Нет подключенных USB носителей"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "Недостаточно места на подключенном USB-устройстве. Для компиляции медиатеки требуется больше места."
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "Подключенное USB-устройство использует файловую систему HFS+ с журналированием. Медиатека не работает в данной файловой системе, но воспроизведение поддерживается. Отключите журналирование для включения всех функций мультимедийного проигрывателя."
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "Подключенное USB-устройство доступно только для чтения. Функция медиатеки не будет работать."
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "Невозможно создать медиатеку на подключенном USB-устройстве. Проверьте настройки устройства."
+
+msgid "Unrecognized USB device"
+msgstr "Нераспознанное USB устройство"
+
+msgid "Storage can not aggregate"
+msgstr "Невозможно выполнить считывание запоминающего устройства"
+
+msgid "Scanning the attached USB device..."
+msgstr "Сканирование подключенного USB устройства..."
+
+msgid "An error has been detected in the file system of your USB device. Media Library support will be unavailable while the error exists. Please refer to the user manual on how to correct this error."
+msgstr "Была обнаружена ошибка в файловой системе вашего устройства USB. Поддержка медиатеки будет недоступна, пока существует ошибка. Пожалуйста, обратитесь к руководству пользователя о том, как исправить эту ошибку."
+
+msgid "Unable to recognize attached device at USB port"
+msgstr "Невозможно распознать подключенное USB устройство"
+
+msgid "Warning: please safely eject your USB device before removing it"
+msgstr "Предупреждение: пожалуйста, безопасно извлекайте ваши USB устройства перед удалением"
+
+msgid "Connecting... "
+msgstr "Подключение ..."
+
+msgid "Untitled volume"
+msgstr "Том без названия"
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "Нажмите [OK] для продолжения воспроизведения или [Отмена] для воспроизведения с начала"
+
+msgid "Next Song:"
+msgstr "Следующая композиция"
+
+msgid "Unsupported"
+msgstr "Не поддерживается"
+
+msgid "Unsupported subtitle"
+msgstr "Неподдерживаемые субтитры"
+
+msgid "Subtitle off"
+msgstr "Субтитры выкл"
+
+msgid "Subtitle"
+msgstr "Субтитры"
+
+msgid "No subtitle"
+msgstr "Нет субтитров"
+
+msgid "Audio Channel"
+msgstr "Аудио дорожка"
+
+msgid "Audio channel"
+msgstr "Аудио дорожка"
+
+msgid "No audio channel"
+msgstr "Нет аудио дорожки"
+
+msgid "Chapters"
+msgstr "Разделы"
+
+msgid "Audio/Video"
+msgstr "Аудио/Видео"
+
+msgid "System"
+msgstr "Система"
+
+msgid "Firmware upgrade"
+msgstr "Обновление встроенного ПО"
+
+msgid "Video output"
+msgstr "Видеовыход"
+
+msgid "Display resolution"
+msgstr "Разрешение экрана"
+
+msgid "Aspect ratio"
+msgstr "Соотношение сторон"
+
+msgid "Audio output"
+msgstr "Аудиовыход"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Widescreen"
+msgstr "Широкий экран"
+
+msgid "Composite"
+msgstr "Композитный"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "Stereo"
+msgstr "Стерео"
+
+msgid "Digital"
+msgstr "Цифровой"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "Изменить разрешение видео?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "Изменить формат видеовыхода?"
+
+msgid "Video sequence"
+msgstr "Порядок следования видео"
+
+msgid "Subtitle font size"
+msgstr "Размер шрифта субтитров"
+
+msgid "Music sequence"
+msgstr "Порядок следования аудио"
+
+msgid "Slideshow sequence"
+msgstr "Порядок слайд-шоу"
+
+msgid "Photo scaling"
+msgstr "Масштабирование фотографий"
+
+msgid "Transition effect"
+msgstr "Эффект перехода"
+
+msgid "Interval time"
+msgstr "Интервал"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Media library"
+msgstr "Медиатека"
+
+msgid "Screensaver delay"
+msgstr "Экранная заставка"
+
+msgid "Display file size"
+msgstr "Показывать размер файла"
+
+msgid "Additional encoding support"
+msgstr "Дополнительная кодировка"
+
+msgid "Browser display"
+msgstr "отображение списка файлов"
+
+msgid "System reset"
+msgstr "Сброс системы"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "Normal"
+msgstr "Обычный"
+
+msgid "Repeat one"
+msgstr "Повтор одной"
+
+msgid "Repeat all"
+msgstr "Повтор всех"
+
+msgid "Repeat all and shuffle"
+msgstr "Повтор всех в случайном порядке"
+
+msgid "Keep as original"
+msgstr "Сохранить исходное"
+
+msgid "Fit to screen"
+msgstr "По размеру экрана"
+
+msgid "Display in full screen"
+msgstr "Отображать на весь экран"
+
+msgid "Shuffle"
+msgstr "Случайный порядок"
+
+msgid "Fade"
+msgstr "Затемнение"
+
+msgid "Random"
+msgstr "Случайный"
+
+msgid "3 Seconds"
+msgstr "3 секунды"
+
+msgid "5 Seconds"
+msgstr "5 секунд"
+
+msgid "10 Seconds"
+msgstr "10 секунд"
+
+msgid "20 Seconds"
+msgstr "20 секунд"
+
+msgid "30 Seconds"
+msgstr "30 секунд"
+
+msgid "1 Minute"
+msgstr "1 Минута"
+
+msgid "3 Minutes"
+msgstr "3 Минуты"
+
+msgid "5 Minutes"
+msgstr "5 Минут"
+
+msgid "10 Minutes"
+msgstr "10 Минут"
+
+msgid "15 Minutes"
+msgstr "15 Минут"
+
+msgid "20 Minutes"
+msgstr "20 Минут"
+
+msgid "30 Minutes"
+msgstr "30 Минут"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "French"
+msgstr "Французский"
+
+msgid "Italian"
+msgstr "Итальянский"
+
+msgid "German"
+msgstr "Немецкий"
+
+msgid "Spanish"
+msgstr "Испанский"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "Китайский упрощенный (GB18030)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "Китайский традиционный (Big5)"
+
+msgid "Korean (EUC-KR)"
+msgstr "Корейский (EUC-KR)"
+
+msgid "Portuguese EU"
+msgstr "Португальский"
+
+msgid "Portuguese Brazil"
+msgstr "Португальский Браз."
+
+msgid "Japanese (Shift-JIS)"
+msgstr "Японский (Shift-JIS)"
+
+msgid "On"
+msgstr "Да"
+
+msgid "Off"
+msgstr "Нет"
+
+msgid "CAS_On"
+msgstr "Да"
+
+msgid "CAS_Off"
+msgstr "Нет"
+
+msgid "Never"
+msgstr "Никогда"
+
+msgid "List mode"
+msgstr "Список"
+
+msgid "Thumbnail mode"
+msgstr "Миниатюры"
+
+msgid "Preview mode"
+msgstr "Предпросмотр"
+
+msgid "Subtitle default"
+msgstr "Показывать субтитры по умолчанию"
+
+msgid "Subtitle border"
+msgstr "Контур субтитров"
+
+msgid "Thick"
+msgstr "Толстый"
+
+msgid "Thin"
+msgstr "Тонкий"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "Восстановить заводские настройки?"
+
+msgid "WD TV HD Media Player"
+msgstr "Мультимедийный проигрыватель WD TV HD"
+
+msgid "Firmware Version"
+msgstr "Версия встроенного ПО"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "Дополнительную информацию о мультимедийном HD-проигрывателе см. в руководстве пользователя или на веб-сайте:"
+
+msgid "Western Europe"
+msgstr "Западноевропейская"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "Центральная Европа (Windows-1250)"
+
+msgid "Central Europe (ISO)"
+msgstr "Центральная Европа (ISO)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "Кириллица (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "Кириллица (KOI8-R)"
+
+msgid "Greek (Windows-1253)"
+msgstr "Греческая (Windows-1253)"
+
+msgid "Greek (ISO)"
+msgstr "Греческая (ISO)"
+
+msgid "Turkish"
+msgstr "Турецкий"
+
+msgid "Current version"
+msgstr "Текущая версия"
+
+msgid "New version"
+msgstr "Новая версия"
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "Недопустимое встроенное ПО. Загрузите допустимое встроенное ПО с веб-сайта http://www.wdc.com."
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "Обнаружено новое встроенное ПО. Выполнить обновление?"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "Выполняется обновление мультимедийного проигрывателя. НЕ отключайте питание и подключенные запоминающие устройства."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "Обновление выполнено. Мультимедийный проигрыватель будет перезапущен."
+
+msgid "Rebooting"
+msgstr "Перезагрузка"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Title"
+msgstr "Название"
+
+msgid "File name"
+msgstr "Имя файла"
+
+msgid "file name"
+msgstr "имя файла"
+
+msgid "Contains"
+msgstr "Содержит"
+
+msgid "Starts with"
+msgstr "Начинается с"
+
+msgid "Does not contain"
+msgstr "Не содержит"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Equal to"
+msgstr "Равно"
+
+msgid "Not Equal to"
+msgstr "Не равно"
+
+msgid "Space"
+msgstr "Пробел"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "Search completed. No results found."
+msgstr "Поиск завершен. Не найдено."
+
+msgid "Please select the device you would like to eject."
+msgstr "Выберите диск, который требуется извлечь."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "Извлечь этот диск?"
+
+msgid "File Management"
+msgstr "Управление файлами"
+
+msgid "Select source"
+msgstr "Выберите источник"
+
+msgid "Select a destination"
+msgstr "Выберите путь назначения"
+
+msgid "Press [RIGHT] to select source."
+msgstr "Нажмите кнопку [RIGHT] для выбора источника."
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "Нажмите кнопку [OPTION] для копирования, перемещения или удаления."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "Нажмите кнопку [RIGHT] для выбора пути назначения."
+
+msgid "Press [OPTION] to confirm."
+msgstr "Для подтверждения нажмите кнопку [OPTION]."
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "При перемещении файлов, фоновая музыка будет остановлена..."
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Move"
+msgstr "Переместить"
+
+msgid "Select all"
+msgstr "Выделить все"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Destination"
+msgstr "Путь назначения"
+
+msgid "Would you like to delete the selected files?"
+msgstr "Удалить выбранные файлы?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "Копировать выбранные файлы?"
+
+msgid "Would you like to move the selected files?"
+msgstr "Переместить выбранные файлы?"
+
+msgid "Deleting files..."
+msgstr "Удаление файлов..."
+
+msgid "Deleted"
+msgstr "Удалено"
+
+msgid "Copying files..."
+msgstr "Копирование файлов..."
+
+msgid "Moving files..."
+msgstr "Перемещение файлов..."
+
+msgid "Moved"
+msgstr "Перемещено"
+
+msgid "File delete complete."
+msgstr "Удаление файлов выполнено."
+
+msgid "Write fail. Please check the destination device."
+msgstr "Сбой записи. Проверьте целевое устройство."
+
+msgid "Read fail. Please check the source devicei."
+msgstr "Сбой чтения. Проверьте исходное устройство."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "Невозможно скопировать или переместить файл. Недостаточно места на целевом устройстве."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "Невозможно записать на целевое устройство, доступное только для чтения."
+
+msgid "Unable to delete read-only file."
+msgstr "Невозможно удалить файл, доступный только для чтения."
+
+msgid "Press [BACK] to cancel."
+msgstr "Нажмите кнопку [BACK] для отмены."
+
+msgid "Are you sure you want to cancel?"
+msgstr "Отменить?"
+
+msgid "Auto play"
+msgstr "Автоматическое воспроизведение"
+
+msgid "Photo auto play"
+msgstr "Авто-запуск фото"
+
+msgid "Video auto play"
+msgstr "Авто-запуск видео"
+
+msgid "Audio track display"
+msgstr "Отображение аудио файлов"
+
+msgid "Camera"
+msgstr "Камера"
+
+msgid "Camera 1"
+msgstr "Камера 1"
+
+msgid "Camera 2"
+msgstr "Камера 2"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "This folder cannot be accessed."
+msgstr "Доступ к данной папке невозможен."
+
+msgid "Action cancelled."
+msgstr "Действие отменено."
+
+msgid "Arabic (Windows-1256)"
+msgstr "Арабский (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "Тайский (Windows-874)"
+
+msgid "Wipe"
+msgstr "Стирание"
+
+msgid "Zoom"
+msgstr "Растягивание"
+
+msgid "Push"
+msgstr "Выталкивание"
+
+msgid "Copied"
+msgstr "Копируемые"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "Подключенное USB-устройство использует файловую систему HFS+ с журналированием. Медиатека не работает в данной файловой системе, но воспроизведение поддерживается. Отключите журналирование для включения всех функций мультимедийного проигрывателя."
+
+msgid "Unable to create media library on read only storage."
+msgstr "Подключенное USB-устройство доступно только для чтения. Функция медиатеки работать не будет."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "Невозможно создать медиатеку на подключенном USB-устройстве. Проверьте настройки устройства."
+
+msgid "Unlock your WD drive"
+msgstr "Разблокировать накопитель WD"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "Разблокировать этот накопитель WD? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "Введите пароль для разблокирования накопителя."
+
+msgid "Password invalid"
+msgstr "Неверный пароль"
+
+msgid "Please enter your password again."
+msgstr "Введите пароль еще раз."
+
+msgid "Too many password attempts"
+msgstr "Слишком много попыток ввода пароля"
+
+msgid "There were too many password recovery attempts."
+msgstr "Предпринято слишком много попыток восстановления пароля."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "Безопасно извлеките накопитель из WD TV,"
+
+msgid "reconnect it and try again."
+msgstr "снова подключите его и повторите попытку."
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Genre:"
+msgstr "Жанр:"
+
+msgid "File Size:"
+msgstr "Размер файла:"
+
+msgid "File Type:"
+msgstr "Тип файла:"
+
+msgid "Replace"
+msgstr "Замена"
+
+msgid "Checker Board"
+msgstr "Шашечки"
+
+msgid "Play mode"
+msgstr "Порядок следования"
+
+msgid "Pan"
+msgstr "Сдвиг"
+
+msgid "Zoom in"
+msgstr "Увеличить"
+
+msgid "Zoom out"
+msgstr "Уменьшить"
+
+msgid "Info bar"
+msgstr "Инфо-бар"
+
+msgid "Chapter"
+msgstr "Глава"
+
+msgid "Rotate left"
+msgstr "Повернуть влево"
+
+msgid "Rotate right"
+msgstr "Повернуть вправо"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "Ошибка: исходная папка и папка назначения совпадают."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "Ошибка: Папка назначения является подпапкой в папке источника."
+
+msgid "This folder is empty"
+msgstr "Данная папка пуста."
+
+msgid "Media library compilation requires more storage space:"
+msgstr "Для компиляции медиатеки требуется больше места."
+
+msgid "HDMI deep color"
+msgstr "Глубина цвета HDMI"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "Вы хотите изменить глубину цвета HDMI?"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "Извлеките накопитель из WD TV, "
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "Мультимедийный проигрыватель перезапустится для инициации процесса обновления. Так как новая микропрограмма расположена на защищенном паролем диске, снова разблокируйте диск после перезагрузки."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "Выполняется компиляция медиатеки. Мультимедийное содержимое будет доступно после сканирования. Во время этого процесса возможно управление устройством."
+
+msgid "8 bit"
+msgstr "8 бит"
+
+msgid "10 bit"
+msgstr "10 бит"
+
+msgid "12 bit"
+msgstr "12 бит"
+
+msgid "The auto play content could not be accessed."
+msgstr "Автоматическое воспроизведение контента не доступно."
+
+msgid "Local device is disconnected."
+msgstr "Устройство отключено."
+
+msgid "User interface transition effect"
+msgstr "Эффект перехода для интерфейса"
+
+msgid "Fade in and fade out"
+msgstr "Затенение (Fade In/Out)"
+
+msgid "None"
+msgstr "Не выбран"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "Обнаружена фатальная ошибка системы. Устройство перезапустится..."
+
+msgid "YES"
+msgstr "Да"
+
+msgid "Yes to all"
+msgstr "Да, для всех"
+
+msgid "NO"
+msgstr "Нет"
+
+msgid "This folder already contains a file named:"
+msgstr "В этой папке уже есть файл с именем:"
+
+msgid "Would you like to overwrite it?"
+msgstr "Хотите перезаписать его?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "Невозможно воспроизвести выбранный файл. Пожалуйста, обратитесь к руководству пользователя для получения списка поддерживаемых форматов файлов."
+
+

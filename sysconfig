@@ -1,0 +1,14 @@
+export SYSCONF_BUILD_DATE=2010.03.29-2144
+export SYSCONF_FIRMWARE_BIN=wdtvhd.bin
+export SYSCONF_FIRMWARE_VER=wdtvhd.ver
+export SYSCONF_BOOTLOADER_MTD_PARTITION=/dev/sigmblocka
+export SYSCONF_KERNEL_MTD_PARTITION=/dev/sigmblockd
+export SYSCONF_FIRMWARE_MTD_PARTITION=/dev/sigmblockh
+export SYSCONF_FIRMWARE_MTD_SIZE=51904512
+export SYSCONF_LAST_PARTITION_NODE_NAME=/dev/sigmblockl
+export SYSCONF_STATIC_CONFIG_MOUNT_POINT=/tmp/static_config
+export FW_VERSION=WDLXTV_G2
+export EDITOR=nano
+export HOME=/root
+export USER=root
+export IS_DTS=y

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ "`grep -i \^DISABLE_ETHERNET_ON_STANDBY=\'YES\' /conf/config`" != "" ] ; then
+   if [ "$2" == "down" ] ; then
+	/etc/init.d/S90net.mounts stop
+   	ifconfig $*
+  	x=$?
+   elif [ "$2" == "up" ] ; then
+   	ifconfig $*
+   	x=$?
+	/etc/init.d/S90net.mounts start
+	/etc/init.d/S94nfsserver start &
+   fi 
+else
+	eval `grep virdev_int= /conf/config`
+	if [ "$virdev_int" == "eth1" -a "`grep USB_POWER_OFF=\'1\' /conf/config`" != "" ] ; then
+		logger -t ifconfg2 "powering down interface -- USB_POWER_OFF=1"
+		ifconfig $*
+		x=$?
+	else
+		[ "$2" == "0.0.0.0" ] && exit 0
+		[ "$2" == "down" ] && exit 0
+		ifconfig $*
+		x=$?
+		[ "$2" == "up" ] && /etc/init.d/S94nfsserver start &
+		[ "$2" == "up" ] && /etc/init.d/S90net.mounts start
+	fi
+fi
+
+exit $x

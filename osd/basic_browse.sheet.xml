@@ -1,0 +1,62 @@
+<?xml version="1.0"?> <!-- Copyright (C) 2007, ALPHA Networks, inc. --> 
+<page background="image/villa_bg.jpg" type="basic">
+  <ctrlgrp>
+    <listbox valkey="browselist" autoenter="1" autoswitch="0" move="page" cols="1" rows="5" lbmask="lr"  loop_scroll="1" turbo_trigger="8" turbo_multi="4" />
+	<linebreak/>
+  </ctrlgrp>
+  <text id="headline" text="@@browse_title_icon" fontsize="40" textcolor="0x07b5ff" bg="1"/>
+
+  <wrapper  x="0" y="0" w="1280" h="720" align="hcenter" scale="100" scale_type="fixratio" >
+    <image lbimage="@@browse_0_text" clickimage="@@browse_0_text"  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" bg="1"/>
+    <image lbimage="@@browse_1_text" clickimage="@@browse_1_text"  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" bg="1"/>
+    <image lbimage="@@browse_2_text" clickimage="@@browse_2_text"  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" bg="1"/>
+    <image lbimage="@@browse_3_text" clickimage="@@browse_3_text"  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" bg="1"/>
+    <image lbimage="@@browse_4_text" clickimage="@@browse_4_text"  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" bg="1"/>
+  </wrapper>
+
+ <!--image image="./image/frame.png" x="0" y="610" w="1150" h="270" scale="100" /-->
+
+  <table x="50" y="455" w="1041" h="245" fontsize="26" selected_fontsize="32"
+         cols="1" rows="5" colspacing="0" rowspacing="0" 
+	 lbimage="image/browser_list_btn.long.png" clickimage="image/browser_list_btn.long.png"  
+	 textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" 
+	 activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+    <text text="@@browse_0_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"
+	  selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+    <text text="@@browse_1_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1"
+	  selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+    <text text="@@browse_2_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2"
+	  selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+    <text text="@@browse_3_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3"
+	  selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+    <text text="@@browse_4_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4"
+	  selected="@@browse_4_select" speed="@@browse_4_speed" delay="2"/>
+    
+    
+  </table>
+  
+  <table x="62" y="456" w="50" h="245"
+           cols="1" rows="5" colspacing="0" rowspacing="0" >
+    <image image="@@browse_0_icon" ymargin="0" />
+    <image image="@@browse_1_icon" ymargin="0" />
+    <image image="@@browse_2_icon" ymargin="0" />
+    <image image="@@browse_3_icon" ymargin="0" />
+    <image image="@@browse_4_icon" ymargin="0" />
+  </table>
+
+  <image  x="1140" y="520" w="38" h="27" image="@@moreprev"/>
+  <image  x="1140" y="580" w="38" h="27" image="@@morenext"/>
+  <text text="@@pagecounter" x="1065" y="665" h="24" w="190" fontsize="24" align="hcenter" textcolor="0xe2e2e2"/>
+
+
+
+  <!-- fixed --> 
+  <include filename="././inc_headline_property.xml"/>
+  <include filename="./myinfo.xml"/>
+  <include filename="./decoration.xml"/>
+</page>

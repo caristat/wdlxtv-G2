@@ -1,0 +1,829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "비디오"
+
+msgid "Music"
+msgstr "음악"
+
+msgid "Settings"
+msgstr "설정"
+
+msgid "All Video"
+msgstr "모든 비디오"
+
+msgid "Date"
+msgstr "날짜"
+
+msgid "Folders"
+msgstr "폴더"
+
+msgid "Recent"
+msgstr "최근"
+
+msgid "Playlist"
+msgstr "재생목록"
+
+msgid "All Music"
+msgstr "모든 음악"
+
+msgid "Artist"
+msgstr "가수"
+
+msgid "Genre"
+msgstr "종류"
+
+msgid "Album"
+msgstr "앨범"
+
+msgid "Now Playing"
+msgstr "재생중"
+
+msgid "New firmware found"
+msgstr "새로운 펌웨어가 발견됨"
+
+msgid "No storage present"
+msgstr "저장 장치가 없음"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "미디어 라이브러리 만들기에는 추가 저장 공간이 필요합니다:"
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "연결된 스토리지를 스캔하는 중. 처음으로 스캔할 때는 시간이 지연될 수 있습니다. 기다려 주십시오…"
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "[확인]을 선택하여 다시 재생을 시작하거나 [취소]를 선택하여 비디오를 다시 시작하십시오."
+
+msgid "Audio/Video"
+msgstr "오디오/비디오"
+
+msgid "Movie"
+msgstr "영화"
+
+msgid "System"
+msgstr "시스템"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "간격 시간"
+
+msgid "Language"
+msgstr "언어"
+
+msgid "About"
+msgstr "정보"
+
+msgid "Normal"
+msgstr "정상"
+
+msgid "Widescreen"
+msgstr "넓은 화면"
+
+msgid "Composite"
+msgstr "혼합"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "자동"
+
+msgid "Stereo"
+msgstr "스테레오"
+
+msgid "Digital"
+msgstr "디지털"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "정말로 비디오 해상도를 변경하시겠습니까?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "정말로 비디오 출력 형식을 변경하시겠습니까?"
+
+msgid "Repeat one"
+msgstr "하나 반복"
+
+msgid "Repeat all"
+msgstr "모두 반복"
+
+msgid "Repeat all and shuffle"
+msgstr "모두 반복한 다음 셔플"
+
+msgid "Keep as original"
+msgstr "원래로 유지"
+
+msgid "Fit to screen"
+msgstr "화면 크기에 맞춤"
+
+msgid "Shuffle"
+msgstr "셔플"
+
+msgid "Fade"
+msgstr "페이드"
+
+msgid "Random"
+msgstr "무작위"
+
+msgid "3 Seconds"
+msgstr "3 초"
+
+msgid "5 Seconds"
+msgstr "5 초"
+
+msgid "10 Seconds"
+msgstr "10 초"
+
+msgid "20 Seconds"
+msgstr "20 초"
+
+msgid "30 Seconds"
+msgstr "30 초"
+
+msgid "1 Minute"
+msgstr "1 분"
+
+msgid "3 Minutes"
+msgstr "3 분"
+
+msgid "5 Minutes"
+msgstr "5 분"
+
+msgid "10 Minutes"
+msgstr "10 분"
+
+msgid "15 Minutes"
+msgstr "15 분"
+
+msgid "20 Minutes"
+msgstr "20 분"
+
+msgid "30 Minutes"
+msgstr "30 분"
+
+msgid "English"
+msgstr "영어"
+
+msgid "French"
+msgstr "불어"
+
+msgid "Italian"
+msgstr "이태리어"
+
+msgid "German"
+msgstr "독일어"
+
+msgid "Spanish"
+msgstr "스페인어"
+
+msgid "Simplified Chinese"
+msgstr "중국어 간체"
+
+msgid "Traditional Chinese"
+msgstr "중국어 번체"
+
+msgid "Korean"
+msgstr "한국어"
+
+msgid "Japanese"
+msgstr "일어"
+
+msgid "On"
+msgstr "켬"
+
+msgid "Off"
+msgstr "끔"
+
+msgid "CAS_On"
+msgstr "켬"
+
+msgid "CAS_Off"
+msgstr "끔"
+
+msgid "Never"
+msgstr "사용 안 함"
+
+msgid "List mode"
+msgstr "목록 모드"
+
+msgid "Thumbnail mode"
+msgstr "썸네일 모드"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "정말로 이 장치를 출고 설정으로 복구하시겠습니까?"
+
+msgid "WD TV HD Media Player"
+msgstr "WD TV HD 미디어 재생기"
+
+msgid "version"
+msgstr "버전"
+
+msgid "Current version"
+msgstr "현재 버전"
+
+msgid "New version"
+msgstr "새로운 버전"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "새로운 펌웨어가 발견됨. 업그레이드 하시겠습니까?"
+
+msgid "Rebooting"
+msgstr "리부팅"
+
+msgid "Invalid firmware"
+msgstr "잘못된 펌웨어"
+
+msgid "Contains"
+msgstr "포함"
+
+msgid "Starts with"
+msgstr "시작"
+
+msgid "Loading"
+msgstr "로딩"
+
+msgid "Loading..."
+msgstr "로딩..."
+
+msgid "OK"
+msgstr "확인"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "연결된 장치를 USB 포트에서 인식할 수 없음 "
+
+msgid "Storage can not aggregate"
+msgstr "스토리지는 축적될 수 없음"
+
+msgid "Next Song:"
+msgstr "다음 곡:"
+
+msgid "Current Song"
+msgstr "현재 곡"
+
+msgid "Search"
+msgstr "검색"
+
+msgid "All Photos"
+msgstr "모든 사진"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "미디어 라이브러리는 저널 파일 시스템을 지원하지 않습니다. 재생은 계속 지원됩니다."
+
+msgid "Unable to create media library on read only storage."
+msgstr "미디어 라이브러리를 읽기전용 스토리지에 만들 수 없음."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "미디어 라이브러리를 만들 수 없음. 스토리지 설정을 확인하십시오."
+
+msgid "Unrecognized USB device"
+msgstr "인식되지 않는 USB 장치"
+
+msgid "Scanning the attached USB device..."
+msgstr "연결된 USB 장치 스캐닝 중…"
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "재생하려는 비디오 파일에 지원되지 않는 다중 오디오 채널 출력이 있습니다. 디지털 오디오 출력으로 전환하고 HD 미디어 플레이어를 오디오 코덱을 지원하는 AV 수신기에 연결시키십시오."
+
+msgid "Unsupported subtitle"
+msgstr "지원되지 않는 자막"
+
+msgid "Audio Channel"
+msgstr "오디오 채널"
+
+msgid "Audio channel"
+msgstr "오디오 채널"
+
+msgid "Photos"
+msgstr "사진"
+
+msgid "Firmware upgrade"
+msgstr "펌웨어 업그레이드"
+
+msgid "Video output"
+msgstr "비디오 출력"
+
+msgid "Display resolution"
+msgstr "디스플레이 해상도"
+
+msgid "Aspect ratio"
+msgstr "화상비"
+
+msgid "Audio output"
+msgstr "오디오 출력"
+
+msgid "Video sequence"
+msgstr "비디오 시퀀스"
+
+msgid "Music sequence"
+msgstr "음악 시퀀스"
+
+msgid "Slideshow sequence"
+msgstr "슬라이드쇼 시퀀스"
+
+msgid "Photo scaling"
+msgstr "사진 스케일링"
+
+msgid "Transition effect"
+msgstr "변화 효과"
+
+msgid "Screensaver delay"
+msgstr "화면 보호기 지연"
+
+msgid "Browser display"
+msgstr "브라우저 디스플레이"
+
+msgid "System reset"
+msgstr "시스템 재설정"
+
+msgid "Display in full screen"
+msgstr "전체 화면 보기"
+
+msgid "Wipe right"
+msgstr "오른쪽 지우기"
+
+msgid "Wipe left"
+msgstr "왼쪽 지우기"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "사용자 HD 미디어 플레이어가 업그레이드 중입니다. 전원이나 부착된 저장 장치를 분리시키지 마십시오."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "업그레이드 완료. 미디어 플레이어가 이제 시작됩니다."
+
+msgid "Please select the device you would like to eject."
+msgstr "배출하기 원하는 장치를 선택하십시오."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "이 장치를 제거하시겠습니까?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "디지털 오디오 출력 설정 시, 오디오 트랙을 서라운드 사운드로 재생하려면 적절한 오디오 포맷이 지원되는 AV 수신기가 필요합니다."
+
+msgid "Subtitle off"
+msgstr "자막 끄기"
+
+msgid "No subtitle"
+msgstr "자막 없음"
+
+msgid "Media library"
+msgstr "미디어 라이브러리"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "HD 미디어 플레이어에 관한 추가 정보는 사용자 설명서를 참조하거나 아래의 웹사이트를 방문하십시오."
+
+msgid "Subtitle"
+msgstr "자막"
+
+msgid "Firmware Version"
+msgstr "펌웨어 버전"
+
+msgid "Title"
+msgstr "제목"
+
+msgid "File name"
+msgstr "파일 이름"
+
+msgid "Search completed. No results found."
+msgstr "검색 완료. 아무 결과도 발견되지 않음."
+
+msgid "Unsupported"
+msgstr "지원되지"
+
+msgid "Space"
+msgstr "스페이스바"
+
+msgid "No audio channel"
+msgstr "오디오 수로"
+
+msgid "Untitled volume"
+msgstr "제목 없는 볼륨"
+
+msgid "Subtitle font size"
+msgstr "하위 제목 글자 크기"
+
+msgid "Additional encoding support"
+msgstr "추가 암호화 지원"
+
+msgid "Western Europe (ISO)"
+msgstr "서유럽 (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "번체자 (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "간체자 (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "일어 (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "한국어 (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "키릴문자 (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "키릴문자 (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "그리스어 (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "그리스어 (Windows-1253)"
+
+msgid "All"
+msgstr "모두"
+
+msgid "Equal to"
+msgstr "같음"
+
+msgid "Not Equal to"
+msgstr "같지 않음"
+
+msgid "Central Europe (ISO)"
+msgstr "중부 유럽 (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "중부 유럽 (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "포함하지 않음"
+
+msgid "Display file size"
+msgstr "파일 크기 표시"
+
+msgid "Display file size during navigation"
+msgstr "탐색 중에 파일 크기 표시"
+
+msgid "Western Europe"
+msgstr "서유럽"
+
+msgid "Turkish"
+msgstr "터키어"
+
+msgid "Subtitle default"
+msgstr "자막 기본값"
+
+msgid "Subtitle border"
+msgstr "자막 테두리"
+
+msgid "Thick"
+msgstr "두껍게"
+
+msgid "Thin"
+msgstr "가늘게"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "연결된 USB 장치의 여유 공간이 부족합니다. 미디어 라이브러리를 작성하려면 더 많은 저장 공간이 필요합니다."
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "연결딘 USB 장치가 HFS+ 저널링 파일 시스템을 사용 중입니다. 이 파일 시스템 하에서는 미디어 라이브러리가 작동하지 않지만 재생은 여전히 지원됩니다. 미디어 플레이어를 작동하려면 저널링을 비활성화하십시오."
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "연결된 USB 장치가 읽기 전용으로 설정되어 미디어 라이브러리 기능이 지원되지 않습니다."
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "연결된 USB 장치에서 미디어 라이브러리를 작성할 수 없습니다. 장치 설정을 확인하십시오."
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "잘못된 펌웨어. 올바른 펌웨어를 http://www.wdc.com에서 다운로드 하십시오."
+
+msgid "File Management"
+msgstr "파일 관리"
+
+msgid "Select source"
+msgstr "소스 선택"
+
+msgid "Select a destination"
+msgstr "대상 위치 선택"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "파일 이동을 활성화하면 배경 음악이 중지됩니다..."
+
+msgid "Copy"
+msgstr "복사"
+
+msgid "Delete"
+msgstr "삭제"
+
+msgid "Move"
+msgstr "이동"
+
+msgid "Select all"
+msgstr "모두 선택"
+
+msgid "Source"
+msgstr "소스"
+
+msgid "Destination"
+msgstr "대상 위치"
+
+msgid "Would you like to delete the selected files?"
+msgstr "선택된 파일을 삭제하시겠습니까?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "선택된 파일을 복사하시겠습니까?"
+
+msgid "Would you like to move the selected files?"
+msgstr "선택된 파일을 이동시키시겠습니까?"
+
+msgid "Deleting files..."
+msgstr "파일 삭제 중..."
+
+msgid "Deleted"
+msgstr "삭제됨"
+
+msgid "Copying files..."
+msgstr "파일 복사 중..."
+
+msgid "Moving files..."
+msgstr "파일 이동 중..."
+
+msgid "Moved"
+msgstr "이동됨"
+
+msgid "File delete complete."
+msgstr "파일 삭제 완료."
+
+msgid "Write fail. Please check the destination device."
+msgstr "쓰기 실패. 대상 장치를 확인하십시오."
+
+msgid "Read fail. Please check the source device."
+msgstr "읽기 실패. 소스 장치를 확인하십시오."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "파일을 복사하거나 이동시킬 수 없습니다. 대상 위치의 공간이 부족합니다."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "대상 위치의 읽기 전용 장치에 쓸 수 없습니다."
+
+msgid "Unable to delete read-only file."
+msgstr "읽기 전용 파일을 삭제할 수 없습니다."
+
+msgid "Press [BACK] to cancel."
+msgstr "뒤로를 눌러 취소하십시오."
+
+msgid "Are you sure you want to cancel?"
+msgstr "취소하시겠습니까?"
+
+msgid "Auto play"
+msgstr "자동 재생"
+
+msgid "Photo auto play"
+msgstr "사진 자동 재생"
+
+msgid "Video auto play"
+msgstr "비디오 자동 재생"
+
+msgid "Audio track display"
+msgstr "오디오 트랙 표시"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "비디오 설정을 변경하시겠습니까?"
+
+msgid "Camera"
+msgstr "카메라"
+
+msgid "Camera 1"
+msgstr "카메라 1"
+
+msgid "Camera 2"
+msgstr "카메라 2"
+
+msgid "Chapters"
+msgstr "장"
+
+msgid "file name"
+msgstr "파일 이름"
+
+msgid "Press [RIGHT] to select source."
+msgstr "[오른쪽]을 눌러 소스를 선택하십시오."
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "[OPTION]을 눌러 복사, 이동 또는 삭제하십시오."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "[오른쪽]을 눌러 대상 위치를 선택하십시오."
+
+msgid "Press [OPTION] to confirm."
+msgstr "[OPTION]을 눌러 확인하십시오."
+
+msgid "This folder cannot be accessed."
+msgstr "이 폴더는 액세스가 불가능합니다."
+
+msgid "Standby mode"
+msgstr "대기 모드"
+
+msgid "Action cancelled."
+msgstr "액션 취소"
+
+msgid "Arabic"
+msgstr "아라비아 말"
+
+msgid "Hindu"
+msgstr "힌디어"
+
+msgid "Thailand"
+msgstr "타이어"
+
+msgid "Preview mode"
+msgstr "미리보기 모드"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "펌웨어 업그레이 드를하지 못했습니다. 장치가 다시 시작됩니다."
+
+msgid "Empty"
+msgstr "비어있는"
+
+msgid "Push"
+msgstr "밀다"
+
+msgid "Wipe"
+msgstr "청소"
+
+msgid "Zoom"
+msgstr "비행기가 급상승하다"
+
+msgid "Access point detecting..."
+msgstr "액세스 포인트를 감지 ..."
+
+msgid "The network encryption key is not valid."
+msgstr "네트워크 암호화 키가 유효하지 않습니다."
+
+msgid "No Chapter"
+msgstr "아무 장입니다"
+
+msgid "Arabic (Windows-1256)"
+msgstr "아라비아 말 (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "타이어 (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "WD 드라이브 잠금 해제"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "이 WD 드라이브의 잠금을 해제하시겠습니까? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "드라이브 잠금을 해제하려면 비밀번호를 입력하십시오."
+
+msgid "Password invalid"
+msgstr "잘못된 비밀번호입니다"
+
+msgid "Please enter your password again."
+msgstr "비밀번호를 다시 입력하십시오"
+
+msgid "Too many password attempts"
+msgstr "비밀번호 입력 시도 횟수가 너무 많습니다."
+
+msgid "There were too many password recovery attempts."
+msgstr "비밀번호 복구 시도 횟수가 너무 많았습니다."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "WD TV에서 드라이브를 안전하게 제거하고,"
+
+msgid "reconnect it and try again."
+msgstr "다시 연결한 다음 다시 시도하십시오."
+
+msgid "Password"
+msgstr "비밀번호"
+
+msgid "Genre:"
+msgstr "종류:"
+
+msgid "File Size:"
+msgstr "파일 크기:"
+
+msgid "File Type:"
+msgstr "파일 형식:"
+
+msgid "Replace"
+msgstr "바꾸기"
+
+msgid "Checker Board"
+msgstr "체커 보드"
+
+msgid "Play mode"
+msgstr "재생 모드"
+
+msgid "Pan"
+msgstr "이동"
+
+msgid "Zoom in"
+msgstr "확대"
+
+msgid "Zoom out"
+msgstr "축소"
+
+msgid "Info bar"
+msgstr "정보 모음"
+
+msgid "Chapter"
+msgstr "장"
+
+msgid "Rotate left"
+msgstr "왼쪽으로 회전"
+
+msgid "Rotate right"
+msgstr "오른쪽으로 회전"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "오류 : 원본 폴더와 대상 폴더가 동일합니다."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "오류 : 대상 폴더 - 소스 폴더의 하위 폴더입니다."
+
+msgid "This folder is empty"
+msgstr "거기에 현재 폴더에 미디어입니다."
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color 는 모드"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "비디오 설정을 변경하시겠습니까?"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "WD TV에서 드라이브를 제거하고,"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "이제 미디어 플레이어가 업그레이드 과정을 시작하기 위해 재시작합니다. 새 펌웨어가 암호로 보호되는 드라이브에 있기 때문에 재부팅한 후 해당 드라이브의 잠금을 다시 해제하십시오."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "미디어 라이브러리 작성 중입니다. 따라서 미디어 컨텐츠는 스캔되어 있는 대로 이용할 수 있습니다. 이 과정에서도 장치 탐색이 여전히 지원됩니다."
+
+msgid "Copied"
+msgstr "복사"
+
+msgid "8 bit"
+msgstr "8 비트"
+
+msgid "10 bit"
+msgstr "10 비트"
+
+msgid "12 bit"
+msgstr "12 비트"
+
+msgid "The auto play content could not be accessed."
+msgstr "자동 재생 콘텐츠에 액세스할 수없습니다."
+
+msgid "Local device is disconnected."
+msgstr "경고: 사용자 USB 장치를 분리시키기 전에 먼저 안전히 빼내십시오."
+
+msgid "User interface transition effect"
+msgstr "사용자 인터페이스 전환 효과"
+
+msgid "Fade in and fade out"
+msgstr "페이드 인 및 페이드 아웃"
+
+msgid "None"
+msgstr "없음"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "치명적인 시스템 오류가 발견됩니다..."
+
+msgid "YES"
+msgstr "예"
+
+msgid "Yes to all"
+msgstr "예, 모두"
+
+msgid "NO"
+msgstr "아니오"
+
+msgid "This folder already contains a file named:"
+msgstr "이 폴더에 이미 이름이 파일이 포함되어있습니다 :"
+
+msgid "Would you like to overwrite it?"
+msgstr "당신은 그것을 덮어 쓰시겠습니까?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "선택한 파일 플레이 불가능. 제발 지원되는 파일 형식 목록에 대한 사용자 설명서를 참조하십시오."
+
+

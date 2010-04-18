@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ ! -f /conf/rsa_key ]; then
+    dropbearkey -t rsa -s 2048 -f /conf/rsa_key
+    dropbearkey -t dss -f /conf/dss_key
+fi
+
+[ ! -f /conf/id_rsa ] && dropbearconvert dropbear openssh /conf/rsa_key /conf/id_rsa
+chmod 600 /conf/dss_key
+chmod 600 /conf/rsa_key
+chmod 600 /conf/id_rsa
+
+case "$1" in
+start|restart)
+	[ "`grep -i \^SSHD=\'OFF\' /conf/config`" == "" ] && dropbear -r /conf/rsa_key -d /conf/dss_key
+	;;
+stop)
+	killall dropbear
+	;;
+esac

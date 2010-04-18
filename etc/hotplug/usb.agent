@@ -1,0 +1,54 @@
+#!/bin/sh
+
+mkdir -p /tmp/init.d 2>/dev/null && touch /tmp/devs
+[ $? -ne 0 ] && exit 1
+
+eval `blkid /dev/$MDEV | cut -n -d':' -f2-9`
+[ "$TYPE" == "" ] && exit 1
+[ "$LABEL" == "" ] && LABEL=$MDEV
+[ "$UUID" == "" ] && UUID=$MDEV
+
+logger -t usb.agent "$MDEV"
+
+if [ "$TYPE" == "msdos" -o "$TYPE" == "vfat" -o "$TYPE" == "ext2" -o "$TYPE" == "ext3" -o "$TYPE" == "ext4" ] || 
+   [ "$TYPE" == "ntfs" -o "$TYPE" == "hfs" -o "$TYPE" == "hfsplus" -o "$TYPE" == "xfs" -o "$TYPE" == "reiserfs" ]; then
+     if [ "$TYPE" == "hfs" ] || [ "$TYPE" == "hfsplus" ]; then
+          # fix hfs/hfsplus disk mounted ro because of unclean mount
+          chkhfs -f /dev/$MDEV
+     fi
+
+     [ "$TYPE" == "ntfs" ] && TYPE=ufsd
+     [ "$TYPE" == "hfs" ] && TYPE=ufsd
+     [ "$TYPE" == "hfsplus" ] && TYPE=ufsd
+     [ "$TYPE" == "ext4" ] && TYPE=ext3
+     if [ "$TYPE" == "ufsd" ] ; then
+	[ "$IOCHARSET" != "" ] && OPTIONS="iocharset=$IOCHARSET" || OPTIONS="iocharset=utf8"
+     fi
+     if [ "$TYPE" == "vfat" -o "$TYPE" == "msdos" ] ; then
+	[ "$CODEPAGE" != "" ] && OPTIONS="codepage=$CODEPAGE"
+	if [ "$IOCHARSET" != "" ] ; then
+	   if [ "$OPTIONS" == "" ] ; then
+		OPTIONS="iocharset=$IOCHARSET,utf8"
+	   else
+		OPTIONS="$OPTIONS,iocharset=$IOCHARSET,utf8"
+	   fi
+	else
+	   [ "$OPTIONS" == "" ] && OPTIONS="utf8" || OPTIONS="$OPTIONS,utf8"
+	fi
+     fi
+
+     LABEL=${LABEL// /.}
+     touch /etc/fstab
+     mount UUID=$UUID 2> /dev/null
+     if [ $? == 0 ] ; then
+          logger -t usb.agent -p notice "mounted /dev/$device via fstab"
+          xmount /dev/$MDEV "$LABEL" $TYPE "NOMOUNT"
+	  ret=$?
+     else
+          xmount /dev/$MDEV "$LABEL" $TYPE $OPTIONS
+	  ret=$?
+     fi
+     echo $MDEV >> /tmp/devs
+     exit $ret
+fi
+exit 1

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while read line; do 
+   for i in $line ; do
+	if [ "`echo $i | egrep '^/tmp/media/usb'`" == "" ] ; then
+	   IP=`echo $i | cut -d'(' -f1`
+	   echo "ALL: $IP" >> /tmp/tmp-hosts.allow
+	fi
+   done
+done
+
+awk ' !x[$0]++' /tmp/tmp-hosts.allow > /etc/hosts.allow && rm /tmp/tmp-hosts.allow

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+eval `egrep 'IOCHARSET=|CODEPAGE=' /conf/config`
+
+if [ "$IOCHARSET" != "" -a -e /lib/modules/2.6.22.19-19-4/nls_${IOCHARSET}.ko -a "`echo ${IOCHARSET} | grep '^cp'`" == "" ] ; then
+   modprobe nls_${IOCHARSET}
+   [ $? -eq 0 ] && logger -t set-nls-codepage "iocharset $IOCHARSET added to FAT/NTFS/HFS/HFS+ mount options" && export IOCHARSET=$IOCHARSET
+fi
+
+if [ "$CODEPAGE" != "" -a -e /lib/modules/2.6.22.19-19-4/nls_${CODEPAGE}.ko -a "`echo ${CODEPAGE} | grep '^cp'`" != "" ] ; then
+   modprobe nls_${CODEPAGE}
+   CODEPAGE=${CODEPAGE/cp/}
+   [ $? -eq 0 ] && logger -t set-nls-codepage "codepage $CODEPAGE added to FAT mount options" && export CODEPAGE=$CODEPAGE
+fi 
+

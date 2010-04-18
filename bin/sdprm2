@@ -1,0 +1,15 @@
+#!/bin/sh
+
+eval `blkid $2 | cut -d':' -f2-10`
+[ "$UUID" == "" ] && UUID=`basename $2`
+stopDrive=`cat /tmp/.keepalive 2> /dev/null | grep $UUID`
+
+#[ "$1" == "--command=stop" ] && echo 'OFF' > /tmp/wdtv.status
+#[ "$1" == "--command=start" ] && echo 'ON' > /tmp/wdtv.status
+
+if [ "$stopDrive" == "" ]; then
+	[ "$1" == "--command=stop" ] && logger "spinning down $2" && sdparm $*
+	[ "$1" == "--command=start" ] && logger "spinning up $2" && sdparm $*
+else
+	logger "ignoring spin down/up command for $2"
+fi

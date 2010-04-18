@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page background="image/videophoto_player_bg_n.png" type="basic">
+  <ctrlgrp>
+    <button valkey="FW_SEARCH_CANCEL"
+      	focused_bg="image/common_button_B_btn_f.png"
+      	normal_bg="image/common_button_B_btn_n.png"
+      	click_bg="image/common_button_B_btn_p.png" />
+  </ctrlgrp>
+
+  <include filename="./inc_upgrade_title.xml" />
+
+  <text text="$$Searching for update" x="122" y="190" w="477" h="30" fontsize="20" align="hcenter"/>
+
+  <motion_icon x="306" y="240" w="109" h="109" count="9" base_filename="image/settings_wait_progress_n" suffix_name="png"/>
+
+  <imgbtn x="126" y="370" w="468" h="36" image="@@bg-FW_SEARCH_CANCEL" text="$$Cancel" align="hcenter" fontsize="24" textcolor="0xEDC831" active="@@act-FW_SEARCH_CANCEL" actnoseltextcolor="0x3333333"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

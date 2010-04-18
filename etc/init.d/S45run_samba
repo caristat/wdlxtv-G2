@@ -1,0 +1,109 @@
+#!/bin/sh
+test -x /usr/sbin/nmbd -a -x /usr/sbin/smbd || exit 0
+case "$1" in
+	start)
+	   if [ "`grep -i ENABLE_SAMBA_SHARE=\'1\' /conf/config`" != "" -a `pidof smbd | wc -l` -eq 0 ]; then
+		rm -rf /tmp/private
+		if [ "$FW_VERSION" == "WDLXTV_G2" ] ; then
+		   cp /etc/samba/smb.conf /tmp
+		   hn="`hostname`"
+		   eval `grep WORKGROUP= /conf/config`
+		   [ "$WORKGROUP" == "" ] && WORKGROUP="Workgroup"
+		   sed -i "s/xxxHOSTNAMExxx/$hn/" /tmp/smb.conf
+		   sed -i "s/xxxWorkgroupxxx/$WORKGROUP/" /tmp/smb.conf
+		fi
+		mkdir -p /tmp/private
+		cp -f /etc/secrets.tdb /tmp/private
+		[ ! -f /conf/smbpasswd ] && touch /conf/smbpasswd
+		ln -s /conf/smbpasswd /tmp/private/smbpasswd 
+
+		MODTIME='0'
+   		if [ -f /tmp/smb.custom.conf ] ; then
+     			cat /tmp/smb.custom.conf > /tmp/smb.X.conf
+			eval `grep WORKGROUP= /conf/config`
+                   	[ "$WORKGROUP" == "" ] && WORKGROUP="Workgroup"
+			sed -i "s/xxxWorkgroupxxx/$WORKGROUP/" /tmp/smb.X.conf
+		   	hn="`hostname`"
+			sed -i "s/xxxHOSTNAMExxx/$hn/" /tmp/smb.X.conf
+   		else
+			if [ "$FW_VERSION" == "WDLXTV_G2" ] ; then
+			   cat /tmp/smb.conf | head -n 14 > /tmp/smb.X.conf
+			else
+			   cat /tmp/smb.conf | head -n 11 > /tmp/smb.X.conf
+        	           eval `grep WORKGROUP= /conf/config`
+	                   [ "$WORKGROUP" == "" ] && WORKGROUP="Workgroup"
+			   sed -i "s/   Workgroup       = Workgroup/   Workgroup       = $WORKGROUP/" /tmp/smb.X.conf
+			   echo "   encrypt passwords = True" >> /tmp/smb.X.conf
+			   echo "   smb passwd file = /tmp/private/smbpasswd" >> /tmp/smb.X.conf
+			   echo "" >> /tmp/smb.X.conf
+			fi
+  		fi
+   		extraDevs="`find /tmp/export.adds/ 2>/dev/null`"
+   		if [ "`grep -i \^SMB_NOGUEST=\'ON\' /conf/config`" != "" -a "$SMBD_AUTO" != "OFF" ] ; then
+     			if [ "$FW_VERSION" != "WDLXTV_G2" ] ; then
+				tail -n +13 /tmp/smb.conf >> /tmp/smb.X.conf
+				private="   valid users     = `smbusers`\n   write list      = `smbusers`"
+				sed -i "s/   guest ok        = yes/$private/g" /tmp/smb.X.conf
+			fi
+			for ed in $extraDevs ; do
+			   if [ -f $ed ] ; then
+				cat $ed | grep -v 'guest ok' >> /tmp/smb.X.conf
+				echo "   valid users     = `smbusers`" >> /tmp/smb.X.conf
+				echo "   write list      = `smbusers`" >> /tmp/smb.X.conf
+			   fi
+			done
+   		elif [ "$SMBD_AUTO" != "OFF" ] ; then
+     			[ "$FW_VERSION" != "WDLXTV_G2" ] && tail -n +13 /tmp/smb.conf >> /tmp/smb.X.conf
+     			cat $extraDevs 2>/dev/null >> /tmp/smb.X.conf
+   		fi
+   		eval "`grep -i \^SMB_RESOLVEORDER /conf/config`"
+   		[ "$SMB_RESOLVEORDER" != "" ] && sed -i "s/name resolve order.*=.*$/name resolve order = $SMB_RESOLVEORDER/" /tmp/smb.X.conf
+   		mv /tmp/smb.X.conf /tmp/smb2.conf
+		mountpoint -q /boot
+		if [ $? == 0 -a "`grep -i \^SSHD=\'OFF\' /conf/config`" == "" -a ! -f /tmp/ext3-boot-run_samba-lock ] ; then
+			logger -t run_samba 'executing smbd zombie workaround'
+			pubkey="`ssh-public-key`"
+			grep -q "$pubkey" /root/.ssh/authorized_keys || ssh-public-key >> /root/.ssh/authorized_keys
+			ssh -o StrictHostKeyChecking=no localhost 'touch /tmp/ext3-boot-run_samba-lock; run_samba start && rm -f /tmp/ext3-boot-run_samba-lock || exit 1;'
+		else
+			/usr/sbin/nmbd -D --configfile=/tmp/smb2.conf  
+			exec /usr/sbin/smbd -D --configfile=/tmp/smb2.conf --piddir=/tmp --private-dir=/tmp/private --lockdir=/tmp/ --smb-passwd-file=/tmp/private/smbpasswd
+		fi
+	   else
+		logger -t run_samba "SMBD disabled, to enable: config_tool -c ENABLE_SAMBA_SHARE=1"
+	   fi
+		;;
+	stop)
+		if [ "`grep -i \^SMB_STANDBY=\'OFF\' /conf/config`" != "" ] ; then
+			$0 force-stop
+		else
+			echo 'run_samba force-stop to really stop Samba services'
+			logger -t run_samba '"run_samba force-stop" to really stop Samba services'
+			logger -t run_samba '"config_tool -c SMB_STANDBY=OFF" to disable Samba on standby'
+		fi
+		;;
+	force-stop)
+		logger -t run_samba "stopping Samba"
+		kill -9 `pidof nmbd`
+		kill -9 `pidof smbd`
+		;;
+	reload)
+		kill -HUP `pidof smbd`
+		kill -HUP `pidof nmbd`
+		;;
+	restart|force-reload)
+		$0 force-stop
+		sleep 1
+		$0 start
+		;;
+	status)
+		echo "not support status command !"
+		exit 1
+		;;
+	*)
+		echo "Usage: $0 {start|stop|reload|restart|force-reload|status}"
+		exit 1
+		;;
+esac
+
+exit 0

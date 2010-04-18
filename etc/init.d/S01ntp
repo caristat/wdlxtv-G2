@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+start)
+   if [ "`grep -i \^NTP=\'ON\' /conf/config`" != "" ] ; then
+	sleep 5
+	[ ! -f /tmp/ifup ] && logger -t S01ntp "interface still not up! Not connected?" && exit 1
+	for i in `seq 1 30` ; do 
+		sleep 1
+		[ -f /tmp/NTP-DONE ] && rm /tmp/NTP-DONE && exit 0
+	done
+
+#	eval `grep \^NTP_DELAY= /conf/config`
+#        echo $NTP_DELAY | egrep '^[0-9]*$' -q
+#    	if [ $? == 0 ] && [ "$NTP_DELAY" != "" ] ; then
+#		NTP_DELAY="`expr 15 + $NTP_DELAY`"
+#      		sleep $NTP_DELAY
+#	else
+#		sleep 15
+#	fi
+   fi
+   ;;
+esac

@@ -1,0 +1,97 @@
+iwpriv
+=================
+This is a detailed explanation of each parameter for iwpriv. Before
+reading this document, make sure you have already read README.
+
+----------------------------------------------------------------------
+USAGE:
+        iwpriv rausb0 [parameters] [val]
+
+where
+
+[parameters]      [val] range           explanation
+------------    ----------------        ------------------------------
+auth            1~5                     1:open
+                                        2:shared
+                                        3:wpapsk
+                                        4:wpa2psk
+                                        5:wpanone
+Note : please don't use "iwpriv" for "open" and "shared", use
+"iwconfig" instead.
+
+enc             1~4                     1:none
+                                        2:wep
+                                        3:tkip
+                                        4:aes
+Note : please don't use "iwpriv" for "none" and "wep", use "iwconfig"
+instead.
+
+wpapsk          8~63 chars              WPAPSK ASCII password
+                64 chars                hex characters
+
+adhocmode       0~2                     0: Plain 11Mbps
+                                           mode in
+                                           Ad-Hoc
+                                           (IEEE
+                                           802.11g
+                                           standard)
+                                        1: Auto mode
+                                           in Ad-Hoc
+                                           (violates
+                                           IEEE 802.11g
+                                           standard)
+                                        2: 54Mbps only.
+
+get_adhocmode   none                    Returns adhoc mode status.
+
+rfmontx         0~1                     0: Disable injection
+                                        1: Enable injection
+
+get_rfmontx     none                    Returns injection status.
+
+forceprismheader 0~2                    0: TODO
+                                        1: TODO
+                                        2: TODO
+
+get_prismheader none                    Returns prism header status.
+
+psm             0~1                     0: TODO
+                                        1: TODO
+
+get_rtpriv      none                    Returns a binary blob! (Used
+                                        by RutilT)
+
+Examples
+================
+----------------------------------------------------------------------
+Example I: STA with AP using OPEN/NONE(Authentication/Encryption)
+        1. iwconfig rausb0 mode Managed
+        2. iwconfig rausb0 enc none
+        3. iwconfig rausb0 essid "AP's SSID"
+
+Example II: STA with AP using OPEN/WEP(Authentication/Encryption)
+        1. iwconfig rausb0 mode Managed
+        2. iwconfig rausb0 enc s:abcde
+        3. iwconfig rausb0 essid "AP's SSID"
+
+Example III: STA with AP using WPAPSK/TKIP(Authentication/Encryption)
+        1. iwconfig rausb0 mode Managed
+        2. iwpriv rausb0 auth 3
+        3. iwpriv rausb0 enc 3
+        4. iwconfig rausb0 essid "AP's SSID"
+        5. iwpriv rausb0 wpapsk 12345678
+        6. iwconfig rausb0 essid "AP's SSID"
+
+Step 4 is part of generating the wpapsk password and is necessary when
+anything other than a 64 hex character string is used in step 5. When
+a 64 character hex string is used, step 3 may be omitted.
+
+NOTE:
+
+iwlist
+=================
+This is detailed explanation of each parameters for iwlist.
+
+----------------------------------------------------------------------
+
+iwlist rausb0 scanning    ; list the result after scanning(site survey)

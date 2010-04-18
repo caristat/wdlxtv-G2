@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<wrapper>
+  <image image="@@info_inforbar" x="100" y="0" w="1080" h="50" scale="100"/>
+  <image image="@@info_trackicon" x="150" y="6" w="35" h="38"/>
+  <text text="@@info_artist" x="190" y="19" w="340" h="20" align="left" fontsize="18" textcolor="0xd3d3d3" speed="1" delay="2" auto_translate="1"/> 
+  <text text="@@info_trackname" x="530" y="19" w="400" h="20" fontsize="18" speed="1" delay="2" align="left" textcolor="0xffffff" auto_translate="1"/>
+  <text text="@@info_currenttime" x="955" y="19" w="90" h="20" fontsize="18" textcolor="0xffffff" align="right"/>
+  <text text="@@info_totaltime" x="1043" y="19" w="90" h="20" fontsize="18" align="right" textcolor="0xffffff"/>
+  <!--image image="@@info_artisticon" x="431" y="36" w="26" h="26"/-->
+</wrapper>
+
+

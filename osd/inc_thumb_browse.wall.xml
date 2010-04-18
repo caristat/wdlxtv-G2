@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<wrapper>
+
+    <table x="51" y="23" w="678" h="184" cols="3" rows="1" colspacing="63" align="hcenter" scale="100" >
+        <image image="@@thumb_active_0" w="184" h="184" />
+        <image image="@@thumb_active_1" w="184" h="184" />
+        <image image="@@thumb_active_2" w="184" h="184" />
+    </table>
+    <table x="51" y="239" w="678" h="184" cols="3" rows="1" colspacing="63" align="hcenter" scale="100" >
+        <image image="@@thumb_active_3" w="184" h="184" />
+        <image image="@@thumb_active_4" w="184" h="184" />
+        <image image="@@thumb_active_5" w="184" h="184" />
+    </table>
+    <table x="51" y="457" w="678" h="184" cols="3" rows="1" colspacing="63" align="hcenter" scale="100" >
+        <image image="@@thumb_active_6" w="184" h="184" />
+        <image image="@@thumb_active_7" w="184" h="184" />
+        <image image="@@thumb_active_8" w="184" h="184" />
+    </table>
+    <table x="58" y="30" w="664" h="170" cols="3" rows="1" colspacing="77" align="hcenter" scale_type="fixratio" >
+        <image name="th0" image="@@browse_0_thumbnail" default_image="@@browse_0_default_image" w="170" h="170" scale="100" />
+        <image name="th1" image="@@browse_1_thumbnail" default_image="@@browse_1_default_image" w="170" h="170" scale="100" />
+        <image name="th2" image="@@browse_2_thumbnail" default_image="@@browse_2_default_image" w="170" h="170" scale="100" />
+    </table>
+    <table x="58" y="246" w="664" h="170" cols="3" rows="1" colspacing="77" align="hcenter" scale_type="fixratio" >
+        <image name="th3" image="@@browse_3_thumbnail" default_image="@@browse_3_default_image" w="170" h="170" scale="100" />
+        <image name="th4" image="@@browse_4_thumbnail" default_image="@@browse_4_default_image" w="170" h="170" scale="100" />
+        <image name="th5" image="@@browse_5_thumbnail" default_image="@@browse_5_default_image" w="170" h="170" scale="100" />
+    </table>
+    <table x="58" y="464" w="664" h="170" cols="3" rows="1" colspacing="77" align="hcenter" scale_type="fixratio" >
+        <image name="th6" image="@@browse_6_thumbnail" default_image="@@browse_6_default_image" w="170" h="170" scale="100" />
+        <image name="th7" image="@@browse_7_thumbnail" default_image="@@browse_7_default_image" w="170" h="170" scale="100" />
+        <image name="th8" image="@@browse_8_thumbnail" default_image="@@browse_8_default_image" w="170" h="170" scale="100" />
+    </table>
+
+    <image image="@@moreprev" x="51" y="650" w="38" h="27"  /> 
+    <image image="@@morenext" x="51" y="675" w="38" h="27"  />
+    <text text="@@pagecounter" x="100" y="641" h="24" w="190" fontsize="24" align="left" textcolor="0xe2e2e2"/> 
+    <text text="@@file_info" x="100" y="659" w="680" h="30" selected="@@file_info_selected" textcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" align="left" speed="1" delay="2" auto_translate="1" /> 
+</wrapper>

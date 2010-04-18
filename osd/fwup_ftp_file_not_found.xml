@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page background="image/browser_list_background_bg_n.png" type="basic">
+  <ctrlgrp>
+    <button valkey="FW_FTP_FILE_NOT_FOUND_CANCEL"
+      focused_bg="image/common_button_B_btn_f.png"
+      normal_bg="image/common_button_B_btn_n.png"
+      click_bg="image/common_button_B_btn_p.png" />
+  </ctrlgrp>
+
+  <include filename="./inc_upgrade_title.xml" />
+
+  <text text="$$The device could not download updates." x="122" y="180" w="477" h="30" fontsize="24" align="hcenter"/>
+
+  <text text="$$System updates could not check for updates because of a network problem. Please check your network connections." x="150" y="230" w="420" h="80" fontsize="20" numlines="3"/>
+
+  <imgbtn x="126" y="350" w="468" h="36" image="@@bg-FW_FTP_FILE_NOT_FOUND_CANCEL" text="$$Cancel" align="hcenter" fontsize="24" textcolor="0xEDC831" active="@@act-FW_FTP_FILE_NOT_FOUND_CANCEL" actnoseltextcolor="0x3333333"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

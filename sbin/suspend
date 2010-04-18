@@ -1,0 +1,33 @@
+#!/bin/sh
+
+sync && sync
+
+for i in "`ls /tmp/init.d/S* -r`" ; do
+	if [ -f "$i" ]; then
+		export APATH=`readlink $i|sed -e 's/etc\/init.*$//'`
+	     # set APATH to the mount location of the application.bin
+		[ "$APATH" != "" ] && app="`basename $APATH`"
+		if [ "$app" != "/" -a -f /tmp/appsRoot -a "$app" != "" ]; then
+			AROOT="`cat /tmp/appsRoot | grep $app`"
+			[ "$AROOT" != "" ] && export AROOT="`dirname $AROOT`"
+		        # set AROOT to the actual location of the application.bin
+		fi
+	     case "$i" in
+	        *~)
+	        	;;
+		*)
+		    # No sh extension, so fork subprocess.
+		    if [ "$i" == "/tmp/init.d/S99post-init" ] ||
+		       [ "$i" == "/tmp/init.d/S70dmaosd" ] ||
+                       [ "$i" == "/tmp/init.d/S00user-script" ] ||
+		       [ "$i" == "/tmp/init.d/S00custom-options" ] ; then
+			x='x'			
+		    else
+			$i stop
+		    fi
+		    ;;
+    	esac
+	fi
+done
+
+

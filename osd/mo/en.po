@@ -1,0 +1,829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Music"
+msgstr "Music"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "All Video"
+msgstr "All video"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Folders"
+msgstr "Folders"
+
+msgid "Recent"
+msgstr "Recent"
+
+msgid "Playlist"
+msgstr "Playlist"
+
+msgid "All Music"
+msgstr "All music"
+
+msgid "Artist"
+msgstr "Artist"
+
+msgid "Genre"
+msgstr "Genre"
+
+msgid "Album"
+msgstr "Album"
+
+msgid "Now Playing"
+msgstr "Now playing"
+
+msgid "New firmware found"
+msgstr "New firmware found"
+
+msgid "No storage present"
+msgstr "No storage present"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "Media library compilation requires more storage space:"
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "Please select [OK] to resume playback or [Cancel]  to restart the video"
+
+msgid "Audio/Video"
+msgstr "Audio/Video"
+
+msgid "Movie"
+msgstr "Movie"
+
+msgid "System"
+msgstr "System"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "Interval time"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "About"
+msgstr "About"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Widescreen"
+msgstr "Widescreen"
+
+msgid "Composite"
+msgstr "Composite"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "Digital"
+msgstr "Digital"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "Are you sure you want to change the video resolution?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "Are you sure you want to change the video output format?"
+
+msgid "Repeat one"
+msgstr "Repeat one"
+
+msgid "Repeat all"
+msgstr "Repeat all"
+
+msgid "Repeat all and shuffle"
+msgstr "Repeat all and shuffle"
+
+msgid "Keep as original"
+msgstr "Keep as original"
+
+msgid "Fit to screen"
+msgstr "Fit to screen"
+
+msgid "Shuffle"
+msgstr "Shuffle"
+
+msgid "Fade"
+msgstr "Fade"
+
+msgid "Random"
+msgstr "Random"
+
+msgid "3 Seconds"
+msgstr "3 seconds"
+
+msgid "5 Seconds"
+msgstr "5 seconds"
+
+msgid "10 Seconds"
+msgstr "10 seconds"
+
+msgid "20 Seconds"
+msgstr "20 seconds"
+
+msgid "30 Seconds"
+msgstr "30 seconds"
+
+msgid "1 Minute"
+msgstr "1 minute"
+
+msgid "3 Minutes"
+msgstr "3 minutes"
+
+msgid "5 Minutes"
+msgstr "5 minutes"
+
+msgid "10 Minutes"
+msgstr "10 minutes"
+
+msgid "15 Minutes"
+msgstr "15 minutes"
+
+msgid "20 Minutes"
+msgstr "20 minutes"
+
+msgid "30 Minutes"
+msgstr "30 minutes"
+
+msgid "English"
+msgstr "English"
+
+msgid "French"
+msgstr "French"
+
+msgid "Italian"
+msgstr "Italian"
+
+msgid "German"
+msgstr "German"
+
+msgid "Spanish"
+msgstr "Spanish"
+
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+msgid "Korean"
+msgstr "Korean"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "On"
+msgstr "On"
+
+msgid "Off"
+msgstr "Off"
+
+msgid "CAS_On"
+msgstr "On"
+
+msgid "CAS_Off"
+msgstr "Off"
+
+msgid "Never"
+msgstr "Never"
+
+msgid "List mode"
+msgstr "List mode"
+
+msgid "Thumbnail mode"
+msgstr "Thumbnail mode"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "Are you sure you want to restore this device to factory settings?"
+
+msgid "WD TV HD Media Player"
+msgstr "WD TV HD Media Player"
+
+msgid "version"
+msgstr "version"
+
+msgid "Current version"
+msgstr "Current version"
+
+msgid "New version"
+msgstr "New version"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "New firmware found. Do you want to upgrade?"
+
+msgid "Rebooting"
+msgstr "Rebooting"
+
+msgid "Invalid firmware"
+msgstr "Invalid firmware"
+
+msgid "Contains"
+msgstr "Contains"
+
+msgid "Starts with"
+msgstr "Starts with"
+
+msgid "Loading"
+msgstr "Loading"
+
+msgid "Loading..."
+msgstr "Loading..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "Unable to recognize attached device at USB port "
+
+msgid "Storage can not aggregate"
+msgstr "Storage can not aggregate"
+
+msgid "Next Song:"
+msgstr "Next song:"
+
+msgid "Current Song"
+msgstr "Current song"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "All Photos"
+msgstr "All photos"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "Media library does not support journaled file system. Playback is still supported."
+
+msgid "Unable to create media library on read only storage."
+msgstr "Unable to create media library on read only storage."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "Unable to create media library. Please check your storage setting."
+
+msgid "Unrecognized USB device"
+msgstr "Unrecognized USB device"
+
+msgid "Scanning the attached USB device..."
+msgstr "Scanning the attached USB device..."
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+
+msgid "Unsupported subtitle"
+msgstr "Unsupported subtitle"
+
+msgid "Audio Channel"
+msgstr "Audio channel"
+
+msgid "Audio channel"
+msgstr "Audio channel"
+
+msgid "Photos"
+msgstr "Photos"
+
+msgid "Firmware upgrade"
+msgstr "Firmware upgrade"
+
+msgid "Video output"
+msgstr "Video output"
+
+msgid "Display resolution"
+msgstr "Display resolution"
+
+msgid "Aspect ratio"
+msgstr "Aspect ratio"
+
+msgid "Audio output"
+msgstr "Audio output"
+
+msgid "Video sequence"
+msgstr "Video sequence"
+
+msgid "Music sequence"
+msgstr "Music sequence"
+
+msgid "Slideshow sequence"
+msgstr "Slideshow sequence"
+
+msgid "Photo scaling"
+msgstr "Photo scaling"
+
+msgid "Transition effect"
+msgstr "Transition effect"
+
+msgid "Screensaver delay"
+msgstr "Screensaver delay"
+
+msgid "Browser display"
+msgstr "Browser display"
+
+msgid "System reset"
+msgstr "Reset to factory defaults"
+
+msgid "Display in full screen"
+msgstr "Display in full screen"
+
+msgid "Wipe right"
+msgstr "Wipe right"
+
+msgid "Wipe left"
+msgstr "Wipe left"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "Upgrade complete. The media player will now restart."
+
+msgid "Please select the device you would like to eject."
+msgstr "Please select the device you would like to eject."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "Are you sure you want to remove this device?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+
+msgid "Subtitle off"
+msgstr "Subtitle off"
+
+msgid "No subtitle"
+msgstr "No subtitle"
+
+msgid "Media library"
+msgstr "Media library"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "For additional information regarding your HD Media Player, please refer to the user manual or visit."
+
+msgid "Subtitle"
+msgstr "Subtitle"
+
+msgid "Firmware Version"
+msgstr "Firmware version"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "File name"
+msgstr "File name"
+
+msgid "Search completed. No results found."
+msgstr "Search completed. No results found."
+
+msgid "Unsupported"
+msgstr "Unsupported"
+
+msgid "Space"
+msgstr "Space"
+
+msgid "No audio channel"
+msgstr "No audio channel"
+
+msgid "Untitled volume"
+msgstr "Untitled volume"
+
+msgid "Subtitle font size"
+msgstr "Subtitle font size"
+
+msgid "Additional encoding support"
+msgstr "Additional encoding support"
+
+msgid "Western Europe (ISO)"
+msgstr "Western Europe (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "Traditional Chinese (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "Simplified Chinese (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "Japanese (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "Korean (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "Cyrillic (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "Cyrillic (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "Greek (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "Greek (Windows-1253)"
+
+msgid "All"
+msgstr "All"
+
+msgid "Equal to"
+msgstr "Equal to"
+
+msgid "Not Equal to"
+msgstr "Not equal to"
+
+msgid "Central Europe (ISO)"
+msgstr "Central Europe (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "Central Europe (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "Does not contain"
+
+msgid "Display file size"
+msgstr "Display file size"
+
+msgid "Display file size during navigation"
+msgstr "Display file size during navigation"
+
+msgid "Western Europe"
+msgstr "Western Europe"
+
+msgid "Turkish"
+msgstr "Turkish"
+
+msgid "Subtitle default"
+msgstr "Subtitle default"
+
+msgid "Subtitle border"
+msgstr "Subtitle border"
+
+msgid "Thick"
+msgstr "Thick"
+
+msgid "Thin"
+msgstr "Thin"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "Insufficient space in atached USB device. Media library compilation requires more storage space."
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player."
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "The attached USB device is set to Read Only. The media library function will not be supported."
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "Unable to create media library in the attached USB device. Please check your device's setting."
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+
+msgid "File Management"
+msgstr "File management"
+
+msgid "Select source"
+msgstr "Select source"
+
+msgid "Select a destination"
+msgstr "Select a destination"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "Enabling file movement, background music will now be stopped..."
+
+msgid "Copy"
+msgstr "Copy"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Move"
+msgstr "Move"
+
+msgid "Select all"
+msgstr "Select all"
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Destination"
+msgstr "Destination"
+
+msgid "Would you like to delete the selected files?"
+msgstr "Would you like to delete the selected files?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "Would you like to copy the selected files?"
+
+msgid "Would you like to move the selected files?"
+msgstr "Would you like to move the selected files?"
+
+msgid "Deleting files..."
+msgstr "Deleting files..."
+
+msgid "Deleted"
+msgstr "Deleted"
+
+msgid "Copying files..."
+msgstr "Copying files..."
+
+msgid "Moving files..."
+msgstr "Moving files..."
+
+msgid "Moved"
+msgstr "Moved"
+
+msgid "File delete complete."
+msgstr "File delete complete."
+
+msgid "Write fail. Please check the destination device."
+msgstr "Write fail. Please check the destination device."
+
+msgid "Read fail. Please check the source device."
+msgstr "Read fail. Please check the source device."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "Unable to copy or move file. Not enough space at destination."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "Unable to write to read-only device at destination."
+
+msgid "Unable to delete read-only file."
+msgstr "Unable to delete read-only file."
+
+msgid "Press [BACK] to cancel."
+msgstr "Press [BACK] to cancel."
+
+msgid "Are you sure you want to cancel?"
+msgstr "Are you sure you want to cancel?"
+
+msgid "Auto play"
+msgstr "Auto play"
+
+msgid "Photo auto play"
+msgstr "Photo auto play"
+
+msgid "Video auto play"
+msgstr "Video auto play"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "Are you sure you want to chage the video setting?"
+
+msgid "Camera"
+msgstr "Camera"
+
+msgid "Camera 1"
+msgstr "Camera 1"
+
+msgid "Camera 2"
+msgstr "Camera 2"
+
+msgid "Chapters"
+msgstr "Chapters"
+
+msgid "file name"
+msgstr "file name"
+
+msgid "Press [RIGHT] to select source."
+msgstr "Press [RIGHT] to select source."
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "Press [OPTION] to copy, move or delete."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "Press [RIGHT] to select destination."
+
+msgid "Press [OPTION] to confirm."
+msgstr "Press [OPTION] to confirm."
+
+msgid "This folder cannot be accessed."
+msgstr "This folder cannot be accessed."
+
+msgid "Standby mode"
+msgstr "Standby mode"
+
+msgid "Audio track display"
+msgstr "Audio track display"
+
+msgid "Action cancelled."
+msgstr "Action cancelled."
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "Hindu"
+msgstr "Hindu"
+
+msgid "Thailand"
+msgstr "Thailand"
+
+msgid "Preview mode"
+msgstr "Preview mode"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "Firmware upgrade failed. The device will restart."
+
+msgid "Empty"
+msgstr "Empty"
+
+msgid "Push"
+msgstr "Push"
+
+msgid "Wipe"
+msgstr "Wipe"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Access point detecting..."
+msgstr "Access point detecting..."
+
+msgid "The network encryption key is not valid."
+msgstr "The network encryption key is not valid."
+
+msgid "No Chapter"
+msgstr "No chapter"
+
+msgid "Arabic (Windows-1256)"
+msgstr "Arabic (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "Thai (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "Unlock your WD drive"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "Would you like to unlock this WD drive?"
+
+msgid "Enter your password to unlock the drive."
+msgstr "Enter your password to unlock the drive."
+
+msgid "Password invalid"
+msgstr "Password invalid"
+
+msgid "Please enter your password again."
+msgstr "Please enter your password again."
+
+msgid "Too many password attempts"
+msgstr "Too many password attempts"
+
+msgid "There were too many password recovery attempts."
+msgstr "There were too many password recovery attempts."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "Please safely remove your drive from WD TV,"
+
+msgid "reconnect it and try again."
+msgstr "reconnect it and try again."
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Genre:"
+msgstr "Genre:"
+
+msgid "File Size:"
+msgstr "File size:"
+
+msgid "File Type:"
+msgstr "File type:"
+
+msgid "Replace"
+msgstr "Replace"
+
+msgid "Checker Board"
+msgstr "Checker board"
+
+msgid "Play mode"
+msgstr "Play mode"
+
+msgid "Pan"
+msgstr "Pan"
+
+msgid "Zoom in"
+msgstr "Zoom in"
+
+msgid "Zoom out"
+msgstr "Zoom out"
+
+msgid "Info bar"
+msgstr "Info bar"
+
+msgid "Chapter"
+msgstr "Chapter"
+
+msgid "Rotate left"
+msgstr "Rotate left"
+
+msgid "Rotate right"
+msgstr "Rotate right"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "Error: The source folder and destination folder are the same."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "Error: The destination folder is a subfolder of the source folder."
+
+msgid "This folder is empty"
+msgstr "There is no media in the current folder."
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color mode"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "Are you sure you want to change the HDMI deep color mode?"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "Please remove your drive from WD TV, "
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "The media player will now restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+
+msgid "Copied"
+msgstr "Copied"
+
+msgid "8 bit"
+msgstr "8 bit"
+
+msgid "10 bit"
+msgstr "10 bit"
+
+msgid "12 bit"
+msgstr "12 bit"
+
+msgid "The auto play content could not be accessed."
+msgstr "The auto play content could not be accessed."
+
+msgid "Local device is disconnected."
+msgstr "Warning: please safely eject your USB device before removing it."
+
+msgid "User interface transition effect"
+msgstr "User interface transition effect"
+
+msgid "Fade in and fade out"
+msgstr "Fade in and fade out"
+
+msgid "None"
+msgstr "None"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "A fatal system error is detected. The device will restart..."
+
+msgid "YES"
+msgstr "Yes"
+
+msgid "Yes to all"
+msgstr "Yes to all"
+
+msgid "NO"
+msgstr "No"
+
+msgid "This folder already contains a file named:"
+msgstr "This folder already contains a file named:"
+
+msgid "Would you like to overwrite it?"
+msgstr "Would you like to overwrite it?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "Unable to play the selected file. Please refer to the user manual for a list of supported file formats."
+
+

@@ -1,0 +1,253 @@
+0.4.1.7
+  * WDLXTV_G2 now available for WDTV HD Gen 2 devices
+  * added better system On/Off detection for turning off/on USB bus
+  * patched to show subtitle delay without audio channel info (thx rezmus)
+  * Deluge updated to 1.2.1-1
+  * included nfsd (kernel) NFS server
+  * new auto-export mode for Samba & NFSD servers
+  * Samba binaries from official fw 1.02.14
+  * Samba shares can be password protected
+  * NTP works with static IP & wireless now
+  * included all available NLS/codepage modules (see S00custom-options)
+  * XFS and ReiserFS drives now supported
+  * rezmus patch for custom fonts in OSD themes
+  * online-delayer now pings self instead of gateway
+  * Deluge auth file located at /conf/deluge.auth
+  * list.watch is now wdlxtv.watch
+  * fixed a few lib symlinks
+
+0.4.1.0
+  *** Include wdtvlive.fff with wdtvlive.bin and wdtvlive.ver when you flash ***
+  * resized youtube home dark box image to fit
+  * changed windows resolve order back to official FW order
+  * added zoster's 11/12 & bonus 10 item list views
+  * included techflaws corrected german UI translation
+  * added 2 additional video info overlay options (see S00custom-options)
+  * fixed smbd zombies in ext3-boot-live
+  * ssh/scp/sftp clients changed to openssh binaries
+  * included ssh-copy-id for passwordless login from wdtv-live
+  * /sbin/usb.power.off and /sbin/usb.power.on turn off/on usb bus power (thx pibos)
+  * fixed openssl cert/private symlinks
+  * full md5sum & netstat included
+  * updated S00custom-options
+  * updated libxml, libssl, libz, & libcrypto
+  * moved around libs to mirror debian-wdlxtv-live
+  * added /etc/screenrc & /etc/ssh/ssh_config & /etc/ssl/openssl.cnf (bind mount over for custom)
+
+0.4.0.0
+  * now based on official firmware 1.01.24
+  * fixed firmware signature byte order == seamless upgrade from official
+  * widened various youtube views
+  * fixed optical drive double mounts
+  * added www-data to cdrom group
+  * fixed php-cgi arguments
+  * fixed smb.conf bug
+
+0.3.4.5
+  * fixed app.bin loading from devices with space's in label
+  * streamlined custom smb.conf usage
+  * additional (non offficially mounted) devices are now added to smb config
+  * added ssh-public-key to display public key
+  * wdlxtv-live-minimal now available (no php/python/perl/nzbget/deluge/lighttpd)
+  * updated net.mounts with curlftpfs & sshfs examples
+  * firmwares are now fully (48B) signed
+
+0.3.4.4
+  * modified /sbin/suspend (stops all startup scripts)
+  * added /sbin/resume (reverse of suspend)
+  * rarfs included (not automagic atm -- or perfect)
+  * unrar-seek included
+  * disabled cd-manager (optical drive access option in UMSP)
+  * removed busybox blkid symlink
+  * fixed mount.watch extra umounting / NOUUID bug
+  * ethernet actions order enforced
+ 
+0.3.4.3
+  * added real PATH export to /etc/profile
+  * modified timezone export in /etc/profile
+  * ethernet actions now available
+
+0.3.4.2
+  * fixed plug.watch bug dealing with multiple partition devices
+  * fixed mount.watch bug causing duplicate NOUUID devices to show up
+  * fixed HFS device mounting issue
+  * Hub support *should* be pretty spot on
+  * fixed custom-language-XX input, custom OSD translations now load
+  * can supply customized smb.conf file (include at root of attached device-experimental)
+  * fixed FTP server 425 error issue (add -H flag)
+  * fixed sshfs & outgoing scp (use public key auth)
+  * fixed timezone (added export to shell profile)
+  * enabled outgoing ssh identity
+  * corrected typo in lighttpd server.upload-dirs location
+  * updated ntfs-3g-2010.1.16
+  * fixed chsh
+
+0.3.4.1
+  * ntfs-3g-2009.4.4-1 included (power users test at own risk)
+
+0.3.4
+  * using Paragon NTFS driver, NTFS devices *should* now mount correctly (finally)
+  * curlftpfs-0.9.2-1 included
+  * openssl-0.9.8k-7 included
+  * fixed nzbget webui images not showing up
+  * Deluge state directory enabled (requires power cycle after changing torrent watch dir)
+  * fixed timezone setting command in S00custom-options & add export to /etc/profile
+
+0.3.3.1
+  * fixed hotplug script for proper app/device mounting
+  * changed smb.conf resolve order to: lmhosts host wins bcast
+
+0.3.3
+  * fixed nzbgetweb default upload dir to match default nzbget watch dir
+  * fixed online.delayer to accomodate space at end of nameserver line
+  * rezmus's audio/video info & youtube header dmaosd patches
+  * widened generic thumbs selected title
+  * libfuse2-2.8.1-1.1 included
+  * strace-4.5.19-1 included
+  * sshfs now works [maybe ;)]
+  * gettext-0.17-8 included for custom translations
+  * more libs are md5'd / dupe files symlinked for space
+  * HFS devices are now fsck'd before mounting to fix r/o issue
+  * experimental ext4 support (mounted as ext3)
+  * possible NTFS fix for app.bins
+  * lighttpd server.upload-dirs now writeable
+  * php5-cgi error logging enabled /var/log/php5
+
+0.3.2
+  * fixed group/shadow/passwd to enable lighttpd
+  * fixed /etc/init.d/S96deluge to enable deluge
+  * fixed /etc/init.d/S96nzbget to enable nzbget
+  * fixed deluge config persistence
+  * unrar-nonfree-3.8.5-1 included
+  * actually included par2-0.4 
+  * lighttpd can be disabled (config_tool -c LIGHTTPD=OFF)
+  * deluge webui can be disabled (config_tool -c DELUGEWEBUI=OFF)
+  * Merry Christmas!!!
+
+0.3.1
+  * fixed resolv.conf symlink for DNS
+
+0.3.0
+  * Rezmus USB-power-on-suspend patch
+  * fixed video_resume_points_table typo, should be video_resume_point_table
+  * cifs-interceptor entries now have optional 3rd field for mount options
+  * /conf/hosts for custom host definitions & fixed resolver for hostname lookup
+  * possible NTFS hub fix
+  * Day's S90net.mounts fix
+  * NTP fix for DHCP users
+  * 3 background options, look in S00custom-options for details
+  * crazymount & plug.watch utilize mdev
+  * working ldconfig & ldd + chsh & showmount included
+  * all init.d's are disabled during upgrade
+  * debian-wdlxtv upgraded to Squeeze
+  * live filesystem booting now working : D !!!!!!! (root filesystem must be in .rootFS to pivot)
+  * disabled online update procedure
+  * lighttpd-1.4.25 webserver w/gd included (default enabled)
+  * Deluge-1.2.0-rc4 Bittorrent client included (w/ webui) (default disabled)
+  * nzbget-0.7-r357 & nzbgetweb-0.1.4-t5 include (default disabled)
+  * hellanzb-0.13 included (default disabled)
+  * pure-ftpd-1.0.24 w/TLS included (default enabled)
+  * perl-5.10.1 included
+  * python-2.5.4 included
+  * php-cgi-5.2.11-2 included
+  * screen-4.00.03jw4 included
+  * unrar-free-0.0.1 included
+  * par2-0.4 included
+  * wakeonlan-0.41-10 included
+  * bash-4.0-4 included
+  * sshfs-2.2-1 included
+  * unionfs-0.23.hg.20090611-1 included
+
+0.2.2.1
+  * fixed video playback ; )
+  * enabled persistent video_resume_points_table (if exists on device at boot)
+
+0.2.2
+  * fixed default 12 thumb browse
+  * re-widened youtube related videos results
+  * ext3-boot-live now identifies itself better
+  * debian-wdlxtv-live now in beta (for gimme-the-dam-kitchen-sink-folk)
+  *** thanks to Bob for inspiration and initial work with debbootstrap
+  * better pivot & cleanup with root.bin
+  * cifs-interceptor mounts can now be NFS/cifs/etc instead of only NFS
+
+0.2.1
+  * fixed net.mounts execution on interface up
+  * fixed 8 item list view
+
+0.2.0
+  * firmware now based on official firmware 1.01.11!!!
+
+0.1.9
+  * fixed bug in cifs-interceptor preventing CIFS from mounting
+  * added in code to pivot to ext3-boot-live firmware IF root.bin is located on /dev/sda1
+
+0.1.8
+  * crond included (to enable: config_tool -c CROND=ON) (to edit: crontab -e)
+  * rearranged net.mounts & ntp execution  
+  * NFS now mountable under network shares!!!! (requires workaround--http://b-rad.cc/cifs-interceptor)
+  * shells check for /conf/profile and load if exists
+  * actual original screen_saver & background images included now
+
+0.1.7
+  * enabled upload on 'fixed' ftp server ;-)
+  * disabled ntp by default (cause of info bar issue) [to enable: config_tool -c NTP=ON]
+  * included original background and screen_saver images
+  * update included dox
+
+0.1.6
+  *** !!! PERMANENT FLASH NOW !!! ***
+  * fixed ftp server
+  * tweaked NET_MOUNTS_DELAY implementation
+  * added hostname configuration & ntp (config_tool -c DEVICE_NAME=)
+  * added ntp-4.2.4p7 with timezone (config_tool -c TIMEZONE=)
+
+0.1.5
+  * set ftp root to / (allows editing of /conf files)
+
+0.1.4
+  * add delay for net.mounts execution (config_tool -c NET_MOUNTS_DELAY=10 [or 5/20/13/etc])
+
+0.1.3
+  * patched busybox so CIFS/SAMBA shares mount correctly in 'Network shares'
+  * rsync-3.0.6 included
+
+0.1.2
+  * fixed memory leak with smbtree
+  * better workaround for net.mounts
+
+0.1.1
+  * actually unified background images
+  * workaround for net.mounts
+  * root password is blank (use pw-fix.app.bin to reset)
+
+0.1 - initial release
+  * includes busybox-1.14.1, e2fsprogs-1.41.9, portmap-6.0, dropbear-0.52, hdparm-9.27, usbutils-0.86, wget-1.12
+  * includes cd-manager-0.7 for optical drive functionality
+  * telnet, ftp, & ssh servers enabled (each can be disabled)
+  * net.mounts can exist on attached device at boot or /conf for automagic mounting of NFS,SAMBA,whatever
+  * root password is: wdtvlive
+  * includes wdlxtv-0.5.7.1's mount.watch, list.watch, plug.watch, xmount, & crazymount
+  * app.bin, osd.bin, & opt.bin loading
+  * OSD tweaks (refer to S00custom-options for how to change views)
+    * added selectable 4, 6, 8 item list view (default=8) 
+    * added selectable 4, 8, 12 thumb browse view (default=12) 
+    * added 15 thumb view to music/photo (default=10)
+    * increased font size of title to 32 in thumb view
+    * filename listings are much wider
+    * widened YouTube related videos viewboxes
+    * unified background images to villa_bg.jpg (Villa_bg.png, villa_bg.jpg, villa_bg.png)
+  * one compiled font replacement may be stored as /conf/custom-translation.mo, it will overlay the first asian font
+  * independant welcome_logo and screen_saver
+  * Custom background and screen saver images can be supplied at boot
+	* requires villa_bg.jpg (maxsize=524288) or screen_saver.png to exist on a device attached at boot
+	* original screen_saver & welcome_background are supplied, in case you desire them.
+  * .addMounts functionality for media library scanning (Experimental--work in progress--do not use)
+  * .thumbDB functionality for persistent thumb cache
+  * .keepalive functionality for disabling of device spin down on device standby (possibly broken)
+  * Ethernet is kept alive during standby (look at S00custom-options to disable)
+  * users are enabled (experimental)
+  * custom USB slot icons can be enabled (look at S00custom-options)
+  * default Optical Drive thumb
+  * changed background to http://oliuss.deviantart.com/art/Hardwood-Night-88299626
+

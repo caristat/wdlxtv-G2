@@ -1,0 +1,81 @@
+#!/bin/sh
+
+# usage:  xmount  MOUNT_PATH  NAME   FSTYPE   OPTIONS
+
+if [ "$4" == "" ]; then
+  O="defaults"
+elif [ "$3" != "curlftpfs" -a "$3" != "sshfs" ] ; then
+  O="$4"
+else
+  O=""
+fi
+
+if [ "$3" == "cifs" ]; then
+  if [ "$O" == "defaults" ]; then
+    [ "$IOCHARSET" != "" ] && O="user=guest,iocharset=$IOCHARSET" || O="user=guest,iocharset=utf8"
+  fi
+fi
+
+if [ "$3" == "nfs" ] ; then
+  /etc/init.d/S10portmap startNFS && sleep 2
+  if [ "$O" == "defaults" ]; then
+    O="soft,intr"
+  fi
+fi
+
+if [ "$3" == "xfs" ] ; then 
+  modprobe xfs
+fi
+
+if [ "$3" == "reiserfs" ] ; then 
+  modprobe reiserfs
+fi
+
+if [ "$3" == "ntfs" ] ; then
+  logger -t xmount -p warning "using ntfs as filesystem type does not act as expected, ntfs uses Paragon driver. Filesystem must be specified as ufsd."
+fi
+
+mLoc=""
+if [ "$4" != "NOMOUNT" ] ; then
+	mountpoint -q "/tmp/media/usb/$2" && logger -t xmount -p warning "partition with label ($2) already mounted!" && exit 1
+	mkdir -p "/tmp/media/usb/$2"
+
+	if [ "$3" == "ftpfs" -o "$3" == "curlftpfs" ] ; then
+		curlftpfs $1 "/tmp/media/usb/$2" $O
+	elif [ "$3" == "sshfs" ] ; then
+		sshfs $1 "/tmp/media/usb/$2" $O
+	else
+		mount -t $3 $1 "/tmp/media/usb/$2" -o $O
+	fi
+
+	if [ $? == 0 ] ; then
+		cat /etc/fstab > /tmp/fstab~
+		cat /etc/mtab | egrep "^$1" | grep /tmp/media/usb/$2 >> /tmp/fstab~
+		awk ' !x[$0]++' /tmp/fstab~ > /etc/fstab && rm /tmp/fstab~
+		mLoc="/tmp/media/usb/$2"
+		logger -t xmount "xmounted $1 $2 $3 $O"
+		echo "linksheets \"/tmp/media/usb/$2\" 0" > /tmp/sheetQueue/x.`echo /tmp/media/usb/$2 0 | md5sum | cut -d' ' -f1`
+	else
+		rmdir "/tmp/media/usb/$2"
+		logger -t xmount "xmount $1 $2 $3 $O FAILED WTF?!?"
+		exit 1
+	fi
+else
+	mLoc="`cat /proc/mounts | grep $1 | grep /tmp/media/usb/ | head -n 1 | cut -d' ' -f2 | sed -e 's/\\040/\ /'`"
+fi
+
+mountpoint -q "$mLoc"
+if [ $? == 0 ] ; then
+	if [ -e "$mLoc/.dontAddMount" ] ; then
+	   UUID="`blkid | egrep "^$1" | sed -e 's/^.*UUID=\"//' -e 's/\".*$//'`"
+	   [ "$UUID" == "" ] && UUID="`echo $1 | cut -d'/' -f3`"
+	   echo $UUID >> /tmp/.dontAddMounts
+	fi
+# add to samba exports
+	if [ "`echo $1 | egrep '^/dev/sd'`" != "" ] ; then
+		partition="`basename $1`"
+		echo -e "[$2]\n   comment         = $2\n   path            = $mLoc\n   read only       = no\n   guest ok        = yes\n   use sendfile    = yes" > "/tmp/export.adds/$partition"
+	fi
+fi
+
+exit 0

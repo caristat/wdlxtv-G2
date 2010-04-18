@@ -1,0 +1,7 @@
+<device DEVNO="0xfe02" TIME="1260774432" LABEL="YAMON_XLOAD" TYPE="romfs">/dev/sigmblockc</device>
+<device DEVNO="0xfe03" TIME="1260774432" LABEL="MIPSLINUX_XLOAD" TYPE="romfs">/dev/sigmblockd</device>
+<device DEVNO="0xfe04" TIME="1260774432" LABEL="MIPSLINUX_XLOAD" TYPE="romfs">/dev/sigmblocke</device>
+<device DEVNO="0xfe05" TIME="1260774432" LABEL="imaterial" TYPE="romfs">/dev/sigmblockf</device>
+<device DEVNO="0xfe06" TIME="1260774432" LABEL="xmaterial" TYPE="romfs">/dev/sigmblockg</device>
+<device DEVNO="0xfe07" TIME="1260774432" LABEL="WDLXTV_LIVE" TYPE="cramfs">/dev/sigmblockh</device>
+<device DEVNO="0xfe0b" TIME="1260774432" TYPE="minix">/dev/sigmblockl</device>

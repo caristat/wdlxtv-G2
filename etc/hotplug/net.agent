@@ -1,0 +1,114 @@
+#!/bin/sh
+[ -f /tmp/sys.path ] &&  . /tmp/sys.path
+
+logger "net.agent:  Called for $MDEV"
+
+# hotplug (ala busybox mdev) network autoconfig agent
+
+if [ "$ACTION" == "add" ]; then
+  echo "INTERFACE=$INTERFACE" > /tmp/ifup
+  # A /tmp/net.config will override settings in /conf/net.config
+  DHCP="yes"
+
+  if [ -f /tmp/net.config ]; then
+	logger -t net.agent "/tmp/net.config overriding /conf/net.config!"
+	. /tmp/net.config
+  else
+	[ -f /conf/net.config ] && dos2unix /conf/net.config && chmod a+x /conf/net.config && . /conf/net.config
+  fi
+ 
+  if [ "$WIRELESS" == "TRUE" ] ; then
+	ifconfig $INTERFACE up
+	sleep 10
+	
+	if [ "$AUTHMODE" == "WPAPSK" -o "$AUTHMODE" == "WPA2PSK" ] ; then
+		iwpriv $INTERFACE set NetworkType=Infra
+		iwpriv $INTERFACE set AuthMode=$AUTHMODE
+		iwpriv $INTERFACE set EncrypType=$ENCRYPTION_TYPE
+		iwpriv $INTERFACE set "SSID=$SSID"
+		iwpriv $INTERFACE set "WPAPSK=$ENCRYPTION_KEY"
+		iwpriv $INTERFACE set "SSID=$SSID"
+	elif [ "$AUTHMODE" == "WEP" ] ; then
+		iwconfig $INTERFACE essid "$SSID" key "s:$ENCRYPTION_KEY" 
+	else
+		iwpriv $INTERFACE set NetworkType=Infra
+		iwpriv $INTERFACE set AuthMode=OPEN
+		iwpriv $INTERFACE set EncrypType=NONE
+		iwpriv $INTERFACE set "SSID=$SSID"
+	fi
+	sleep 3
+  else
+	ifconfig $INTERFACE up
+  fi
+
+  if [ "$IP" == "" ]; then
+  	DHCP="yes"
+  	logger "net.agent: No IP provided, doing DHCP"
+  fi
+  if [ "$MTU" != "" ]; then
+    ifconfig $INTERFACE mtu $MTU
+  fi
+  if [ "$DHCP" == "yes" ] ; then
+    udhcpc -t 6 -i "$INTERFACE" -q &
+    ifconfig $INTERFACE
+  else
+    cat /conf/resolv.conf /tmp/resolv.conf.new > /etc/resolv.conf
+
+    for a in $DNS $DNS1 $DNS2 $DNS3 $DNS4 $DNS5; do
+      if [ "$a" != "" ] ; then
+        echo "nameserver $a" >> /etc/resolv.conf
+      fi
+    done
+
+    if [ "$NM" != "" ] ; then
+      O="netmask $NM $O"
+    fi
+    ifconfig $INTERFACE $IP up $O
+    ifconfig $INTERFACE
+    if [ "$GW" != "" ]; then
+      route add default gw $GW
+      # TEST to see if the IP info is correct!  (only possible if gw defined)
+      PINGCOUNT=6
+      logger "Testing static IP assignment..."
+      SUCCESS=`ping -c $PINGCOUNT $GW | grep "packets received"`
+      logger Ping: $SUCCESS
+      SUCCESS=`echo $SUCCESS |cut -d' ' -f4`
+      if [ $SUCCESS -eq 0 ]; then
+        logger "IP Assignment failed.  Trying DHCP"
+        udhcpc -t 6 -i "$INTERFACE" -q &
+      fi
+    fi
+  fi
+
+  if [ "`grep -i \^NTP=\'ON\' /conf/config`" != "" ] ; then
+	online.delayer 2
+	[ $? -ne 0 ] && logger -t net.agent "IP not acquired after 10s! Try setting NTP_DELAY for longer wait"
+	logger -t net.agent "net.agent: Using $NTPSERVER to set system time"
+	eval `grep \^NTPSERVER= /conf/config`
+	eval `grep \^NTP_DELAY= /conf/config`
+	[ "$NTPSERVER" == "" ] && NTPSERVER="pool.ntp.org"
+        echo $NTP_DELAY | egrep '^[0-9]*$' -q
+       	if [ $? == 0 ] && [ "$NTP_DELAY" != "" ] ; then
+		sleep $NTP_DELAY && ntpdate -vs $NTPSERVER && ntpdate -vs $NTPSERVER && touch /tmp/NTP-DONE
+	else
+		ntpdate -vs $NTPSERVER && ntpdate -vs $NTPSERVER && touch /tmp/NTP-DONE
+	fi
+  fi
+
+  # Put the current IP address into /tmp/current.ip
+  # (if dhcp fails, it _could_ be 0.0.0.0)
+  IP=`ip addr ls dev $INTERFACE | grep inet | sed 's/^.* inet //' | cut -d'/' -f1`
+  GW=`ip route|grep default|cut -d' ' -f3`
+  NM=`ifconfig $MDEV | grep inet|sed 's/^.*Mask://'|cut -d' ' -f1`
+  logger -t net.agent "Device $MDEV configged as $IP/$GW/$NM"
+
+  echo $IP > /tmp/current.ip # informational
+  sleep 60 && killall udhcpc &
+fi
+
+# this section is probably not needed. :)
+if [ "$ACTION" == "remove" ]; then
+  logger -t net.agent "removing device $MDEV"
+  ifconfig $INTERFACE down
+fi
+

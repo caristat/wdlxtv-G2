@@ -1,0 +1,838 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Music"
+msgstr "Müzik"
+
+msgid "Photos"
+msgstr "Fotoğraflar"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Untitled volume"
+msgstr "Adsız sürücü"
+
+msgid "All Video"
+msgstr "Tüm Videolar"
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Folders"
+msgstr "Klasörler"
+
+msgid "Recent"
+msgstr "Son Kullanılanlar"
+
+msgid "Playlist"
+msgstr "Çalma Listesi"
+
+msgid "All Music"
+msgstr "Tüm Müzikler"
+
+msgid "Artist"
+msgstr "Sanatçı"
+
+msgid "Genre"
+msgstr "Tür"
+
+msgid "Album"
+msgstr "Albüm"
+
+msgid "All Photos"
+msgstr "Tüm Fotoğraflar"
+
+msgid "Now Playing"
+msgstr "Şu an çalan"
+
+msgid "New firmware found"
+msgstr "Yeni yazılım bulundu"
+
+msgid "No storage present"
+msgstr "Takılı hafıza yok"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "Ortam kitaplığı için daha fazla yer gerekli:"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "Ortam kitaplığı bu dosya sistemini desteklemiyor. Ancak çalma desteği var."
+
+msgid "Unable to create media library on read only storage."
+msgstr "Salt okunur hafıza üzerine ortam kitaplığı oluşturulamıyor."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "Ortam kitaplığı oluşturulamıyor. Lütfen kaydetme ayarlarınızı kontrol edin."
+
+msgid "Unrecognized USB device"
+msgstr "Tanınmayan USB cihazı."
+
+msgid "Storage can not aggregate"
+msgstr "Sürücü kümelenemyor"
+
+msgid "Scanning the attached USB device..."
+msgstr "Takılan USB cihazı taranıyor..."
+
+msgid "An error has been detected in the file system of your USB device. Media Library support will be unavailable while the error exists. Please refer to the user manual on how to correct this error."
+msgstr "USB cihazınızın dosya sisteminde bir hata tespit edildi. Bu hata nedeniyle Ortam Kitaplığı desteği verilemiyor. Lütfen bu hatanın nasıl düzeltileceği konusunda bilgi için kullanma kılavuzunu okuyun."
+
+msgid "Unable to recognize attached device at USB port"
+msgstr "USB bağlantı noktası at bağlı cihaz kabul edilemiyor"
+
+msgid "Warning: please safely eject your USB device before removing it"
+msgstr "Dikkat: USB cihazınızı çıkarmada önce güvenli çıkarma işlemi yapın."
+
+msgid "Connecting..."
+msgstr "Bağlanıyor..."
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "Lütfen kaldığınız yerden devam etmek için [OK] (Tamam) ya da yeniden başlatmak için [Cancel] (İptal) öğelerini seçin."
+
+msgid "Current Song"
+msgstr "Güncel Şarkı"
+
+msgid "Next Song:"
+msgstr "Sonraki şarkı:"
+
+msgid "Unsupported"
+msgstr "Desteklenmeyen"
+
+msgid "Unsupported subtitle"
+msgstr "Desteklenmeyen altyazı"
+
+msgid "Subtitle off"
+msgstr "Altyazı kapalı"
+
+msgid "Subtitle"
+msgstr "Altyazı"
+
+msgid "No subtitle"
+msgstr "Altyazı yok"
+
+msgid "Audio Channel"
+msgstr "Ses Kanalı"
+
+msgid "Audio channel"
+msgstr "Ses Kanalı"
+
+msgid "No audio channel"
+msgstr "Ses Kanalı yok"
+
+msgid "Audio/Video"
+msgstr "Ses/Video"
+
+msgid "System"
+msgstr "Sistem"
+
+msgid "Firmware upgrade"
+msgstr "Yazılım güncellemesi"
+
+msgid "Video output"
+msgstr "Video çıkışı"
+
+msgid "Display resolution"
+msgstr "Görüntü çözünürlüğü"
+
+msgid "Aspect ratio"
+msgstr "En-boy oranı"
+
+msgid "Audio output"
+msgstr "Ses çıkışı"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Video sequence"
+msgstr "Video oynatma"
+
+msgid "Subtitle font size"
+msgstr "Altyazı büyüklüğü"
+
+msgid "Movie"
+msgstr "Film"
+
+msgid "Music sequence"
+msgstr "Müzik çalma"
+
+msgid "Slideshow sequence"
+msgstr "Slayt gösterimi"
+
+msgid "Photo scaling"
+msgstr "Fotoğraf boyutlandırma"
+
+msgid "Transition effect"
+msgstr "Geçiş efekti"
+
+msgid "Interval time"
+msgstr "Bekleme süresi"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Media library"
+msgstr "Ortam Kitaplığı"
+
+msgid "Screensaver delay"
+msgstr "Ekran koruyucu gecikme süresi"
+
+msgid "Display file size"
+msgstr "Dosya boyutunu göster"
+
+msgid "Additional encoding support"
+msgstr "Ek şifreleme desteği"
+
+msgid "Browser display"
+msgstr "Gezinme görünümü"
+
+msgid "System reset"
+msgstr "Sistem sıfırlama"
+
+msgid "About"
+msgstr "Hakkında"
+
+msgid "Widescreen"
+msgstr "Geniş ekran"
+
+msgid "Composite"
+msgstr "Kompozit"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "Otomatik"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "Digital"
+msgstr "Dijital"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "Görüntü çözünürlüğünü değiştirmek istediğinizden emin misiniz?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "Görüntü çıkış ayarını değiştirmek istediğinizden emin misiniz?"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Repeat one"
+msgstr "Birini tekrarla"
+
+msgid "Repeat all"
+msgstr "Tümünü tekrarla"
+
+msgid "Repeat all and shuffle"
+msgstr "Tümünü tekrarla ve karıştır"
+
+msgid "Keep as original"
+msgstr "Orijinal halde bırak"
+
+msgid "Fit to screen"
+msgstr "Ekrana sığdır"
+
+msgid "Display in full screen"
+msgstr "Tam ekran"
+
+msgid "Shuffle"
+msgstr "Karıştır"
+
+msgid "Fade"
+msgstr "Solarak"
+
+msgid "Wipe right"
+msgstr "Silin sağ"
+
+msgid "Wipe left"
+msgstr "Silin leftt"
+
+msgid "Random"
+msgstr "Rastgele"
+
+msgid "Second"
+msgstr "Saniye"
+
+msgid "3 Seconds"
+msgstr "3 Saniye"
+
+msgid "5 Seconds"
+msgstr "5 Saniye"
+
+msgid "10 Seconds"
+msgstr "10 Saniye"
+
+msgid "20 Seconds"
+msgstr "20 Saniye"
+
+msgid "30 Seconds"
+msgstr "30 Saniye"
+
+msgid "1 Minute"
+msgstr "1 Dakika"
+
+msgid "3 Minutes"
+msgstr "3 Dakika"
+
+msgid "5 Minutes"
+msgstr "5 Dakika"
+
+msgid "10 Minutes"
+msgstr "10 Dakika"
+
+msgid "15 Minutes"
+msgstr "15 Dakika"
+
+msgid "20 Minutes"
+msgstr "20 Dakika"
+
+msgid "30 Minutes"
+msgstr "30 Dakika"
+
+msgid "English"
+msgstr "İngilizce"
+
+msgid "French"
+msgstr "Fransızca"
+
+msgid "Italian"
+msgstr "İtalyanca"
+
+msgid "German"
+msgstr "Almanca"
+
+msgid "Spanish"
+msgstr "İspanyolca"
+
+msgid "Simplified Chinese"
+msgstr "Basitleştirilmiş Çince"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "Basitleştirilmiş Çince (GB18030)"
+
+msgid "Traditional Chinese"
+msgstr "Geleneksel Çince"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "Geleneksel Çince (Big5)"
+
+msgid "Korean"
+msgstr "Korece"
+
+msgid "Korean (EUC-KR)"
+msgstr "Korece (EUC-KR)"
+
+msgid "Portuguese EU"
+msgstr "Portekizce (AB)"
+
+msgid "Portuguese Brazil"
+msgstr "Portekizce (Brezilya)"
+
+msgid "Japanese"
+msgstr "Japonca"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "Japonca (Shift-JIS)"
+
+msgid "On"
+msgstr "Açık"
+
+msgid "Off"
+msgstr "Kapalı"
+
+msgid "CAS_On"
+msgstr "Açık"
+
+msgid "CAS_Off"
+msgstr "Kapalı"
+
+msgid "Never"
+msgstr "Hiçbir zaman"
+
+msgid "List mode"
+msgstr "Liste görünümü"
+
+msgid "Thumbnail mode"
+msgstr "Küçük resim görünümü"
+
+msgid "Subtitle default"
+msgstr "Varsayılan altyazı seçeneği"
+
+msgid "Subtitle border"
+msgstr "Altyazı kenarlıkları"
+
+msgid "Thick"
+msgstr "Kalın"
+
+msgid "Thin"
+msgstr "Ince"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "Cihazınızı fabrika ayarlarına döndürmek istediğinizden emin misiniz?"
+
+msgid "WD TV HD Media Player"
+msgstr "WD TV HD Ortam Oynatıcı"
+
+msgid "Firmware Version"
+msgstr "Yazılım sürümü"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "HD Ortam Oynatıcınız hakkında daha fazla bilgi için lütfen kullanma kılavuzunu okuyun ya da [LINK] adresini ziyaret edin."
+
+msgid "Western Europe"
+msgstr "Batı Avrupa"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "Orta Avrupa (Windows-1250)"
+
+msgid "Central Europe (ISO)"
+msgstr "Orta Avrupa (ISO)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "Kiril (KOI8-R)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "Kiril (Windows-1251)"
+
+msgid "Greek (ISO)"
+msgstr "Yunanca (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "Yunanca (Windows-1253)"
+
+msgid "Turkish"
+msgstr "Türkçe"
+
+msgid "Current version"
+msgstr "Mevcut sürüm"
+
+msgid "New version"
+msgstr "Yeni sürüm"
+
+msgid "Version"
+msgstr "Sürüm"
+
+msgid "Invalid firmware"
+msgstr "Geçersiz bellenim"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "Yeni yazılım bulundu. Yüklemek istiyor musunuz?"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "HD Ortam Oynatıcınızın yazılımı güncelleniyor. Lütfen cihazınızın gücünü KESMEYİN ya da bağlı sürücüyü ÇIKARTMAYIN."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "Güncelleme tamamlandı. Cihazınız şimdi yeniden başlayacak."
+
+msgid "Rebooting"
+msgstr "Yeniden başlatılıyor"
+
+msgid "Search"
+msgstr "Arama"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "File name"
+msgstr "Dosya adı"
+
+msgid "Contains"
+msgstr "İçerir"
+
+msgid "Starts with"
+msgstr "Başlangıç"
+
+msgid "Does not contain"
+msgstr "Yok"
+
+msgid "All"
+msgstr "Hepsi"
+
+msgid "Equal to"
+msgstr "Eşit"
+
+msgid "Not Equal to"
+msgstr "Değil Eşit için"
+
+msgid "Space"
+msgstr "Boşluk"
+
+msgid "Loading"
+msgstr "Yükleniyor"
+
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+msgid "Search completed. No results found."
+msgstr "Arama tamamlandı. Sonuç bulunamadı."
+
+msgid "Please select the device you would like to eject."
+msgstr "Lütfen çıkartmak istediğiniz cihazı seçin."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "Bu cihazı çıkarmak istediğinizden emin misiniz?"
+
+msgid "OK"
+msgstr "Tamam"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "Ortam kitaplığı için daha fazla yer gerekli:"
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "Ortam kitaplığı bu dosya sistemini desteklemiyor. Ancak çalma desteği var."
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "Salt okunur hafıza üzerine ortam kitaplığı oluşturulamıyor."
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "Ortam kitaplığı oluşturulamıyor. Lütfen kaydetme ayarlarınızı kontrol edin."
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "Geçersiz bellenim"
+
+msgid "File Management"
+msgstr "Dosya Yönetimi"
+
+msgid "Select source"
+msgstr "Bir kaynak seçin"
+
+msgid "Select a destination"
+msgstr "Bir hedef seçin"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "Dosya taşıma etkinleştiriliyor, arkaplan müziği şimdi durdurulacak..."
+
+msgid "Copy"
+msgstr "Kopyala"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Move"
+msgstr "Taşı"
+
+msgid "Select all"
+msgstr "Tümünü Seç"
+
+msgid "Source"
+msgstr "Kaynak"
+
+msgid "Destination"
+msgstr "Hedef"
+
+msgid "Would you like to delete the selected files?"
+msgstr "Seçilen dosyaları silmek istiyor musunuz?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "Seçilen dosyaları kopyalamak istiyor musunuz?"
+
+msgid "Would you like to move the selected files?"
+msgstr "Seçilen dosyaları taşımak istiyor musunuz?"
+
+msgid "Deleting files..."
+msgstr "Dosyalar siliniyor..."
+
+msgid "Deleted"
+msgstr "Silindi"
+
+msgid "Copying files..."
+msgstr "Dosyalar kopyalanıyor..."
+
+msgid "Moving files..."
+msgstr "Dosyalar taşınıyor..."
+
+msgid "Moved"
+msgstr "Taşındı"
+
+msgid "File delete complete."
+msgstr "Dosya silme işlemi tamamlandı."
+
+msgid "Write fail. Please check the destination device."
+msgstr "Yazma hatası. Lütfen hedef aygıtı kontrol edin."
+
+msgid "Read fail. Please check the source device."
+msgstr "Okuma hatası. Lütfen kaynak aygıtı kontrol edin."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "Dosya kopyalanamıyor veya taşınamıyor. Hedefte yeterli alan yok."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "Hedefteki salt-okunur aygıta yazdırılamıyor."
+
+msgid "Unable to delete read-only file."
+msgstr "Salt okunur dosya silinemiyor."
+
+msgid "Press [BACK] to cancel."
+msgstr "İptal etmek için Geri'ye basın."
+
+msgid "Are you sure you want to cancel?"
+msgstr "İptal etmek istediğinizden emin misiniz?"
+
+msgid "Auto play"
+msgstr "Otomatik oynatma"
+
+msgid "Photo auto play"
+msgstr "Fotoğraf otomatik oynatma"
+
+msgid "Video auto play"
+msgstr "Video otomatik oynatma"
+
+msgid "Audio track display"
+msgstr "Müzi Parçası Göstergesi"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "Video ayarını değiştirmek istediğinizden emin misiniz?"
+
+msgid "Camera"
+msgstr "Kamera"
+
+msgid "Camera 1"
+msgstr "Kamera 1"
+
+msgid "Camera 2"
+msgstr "Kamera 2"
+
+msgid "Cyrillic"
+msgstr "Kiril"
+
+msgid "Greek"
+msgstr "Yunanca"
+
+msgid "Chapters"
+msgstr "Bölümler"
+
+msgid "file name"
+msgstr "dosya adı"
+
+msgid "Press [RIGHT] to select source."
+msgstr "Kaynağı seçmek için [SAĞ]'a basın. "
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "kopyalamak, taşımak veya silmek için [OPTION]'e basın."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "Hedefi seçmek için SAĞ'a basın."
+
+msgid "Press [OPTION] to confirm."
+msgstr "Onaylamak için [OPTION]'e basın."
+
+msgid "This folder cannot be accessed."
+msgstr "Bu klasör erişilemiyor."
+
+msgid "Standby mode"
+msgstr "Bekleme modu"
+
+msgid "Action cancelled."
+msgstr "Eylem iptal"
+
+msgid "Arabic"
+msgstr "Arapça"
+
+msgid "Hindu"
+msgstr "Hintçe"
+
+msgid "Thailand"
+msgstr "Turkish"
+
+msgid "Preview mode"
+msgstr "Önizleme modu"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "Firmware yükseltme başarısız oldu. Cihaz yeniden başlar."
+
+msgid "Empty"
+msgstr "Boşaltmak"
+
+msgid "Push"
+msgstr "Itin"
+
+msgid "Wipe"
+msgstr "Silin"
+
+msgid "Zoom"
+msgstr "Yakınlaştır"
+
+msgid "Access point detecting..."
+msgstr "Erişim noktası tespit ..."
+
+msgid "The network encryption key is not valid."
+msgstr "Ağ şifreleme anahtarı geçerli değil."
+
+msgid "No Chapter"
+msgstr "Hiçbir bölüm ise"
+
+msgid "Arabic (Windows-1256)"
+msgstr "Arapça (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "Tayland dili (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "WD sürücünüzün kilidini açın"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "Bu WD sürücünüzün kilidini açmak istiyor musunuz?"
+
+msgid "Enter your password to unlock the drive."
+msgstr "Sürücünün kilidini açmak için parolanızı girin."
+
+msgid "Password invalid"
+msgstr "Parola geçersiz"
+
+msgid "Please enter your password again."
+msgstr "Lütfen parolanızı tekrar girin."
+
+msgid "Too many password attempts"
+msgstr "Çok fazla parola denemesi"
+
+msgid "There were too many password recovery attempts."
+msgstr "Çok fazla parola kurtarma denemesi vardır."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "Lütfen sürücünüzü WD TV'den güvenli bir şekilde çıkarın,"
+
+msgid "reconnect it and try again."
+msgstr "tekrar bağlayıp, deneyin."
+
+msgid "Password"
+msgstr "Parola"
+
+msgid "Genre:"
+msgstr "Tür:"
+
+msgid "File Size:"
+msgstr "Dosya boyutu:"
+
+msgid "File Type:"
+msgstr "Dosya türü:"
+
+msgid "Replace"
+msgstr "Değiştir"
+
+msgid "Checker Board"
+msgstr "Denetleyicisi Kurulu"
+
+msgid "Play mode"
+msgstr "Oynatma modu"
+
+msgid "Pan"
+msgstr "Taşınmak"
+
+msgid "Zoom in"
+msgstr "Büyült"
+
+msgid "Zoom out"
+msgstr "Uzaklaştır"
+
+msgid "Info bar"
+msgstr "Bilgi çubuğu"
+
+msgid "Chapter"
+msgstr "Bölüm"
+
+msgid "Rotate left"
+msgstr "Sola Döndür"
+
+msgid "Rotate right"
+msgstr "Doğru Döndür "
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "Hata: kaynak klasörü ve hedef klasörü aynıdır."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "Hata: Hedef klasörün bir alt kaynak klasörün klasördür."
+
+msgid "This folder is empty"
+msgstr "Bu geçerli klasör hiçbir ortamdır."
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color modu"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "HDMI deep color modu değiştirmek istediğinizden emin misiniz?"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "Lütfen sürücünüzü WD TV^'den kaldırın, "
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "Ortam yürütücü yükseltme işlemini başlangıç durumuna getirmek için şimdi yeniden başlayacak. Yeni donanım yazılımı parola korumalı bir sürücüde bulunduğu için, yeniden başlattıktan sonra lütfen sürücünün kilidini tekrar açın."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "Ortam kitaplığı derleniyor. Ortam içeriği tarandıkça kullanılabilecektir. Bu işlem sırasında aygıt navigasyonu hala desteklenmektedir."
+
+msgid "Copied"
+msgstr "Kopyalanan"
+
+msgid "8 bit"
+msgstr "8 parça"
+
+msgid "10 bit"
+msgstr "10 parça"
+
+msgid "12 bit"
+msgstr "12 parça"
+
+msgid "The auto play content could not be accessed."
+msgstr "Otomatik oynatma içeriği erişilemiyor."
+
+msgid "Local device is disconnected."
+msgstr "Uyarı:güvenli bir şekilde çıkarmadan önce USB aygıt çıkarma lütfen"
+
+msgid "User interface transition effect"
+msgstr "Kullanıcı arayüzü geçiş etkisi"
+
+msgid "Fade in and fade out"
+msgstr "Fade ve fade out"
+
+msgid "None"
+msgstr "Hiçbiri"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "Bir önemli sistem hatası algılanır. Cihaz yeniden başlar..."
+
+msgid "YES"
+msgstr "Evet"
+
+msgid "Yes to all"
+msgstr "Evet, tüm için"
+
+msgid "NO"
+msgstr "Hayır"
+
+msgid "This folder already contains a file named:"
+msgstr "Bu klasör zaten adlandırılmış bir dosya içerir:"
+
+msgid "Would you like to overwrite it?"
+msgstr "Üzerine yazmak ister misiniz?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "Seçilen dosya oynatılamıyor. Lütfen desteklenen dosya biçimlerinin listesi için kullanım kılavuzuna başvurun."
+
+

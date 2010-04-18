@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $1 in
+start)
+   eval `grep MSHEETDIR /conf/config`
+   [ -n "$MSHEETDIR" -a -e "$MSHEETDIR" ] && mount -o bind "$MSHEETDIR" /msheets || mount -t tmpfs none /msheets
+   mkdir -p /tmp/.root/osd
+   mount -o bind /osd /tmp/.root/osd
+   unionfs /tmp/.root/osd:/msheets /osd -o nonempty
+   ;;
+stop)
+   umount /osd
+   umount /tmp/.root/osd
+   umount /msheets
+   ;;
+esac

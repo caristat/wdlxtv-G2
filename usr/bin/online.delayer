@@ -1,0 +1,28 @@
+#!/bin/sh
+
+[ "`grep -i \^ONLINEDELAYER=\'OFF\' /conf/config`" != "" ] && exit 1
+
+echo $1 | egrep '^[0-9]*$' -q
+if [ $? == 0 ] && [ "$1" != "" ] ; then 
+  DELAY=$1
+else
+  DELAY=5
+fi
+
+if [ "$FW_VERSION" == "WDLXTV_G2" ] ; then
+   INTERFACE="`iwconfig 2>/dev/null | grep ESSID | cut -d' ' -f1`"
+   [ "$INTERFACE" == "" ] && INTERFACE=eth0
+else
+   [ "`grep virdev_int=\'eth1\' /conf/config`" ] && INTERFACE="`iwconfig 2>/dev/null | grep ESSID | cut -d' ' -f1`" || INTERFACE=eth0
+fi
+
+# don't loop forever, only 6 X delay
+for i in `seq 1 6` ; do #while (true); do
+  IP="`ifconfig $INTERFACE 2>/dev/null | egrep -o 'inet addr:[0-9]+.[0-9]+.[0-9]+.[0-9]+' | cut -d':' -f2`"
+  if [ -n "$IP" ]; then
+    ping -q -c 1 $IP 1>/dev/null 2>/dev/null && exit 0
+  fi
+  sleep $DELAY
+done
+
+exit 2

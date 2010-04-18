@@ -1,0 +1,829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "Vidéo"
+
+msgid "Music"
+msgstr "Musique"
+
+msgid "Settings"
+msgstr "Réglages"
+
+msgid "All Video"
+msgstr "Toutes mes vidéos"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Folders"
+msgstr "Dossiers"
+
+msgid "Recent"
+msgstr "Récent"
+
+msgid "Playlist"
+msgstr "Listes"
+
+msgid "All Music"
+msgstr "Toute ma musique"
+
+msgid "Artist"
+msgstr "Artiste"
+
+msgid "Genre"
+msgstr "Genre"
+
+msgid "Album"
+msgstr "Album"
+
+msgid "Now Playing"
+msgstr "En cours"
+
+msgid "New firmware found"
+msgstr "Nouveau Firmware"
+
+msgid "No storage present"
+msgstr "Aucun stockage présent"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "Votre médiathèque requiert plus d’espace de stockage :"
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "Analyse de l'appareil de stockage. La première analyse peut être plus longue. Veuillez patienter…"
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "Sélectionnez [OK] pour reprendre la lecture ou [Annuler] pour revenir au début"
+
+msgid "Audio/Video"
+msgstr "Audio/Vidéo"
+
+msgid "Movie"
+msgstr "Film"
+
+msgid "System"
+msgstr "Système"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "Intervalle"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "About"
+msgstr "A propos"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Widescreen"
+msgstr "Ecran large"
+
+msgid "Composite"
+msgstr "Composite"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Stereo"
+msgstr "Stéréo"
+
+msgid "Digital"
+msgstr "Digital"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "Confirmer la nouvelle résolution vidéo ?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "Confirmer le nouveau format de la sortie vidéo ?"
+
+msgid "Repeat one"
+msgstr "Répéter une piste"
+
+msgid "Repeat all"
+msgstr "Répéter tout"
+
+msgid "Repeat all and shuffle"
+msgstr "Répéter tout aléatoirement"
+
+msgid "Keep as original"
+msgstr "Garder l'original"
+
+msgid "Fit to screen"
+msgstr "Affichage plein-écran"
+
+msgid "Shuffle"
+msgstr "Aléatoire"
+
+msgid "Fade"
+msgstr "Fondu"
+
+msgid "Random"
+msgstr "Aléatoire"
+
+msgid "3 Seconds"
+msgstr "3 secondes"
+
+msgid "5 Seconds"
+msgstr "5 secondes"
+
+msgid "10 Seconds"
+msgstr "10 secondes"
+
+msgid "20 Seconds"
+msgstr "20 secondes"
+
+msgid "30 Seconds"
+msgstr "30 secondes"
+
+msgid "1 Minute"
+msgstr "1 minute"
+
+msgid "3 Minutes"
+msgstr "3 minutes"
+
+msgid "5 Minutes"
+msgstr "5 minutes"
+
+msgid "10 Minutes"
+msgstr "10 minutes"
+
+msgid "15 Minutes"
+msgstr "15 minutes"
+
+msgid "20 Minutes"
+msgstr "20 minutes"
+
+msgid "30 Minutes"
+msgstr "30 minutes"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "French"
+msgstr "Français"
+
+msgid "Italian"
+msgstr "Italien"
+
+msgid "German"
+msgstr "Allemand"
+
+msgid "Spanish"
+msgstr "Espagnol"
+
+msgid "Simplified Chinese"
+msgstr "Chinois simplifié"
+
+msgid "Traditional Chinese"
+msgstr "Chinois traditionnel"
+
+msgid "Korean"
+msgstr "Coréen"
+
+msgid "Japanese"
+msgstr "Japonais"
+
+msgid "On"
+msgstr "Marche"
+
+msgid "Off"
+msgstr "Arrêt"
+
+msgid "CAS_On"
+msgstr "Marche"
+
+msgid "CAS_Off"
+msgstr "Arrêt"
+
+msgid "Never"
+msgstr "Jamais"
+
+msgid "List mode"
+msgstr "Mode liste"
+
+msgid "Thumbnail mode"
+msgstr "Mode miniature"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "Confirmer la restauration des paramètres d'usine de l'appareil ?"
+
+msgid "WD TV HD Media Player"
+msgstr "Lecteur multimédia TV-HD de WD"
+
+msgid "version"
+msgstr "Version"
+
+msgid "Current version"
+msgstr "Version actuelle"
+
+msgid "New version"
+msgstr "Nouvelle version"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "Nouveau logiciel détecté. Mettre à jour?"
+
+msgid "Rebooting"
+msgstr "Redémarrage en cours"
+
+msgid "Invalid firmware"
+msgstr "Micrologiciel non valide"
+
+msgid "Contains"
+msgstr "Contient"
+
+msgid "Starts with"
+msgstr "Commence par"
+
+msgid "Loading"
+msgstr "Chargement"
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "Périphérique non reconnu sur le port USB"
+
+msgid "Storage can not aggregate"
+msgstr "Agrégation du stockage impossible"
+
+msgid "Next Song:"
+msgstr "Chanson suivante :"
+
+msgid "Current Song"
+msgstr "Chanson en cours"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "All Photos"
+msgstr "Toutes mes photos"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "La médiathèque ne supporte pas le système de fichiers journalisés. La lecture reste supportée."
+
+msgid "Unable to create media library on read only storage."
+msgstr "Impossible de créer une médiathèque sur un appareil de stockage à lecture seule."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "Création de médiathèque impossible. Veuillez vérifier les réglages de votre appareil de stockage."
+
+msgid "Unrecognized USB device"
+msgstr "Périphérique USB non reconnu"
+
+msgid "Scanning the attached USB device..."
+msgstr "Analyse du périphérique USB connecté en cours…"
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "Le fichier vidéo que vous souhaitez lire contient une sortie audio multicanal non supportée. Veuillez sélectionner la sortie audio numérique et brancher votre lecteur multimédia HD sur un récepteur AV supportant ce codec audio."
+
+msgid "Unsupported subtitle"
+msgstr "Sous-titres non supportés"
+
+msgid "Audio Channel"
+msgstr "Canal audio"
+
+msgid "Audio channel"
+msgstr "Canal audio"
+
+msgid "Photos"
+msgstr "Photos"
+
+msgid "Firmware upgrade"
+msgstr "Mise à jour du Firmware"
+
+msgid "Video output"
+msgstr "Sortie vidéo"
+
+msgid "Display resolution"
+msgstr "Résolution de l'affichage"
+
+msgid "Aspect ratio"
+msgstr "Format de l'image"
+
+msgid "Audio output"
+msgstr "Sortie audio"
+
+msgid "Video sequence"
+msgstr "Enchaînement vidéo"
+
+msgid "Music sequence"
+msgstr "Enchaînement musical"
+
+msgid "Slideshow sequence"
+msgstr "Enchaînement du diaporama"
+
+msgid "Photo scaling"
+msgstr "Cadrage photo"
+
+msgid "Transition effect"
+msgstr "Effet de transition"
+
+msgid "Screensaver delay"
+msgstr "Délai de l'économiseur d'écran"
+
+msgid "Browser display"
+msgstr "Affichage du navigateur"
+
+msgid "System reset"
+msgstr "Réinitialisation du système"
+
+msgid "Display in full screen"
+msgstr "Affichage plein-écran avec étirement"
+
+msgid "Wipe right"
+msgstr "Volet droite"
+
+msgid "Wipe left"
+msgstr "Volet gauche"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "Une mise à niveau de votre lecteur multimédia HD est en cours. Veuillez NE PAS débrancher l'alimentation ou le périphérique de stockage."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "Mise à niveau terminée. Votre lecteur multimédia va maintenant redémarrer."
+
+msgid "Please select the device you would like to eject."
+msgstr "Veuillez sélectionner le périphérique à éjecter."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "Confirmer le débranchement de ce périphérique ?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "Lorsque la sortie audio numérique est sélectionnée, vous devez utiliser un récepteur AV supportant ce format audio pour pouvoir écouter la bande sonore avec le son d'ambiance."
+
+msgid "Subtitle off"
+msgstr "Sous-titres désactivés"
+
+msgid "No subtitle"
+msgstr "Pas de sous-titres"
+
+msgid "Media library"
+msgstr "Médiathèque"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "Pour plus d'informations sur votre lecteur multimédia HD, veuillez consulter le Guide d'utilisation ou visiter"
+
+msgid "Subtitle"
+msgstr "Sous-titres"
+
+msgid "Firmware Version"
+msgstr "Version du micrologiciel"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "File name"
+msgstr "nom du fichier"
+
+msgid "Search completed. No results found."
+msgstr "Recherche terminée. Aucun résultat."
+
+msgid "Unsupported"
+msgstr "non supporté"
+
+msgid "Space"
+msgstr "Espace"
+
+msgid "No audio channel"
+msgstr "Pas de canal Audio"
+
+msgid "Untitled volume"
+msgstr "Volume sans titre"
+
+msgid "Subtitle font size"
+msgstr "Taille des sous-titres"
+
+msgid "Additional encoding support"
+msgstr "Support d'autres encodages"
+
+msgid "Western Europe (ISO)"
+msgstr "Europe de l'ouest"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "Chinois traditionnel (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "Chinois simplifié (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "Japonais (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "Coréen (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "Cyrillique (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "Cyrillique (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "Grec (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "Grec (Windows-1253)"
+
+msgid "All"
+msgstr "Tous"
+
+msgid "Equal to"
+msgstr "Egal à"
+
+msgid "Not Equal to"
+msgstr "Non égal à"
+
+msgid "Central Europe (ISO)"
+msgstr "Europe centrale (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "Europe centrale (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "Ne contenant pas"
+
+msgid "Display file size"
+msgstr "Afficher la taille du fichier"
+
+msgid "Display file size during navigation"
+msgstr "Afficher la taille du fichier lors de la navigation"
+
+msgid "Western Europe"
+msgstr "Europe de l’Ouest"
+
+msgid "Turkish"
+msgstr "Turc"
+
+msgid "Subtitle default"
+msgstr "Sous-titres par défaut"
+
+msgid "Subtitle border"
+msgstr "Bordure des sous-titres"
+
+msgid "Thick"
+msgstr "Gras"
+
+msgid "Thin"
+msgstr "Fin"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "Espace insuffisant sur l’appareil USB connecté. La compilation de la médiathèque nécessite davantage d’espace de stockage."
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "L’appareil USB connecté utilise le système de fichiers HFS+. La médiathèque ne fonctionne pas sous ce système de fichiers ; en revanche, la lecture reste prise en charge. Veuillez désactiver la journalisation pour activer l’intégralité des fonctionnalités de votre lecteur multimédia. "
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "L’appareil USB connecté est réglé en mode Lecture seule. La fonction médiathèque ne sera pas prise en charge."
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "Impossible de créer une médiathèque sur l’appareil USB connecté. Veuillez vérifier les réglages de vos appareils."
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "Microprogramme invalide. Veuillez télécharger le microprogramme adéquat depuis le site http://www.wdc.com."
+
+msgid "File Management"
+msgstr "Gestion des fichiers"
+
+msgid "Select source"
+msgstr "Sélectionner une source"
+
+msgid "Select a destination"
+msgstr "Sélectionner une destination"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "Activation du déplacement de fichier, la musique en fond sonore va s’arrêter..."
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Move"
+msgstr "Déplacer"
+
+msgid "Select all"
+msgstr "Sélectionner tout"
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Destination"
+msgstr "Destination"
+
+msgid "Would you like to delete the selected files?"
+msgstr "Souhaitez-vous supprimer les fichiers sélectionnés ?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "Souhaitez-vous copier les fichiers sélectionnés ?"
+
+msgid "Would you like to move the selected files?"
+msgstr "Souhaitez-vous déplacer les fichiers sélectionnés ?"
+
+msgid "Deleting files..."
+msgstr "Suppression des fichiers..."
+
+msgid "Deleted"
+msgstr "Supprimé"
+
+msgid "Copying files..."
+msgstr "Copie des fichiers..."
+
+msgid "Moving files..."
+msgstr "Déplacement des fichiers..."
+
+msgid "Moved"
+msgstr "Déplacé"
+
+msgid "File delete complete."
+msgstr "Suppression des fichiers terminée."
+
+msgid "Write fail. Please check the destination device."
+msgstr "Ecriture impossible. Veuillez vérifier l’appareil de destination."
+
+msgid "Read fail. Please check the source device."
+msgstr "Lecture impossible. Veuillez vérifier l’appareil source."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "Copie ou déplacement du fichier impossible. Espace insuffisant au niveau de la destination."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "Ecriture en lecture seule impossible sur l’appareil de destination."
+
+msgid "Unable to delete read-only file."
+msgstr "Suppression du fichier en lecture seule impossible."
+
+msgid "Press [BACK] to cancel."
+msgstr "Appuyez sur Retour pour annuler."
+
+msgid "Are you sure you want to cancel?"
+msgstr "Etes-vous sûr de vouloir annuler ?"
+
+msgid "Auto play"
+msgstr "Lecture automatique"
+
+msgid "Photo auto play"
+msgstr "Lecture photo automatique"
+
+msgid "Video auto play"
+msgstr "Lecture vidéo automatique"
+
+msgid "Audio track display"
+msgstr "Affichage piste audio"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "Etes-vous sûr de vouloir modifier le réglage vidéo ?"
+
+msgid "Camera"
+msgstr "Caméra"
+
+msgid "Camera 1"
+msgstr "Caméra 1"
+
+msgid "Camera 2"
+msgstr "Caméra 2"
+
+msgid "Chapters"
+msgstr "Chapitres"
+
+msgid "file name"
+msgstr "nom du fichier"
+
+msgid "Press [RIGHT] to select source."
+msgstr "Appuyez sur [DROITE] pour sélectionner la source. "
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "Appuyez sur [OPTION] pour copier, déplacer ou supprimer."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "Appuyez sur [DROITE] pour sélectionner la destination. "
+
+msgid "Press [OPTION] to confirm."
+msgstr "Appuyez sur [OPTION] pour confirmer."
+
+msgid "This folder cannot be accessed."
+msgstr "Accès au dossier impossible."
+
+msgid "Standby mode"
+msgstr "Mode veille"
+
+msgid "Action cancelled."
+msgstr "Action pour l'élimination"
+
+msgid "Arabic"
+msgstr "Arabe"
+
+msgid "Hindu"
+msgstr "Hindi"
+
+msgid "Thailand"
+msgstr "Thai"
+
+msgid "Preview mode"
+msgstr "Mode Aperçu"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "Mise à jour du micrologiciel a échoué. L'appareil redémarre."
+
+msgid "Empty"
+msgstr "Vide"
+
+msgid "Push"
+msgstr "pousser"
+
+msgid "Wipe"
+msgstr "Essuyez"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Access point detecting..."
+msgstr "Détection du point d'accès ..."
+
+msgid "The network encryption key is not valid."
+msgstr "Le réseau clé de chiffrement n'est pas valide."
+
+msgid "No Chapter"
+msgstr "Pas de chapitre"
+
+msgid "Arabic (Windows-1256)"
+msgstr "Arabe (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "Thai (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "Déverrouiller votre lecteur WD "
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "Souhaitez-vous déverrouiller ce lecteur WD ? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "Saisissez votre mot de passe pour déverrouiller le lecteur."
+
+msgid "Password invalid"
+msgstr "Mot de passe invalide"
+
+msgid "Please enter your password again."
+msgstr "Veuillez ressaisir votre mot de passe."
+
+msgid "Too many password attempts"
+msgstr "Trop de tentatives de mot de passe"
+
+msgid "There were too many password recovery attempts."
+msgstr "Trop de tentatives de récupération du mot de passe ont été effectuées."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "Veuillez retirer votre lecteur du WD TV en toute sécurité,"
+
+msgid "reconnect it and try again."
+msgstr "puis rebranchez-le et réessayez."
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Genre:"
+msgstr "Genre:"
+
+msgid "File Size:"
+msgstr "Taille du fichier:"
+
+msgid "File Type:"
+msgstr "Type de fichier:"
+
+msgid "Replace"
+msgstr "Remplacer"
+
+msgid "Checker Board"
+msgstr "Checker Board"
+
+msgid "Play mode"
+msgstr "Play mode"
+
+msgid "Pan"
+msgstr "Bouger"
+
+msgid "Zoom in"
+msgstr "Zoom avant"
+
+msgid "Zoom out"
+msgstr "Zoom arrière"
+
+msgid "Info bar"
+msgstr "Stab Informationen"
+
+msgid "Chapter"
+msgstr "Chapitre"
+
+msgid "Rotate left"
+msgstr "Tournez à gauche"
+
+msgid "Rotate right"
+msgstr "Tournez à droite"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "Erreur: Le dossier source et le dossier de destination sont les mêmes."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "Erreur: Le dossier de destination est un sous-dossier du dossier source."
+
+msgid "This folder is empty"
+msgstr "Il n'y a pas de médias dans le dossier actuel."
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color mode"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "Êtes-vous sûr de vouloir changer le mode de HDMI deep color?"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "Veuillez retirer votre lecteur du WD TV, "
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "Le lecteur multimédia va maintenant redémarrer le processus de mise à jour. Etant donné que le nouveau microprogramme se trouve sur un lecteur protégé par mot de passe, veuillez une nouvelle fois déverrouiller le lecteur après le redémarrage."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "Compilation de la médiathèque en cours. Le contenu multimédia sera disponible au fur et à mesure de la numérisation. La fonction de navigation reste possible durant cette opération."
+
+msgid "Copied"
+msgstr "Copié"
+
+msgid "8 bit"
+msgstr "8 bit"
+
+msgid "10 bit"
+msgstr "10 bit"
+
+msgid "12 bit"
+msgstr "12 bit"
+
+msgid "The auto play content could not be accessed."
+msgstr "Le Lecture automatique contenu ne pouvait être consulté."
+
+msgid "Local device is disconnected."
+msgstr "Attention: veuillez éjecter votre périphérique USB avant de le retirer en toute sécurité."
+
+msgid "User interface transition effect"
+msgstr "Effet de transition d'interface utilisateur"
+
+msgid "Fade in and fade out"
+msgstr "Fade in et fade out"
+
+msgid "None"
+msgstr "Aucun"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "Une erreur système fatale est détectée. Le périphérique va maintenant redémarrer..."
+
+msgid "YES"
+msgstr "Oui"
+
+msgid "Yes to all"
+msgstr "Oui, à tous les"
+
+msgid "NO"
+msgstr "Non"
+
+msgid "This folder already contains a file named:"
+msgstr "Ce dossier contient déjà un fichier nommé:"
+
+msgid "Would you like to overwrite it?"
+msgstr "Souhaitez-vous l'écraser?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "Impossible de lire le fichier sélectionné. S'il vous plaît se référer au manuel d'utilisation pour une liste de formats de fichiers pris en charge."
+
+

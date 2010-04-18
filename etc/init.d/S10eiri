@@ -1,0 +1,32 @@
+#!/bin/sh
+
+case "$1" in
+ start)
+     if [ "`grep -i \^EIRI=\'ON\' /conf/config`" != "" ] ; then
+	[ -n "$pidof eirid" ] && echo "eiri already running!" && logger -t S10eiri "eiri already running!"
+	logger -t S10eiri "starting eiri"
+	CONFIG_FILE=''
+	if [ -f /tmp/eiri.conf ]; then
+	    logger -t S10eiri "/tmp/eiri.conf overriding /conf/eiri.conf!" && CONFIG_FILE=/tmp/eiri.conf
+  	else
+	    [ -f /conf/eiri.conf ] && dos2unix /conf/eiri.conf && CONFIG_FILE=/conf/eiri.conf && cp /conf/eiri.conf /tmp
+  	fi
+ 	[ "$CONFIG_FILE" == "" ] && touch /tmp/eiri.conf
+
+	modprobe eiri_dev
+	mv /dev/ir /dev/ir.native 
+	mknod /dev/ir c 241 0
+
+	eirid 300 &
+	sleep 2
+     fi
+     ;;
+ forcestart)
+     config_tool -c EIRI=ON
+     $0 start
+     ;;
+ stop)
+     echo 'stopping eiri is not suggested, killall eirid to manually kill'
+#     killall eirid
+     ;;
+esac

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<page background="image/browser_list_background_bg_n.png" type="basic">
+  <ctrlgrp lbmask="lrud">
+    <button valkey="AUTOCHECK"
+	    focused_bg="image/common_button_C_btn_f.png"
+	    normal_bg="image/common_button_C_btn_n.png"
+	    click_bg="image/common_button_C_btn_p.png" />
+    <linebreak />
+    <button valkey="CHECK"
+	    focused_bg="image/common_button_D_btn_f.png"
+	    normal_bg="image/common_button_D_btn_n.png"
+	    click_bg="image/common_button_D_btn_p.png" />
+  </ctrlgrp>
+
+  <include filename="./inc_upgrade_title.xml" />
+
+  <text text="$$This device can be set to automatically check for updates." x="122" y="177" w="477" h="80" fontsize="20" numlines="3"/>
+
+  <text text="$$Current version:" x="242" y="250" w="477" h="30" fontsize="20"/>
+  <text text="@@firmware_version" x="410" y="250" w="477" h="30" fontsize="20"/>
+  <image image="@@wrongkeyicon" x="594" y="40" w="69" h="51" align="hcenter" />
+
+  <imgbtn x="126" y="320" w="468" h="36" image="@@bg-AUTOCHECK" text="@@auto_check_str" align="hcenter" fontsize="24" textcolor="0xEDC831"  active="@@act-AUTOCHECK" actnoseltextcolor="0x3333333"/>
+  <imgbtn x="256" y="370" w="207" h="36" image="@@bg-CHECK" text="$$New version check" align="hcenter" fontsize="20" textcolor="0xEDC831"  active="@@act-CHECK" actnoseltextcolor="0x3333333"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+  <include filename="./info.xml"/>
+</page>

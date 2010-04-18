@@ -1,0 +1,18 @@
+#!/bin/sh
+#   Copyright (C) 2009 Brad Love
+#     http://b-rad.cc/cd-manager
+#       This program is free software; you can redistribute it and/or
+#       modify it under the terms of the GNU General Public License
+#       as published by the Free Software Foundation; either version 2
+#       of the License, or (at your option) any later version.
+
+mkdir -p /tmp/init.d && touch /tmp/devs
+[ $? -ne 0 ] && exit 1
+
+chmod 775 /dev/$MDEV
+chgrp cdrom /dev/$MDEV
+cd.mount /dev/$MDEV
+
+logger -t cd.agent "Optical Drive /dev/$MDEV detected"
+#[ "`pidof cd-manager`" != "" ] && killall cd-manager
+#cd-manager /dev/${MDEV} &

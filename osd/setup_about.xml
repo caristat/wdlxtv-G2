@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<page background="image/villa_bg.jpg">
+	<ctrlgrp lbmask="lrud">
+		<button valkey="OK" 
+				focused_bg="image/settings_system_msg_reset_btn_f.png"
+				normal_bg="image/settings_system_msg_reset_btn_n.png"
+				click_bg="image/settings_system_msg_reset_btn_f.png"/>
+	</ctrlgrp>
+
+	<text text="$$About" x="247" y="131" w="610" h="45" align="left" fontsize="40" textcolor="0x07b5ff"/>
+	<imgbtn image="@@bg-OK" text="$$OK" x="469" y="548" w="343" h="78" fontsize="20" align="hcenter" textcolor="0xe2e2e2" active="@@act-OK" actnoseltextcolor="0xe2e2e2"/>
+
+	<image image="image/WD_myplay_About_logo.png"   x="569" y="164" w="141" h="93"/>
+	<text text="$$WD TV HD Media Player" x="255" y="260" w="768" h="32" textcolor="0xe2e2e2" 
+align="hcenter" fontsize="30"/>
+	<text text="@@version_info" x="255" y="295" w="768" h="32" textcolor="0xe2e2e2" align="hcenter" 
+fontsize="30"/>
+	<text text="$$For additional information regarding your HD Media Player, please refer to the user manual or visit" x="255" y="374" w="768" h="60" textcolor="0xe2e2e2" numlines="2" align="hcenter" fontsize="26"/>
+	<text text="http://support.wdc.com/" x="255" y="440" w="768" h="30" textcolor="0xe2e2e2" align="hcenter" fontsize="26"/>
+	<text text="for WDLXTV-G2 updates: http://b-rad.cc" x="265" y="495" w="753" h="32" textcolor="0xe2e2e2" align="hcenter" fontsize="30"/>
+	<text text="Font powered by Arphic®, WDLXTV logos by Pennhaven" x="155" y="660" w="988" h="20" textcolor="0xe2e2e2" align="hcenter" fontsize="18"/>
+  	<include filename="./decoration.xml" />
+</page>

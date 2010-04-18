@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case "$1" in
+start|restart)
+	cat /etc/fstab | egrep '^UUID=' | cut -d' ' -f1 > /tmp/UUIDs
+	. /tmp/UUIDs
+	if [ "$UUID" != "" ]; then
+	  for dev in `cat /tmp/UUIDs` ; do
+	    mount $dev
+	  done
+	fi
+	;;
+stop)
+	;;
+esac
+

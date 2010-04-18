@@ -1,0 +1,44 @@
+#!/bin/sh
+#   Copyright (C) 2009 Brad Love
+#     http://b-rad.cc/cd-manager
+#       This program is free software; you can redistribute it and/or
+#       modify it under the terms of the GNU General Public License
+#       as published by the Free Software Foundation; either version 2
+#       of the License, or (at your option) any later version.
+
+if [[ "$1" == "" ]]; then
+  echo "Proper usage is: cd.mount <device>"
+  exit
+fi
+
+### watch out, sucks in cdrom door!!! ###
+if [ "`blkid $1`" != "" ]; then
+    LABEL=`blkid $1 | sed -e 's/^\/dev\///' -e 's/^.*LABEL=\"//' -e 's/\".*$//' -e 's/:.*$//'`
+    LABEL=`echo $LABEL | sed -e 's, ,.,g'`
+
+    if [[ "$LABEL" == "" ]]; then
+      LABEL='cdrom'
+    fi
+
+    xmount $1 "$LABEL" auto 
+    mountpoint -q "/tmp/optical-drive/$LABEL"
+    if [ $? -ne 0 ] ; then
+	mkdir -p "/tmp/optical-drive/$LABEL"
+	mount -t udf $1 "/tmp/optical-drive/$LABEL" || mount $1 "/tmp/optical-drive/$LABEL" || rmdir "/tmp/optical-drive/$LABEL"
+    fi
+
+    if [ "$?" == 0 ]; then
+	find "/tmp/media/usb/$LABEL" -maxdepth 1 | grep 'jpg$'
+	if [ "$?" == 1 ]; then
+	    mkdir -p /tmp/cache/tmp/media/usb/USB1 /tmp/cache/tmp/media/usb/USB2
+	    cp -f /osd/image/optical.thumb "/tmp/cache/tmp/media/usb/${LABEL}.thumb"
+	    cp -f /osd/image/optical.thumb "/tmp/cache/tmp/media/usb/USB1/${LABEL}.thumb"
+	    cp -f /osd/image/optical.thumb "/tmp/cache/tmp/media/usb/USB2/${LABEL}.thumb"
+	fi
+    fi
+
+    hdparm -E16 $1
+else
+    echo 'NO DISC!?!?!'
+fi
+

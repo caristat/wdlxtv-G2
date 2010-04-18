@@ -1,0 +1,829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "ビデオ"
+
+msgid "Music"
+msgstr "音楽"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "All Video"
+msgstr "全てのビデオ"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Folders"
+msgstr "フォルダ"
+
+msgid "Recent"
+msgstr "最近"
+
+msgid "Playlist"
+msgstr "再生リスト"
+
+msgid "All Music"
+msgstr "全ての音楽"
+
+msgid "Artist"
+msgstr "アーチスト"
+
+msgid "Genre"
+msgstr "ジャンル"
+
+msgid "Album"
+msgstr "アルバム"
+
+msgid "Now Playing"
+msgstr "再生中です"
+
+msgid "New firmware found"
+msgstr "新しいファームウェアを検出しました"
+
+msgid "No storage present"
+msgstr "ストレージがありません"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "メディアライブラリコンピレーションには多くの格納スペースが必要です。 "
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "接続したストレージをスキャンしています。初めての場合は時間がかかります。お待ちください。"
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "[OK]を選択すると前回停止位置から再生できます。[キャンセル]ではじめから再生します。"
+
+msgid "Audio/Video"
+msgstr "音声/ビデオ"
+
+msgid "Movie"
+msgstr "動画"
+
+msgid "System"
+msgstr "システム"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "間隔"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "About"
+msgstr "バージョン情報"
+
+msgid "Normal"
+msgstr "標準"
+
+msgid "Widescreen"
+msgstr "ワイドスクリーン"
+
+msgid "Composite"
+msgstr "コンポジット"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "自動"
+
+msgid "Stereo"
+msgstr "ステレオ"
+
+msgid "Digital"
+msgstr "デジタル"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "ビデオ解像度を変更しますか?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "ビデオ出力形式を変更しますか?"
+
+msgid "Repeat one"
+msgstr "1曲リピート"
+
+msgid "Repeat all"
+msgstr "全曲リピート"
+
+msgid "Repeat all and shuffle"
+msgstr "全曲リピートしてシャッフル"
+
+msgid "Keep as original"
+msgstr "そのまま表示"
+
+msgid "Fit to screen"
+msgstr "画面にフィット"
+
+msgid "Shuffle"
+msgstr "シャッフル"
+
+msgid "Fade"
+msgstr "フェード"
+
+msgid "Random"
+msgstr "ランダム"
+
+msgid "3 Seconds"
+msgstr "3 秒"
+
+msgid "5 Seconds"
+msgstr "5 秒"
+
+msgid "10 Seconds"
+msgstr "10 秒"
+
+msgid "20 Seconds"
+msgstr "20 秒"
+
+msgid "30 Seconds"
+msgstr "30 秒"
+
+msgid "1 Minute"
+msgstr "1 分"
+
+msgid "3 Minutes"
+msgstr "3 分"
+
+msgid "5 Minutes"
+msgstr "5 分"
+
+msgid "10 Minutes"
+msgstr "10 分"
+
+msgid "15 Minutes"
+msgstr "15 分"
+
+msgid "20 Minutes"
+msgstr "20 分"
+
+msgid "30 Minutes"
+msgstr "30 分"
+
+msgid "English"
+msgstr "英語"
+
+msgid "French"
+msgstr "フランス語"
+
+msgid "Italian"
+msgstr "ドイツ語"
+
+msgid "German"
+msgstr "ドイツ語"
+
+msgid "Spanish"
+msgstr "スペイン語"
+
+msgid "Simplified Chinese"
+msgstr "簡体字中国語"
+
+msgid "Traditional Chinese"
+msgstr "繁体字中国語"
+
+msgid "Korean"
+msgstr "韓國語"
+
+msgid "Japanese"
+msgstr "日本語"
+
+msgid "On"
+msgstr "オン"
+
+msgid "Off"
+msgstr "オフ"
+
+msgid "CAS_On"
+msgstr "オン"
+
+msgid "CAS_Off"
+msgstr "オフ"
+
+msgid "Never"
+msgstr "なし"
+
+msgid "List mode"
+msgstr "リストモード"
+
+msgid "Thumbnail mode"
+msgstr "サムネイルモード"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "出荷時設定に復元しますか?"
+
+msgid "WD TV HD Media Player"
+msgstr "WD TV HDメディアプレーヤー"
+
+msgid "version"
+msgstr "バージョン"
+
+msgid "Current version"
+msgstr "現在のバージョン"
+
+msgid "New version"
+msgstr "新バージョン"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "新しいファームウェアが見つかりました。更新しますか?"
+
+msgid "Rebooting"
+msgstr "再起動中"
+
+msgid "Invalid firmware"
+msgstr "無効ファームウェア"
+
+msgid "Contains"
+msgstr "キーワード検索（部分一致）"
+
+msgid "Starts with"
+msgstr "キーワード検索（前方一致）"
+
+msgid "Loading"
+msgstr "ロード中"
+
+msgid "Loading..."
+msgstr "ロード中..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "USBデバイスが認識できませんでした。"
+
+msgid "Storage can not aggregate"
+msgstr "ストレージを統合できません"
+
+msgid "Next Song:"
+msgstr "次の曲:"
+
+msgid "Current Song"
+msgstr "現在の曲"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "All Photos"
+msgstr "すべての写真"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "メディアライブラリはジャーナルされたファイルシステムをサポートしません。再生はサポートされています。"
+
+msgid "Unable to create media library on read only storage."
+msgstr "読み込み専用ストレージでメディアライブラリを作成できません。"
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "メディアライブラリを作成できません。ストレージ設定を確認してください。"
+
+msgid "Unrecognized USB device"
+msgstr "USBデバイスを認識できません"
+
+msgid "Scanning the attached USB device..."
+msgstr "USBデバイスをスキャンしています..."
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "再生使用としているビデオファイルには、サポートされていない複数のオーディオチャンネル出力が含まれています。デジタルオーディオ出力に切り替え、HDメディアプレーヤーをオーディオコーデックをサポートするAVレシーバーに接続してください。"
+
+msgid "Unsupported subtitle"
+msgstr "非対応のサブタイトル"
+
+msgid "Audio Channel"
+msgstr "オーディオチャンネル"
+
+msgid "Audio channel"
+msgstr "オーディオチャンネル"
+
+msgid "Photos"
+msgstr "写真"
+
+msgid "Firmware upgrade"
+msgstr "ファームウェアのアップグレード"
+
+msgid "Video output"
+msgstr "ビデオ出力"
+
+msgid "Display resolution"
+msgstr "画面解像度"
+
+msgid "Aspect ratio"
+msgstr "アスペクト比"
+
+msgid "Audio output"
+msgstr "音声出力"
+
+msgid "Video sequence"
+msgstr "ビデオシーケンス"
+
+msgid "Music sequence"
+msgstr "音楽シーケンス"
+
+msgid "Slideshow sequence"
+msgstr "スライドショーシーケンス"
+
+msgid "Photo scaling"
+msgstr "写真の拡大縮小"
+
+msgid "Transition effect"
+msgstr "遷移効果"
+
+msgid "Screensaver delay"
+msgstr "スクリーンセーバー待ち時間"
+
+msgid "Browser display"
+msgstr "ブラウザ表示"
+
+msgid "System reset"
+msgstr "システムリセット"
+
+msgid "Display in full screen"
+msgstr "歪みのあるフルスクリーン"
+
+msgid "Wipe right"
+msgstr "右にワイプ"
+
+msgid "Wipe left"
+msgstr "左にワイプ"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "HDメディアプレーヤーがアップグレードされています。電源または接続されたストレージを切断しないでください。"
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "アップグレードが完了しました。メディアプレーヤーが再起動します。"
+
+msgid "Please select the device you would like to eject."
+msgstr "取り外すデバイスを選択してください。"
+
+msgid "Are you sure you want to remove this device?"
+msgstr "このデバイスを取り外しますか?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "デジタルオーディオ出力設定を行っている場合、サラウンドサウンドでオーディオトラックを再生するには適切なオーディオ形式をサポートするAVレシーバーが必要です。"
+
+msgid "Subtitle off"
+msgstr "サブタイトルオフ"
+
+msgid "No subtitle"
+msgstr "サブタイトルなし"
+
+msgid "Media library"
+msgstr "メディアライブラリ"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "HD Media Playerに関する追加情報については、ユーザーマニュアルを参照するか、以下にアクセスしてください。"
+
+msgid "Subtitle"
+msgstr "サブタイトル"
+
+msgid "Firmware Version"
+msgstr "ファームウェアバージョン"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "File name"
+msgstr "ファイル名"
+
+msgid "Search completed. No results found."
+msgstr "検索が完了しましたが、見つかりませんでした。"
+
+msgid "Unsupported"
+msgstr "対応していません。"
+
+msgid "Space"
+msgstr "スペース"
+
+msgid "No audio channel"
+msgstr "オーディオチャンネルない"
+
+msgid "Untitled volume"
+msgstr "タイトルのないボリューム"
+
+msgid "Subtitle font size"
+msgstr "字幕のフォントサイズ"
+
+msgid "Additional encoding support"
+msgstr "追加の符号化サポート"
+
+msgid "Western Europe (ISO)"
+msgstr "西ヨーロッパ (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "繁体字中国語 (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "簡体字中国語 (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "日本語 (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "韓國語 (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "キリル文字 (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "キリル文字 (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "ギリシャ語 (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "ギリシャ語 (Windows-1253)"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "Equal to"
+msgstr "と等号"
+
+msgid "Not Equal to"
+msgstr "と不等号"
+
+msgid "Central Europe (ISO)"
+msgstr "中央ヨーロッパ (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "中央ヨーロッパ (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "含まない"
+
+msgid "Display file size"
+msgstr "ファイルサイズを表示"
+
+msgid "Display file size during navigation"
+msgstr "ナビゲーション中にファイルサイズを表示"
+
+msgid "Western Europe"
+msgstr "西欧"
+
+msgid "Turkish"
+msgstr "トルコ語"
+
+msgid "Subtitle default"
+msgstr "サブタイトル デフォルト"
+
+msgid "Subtitle border"
+msgstr "サブタイトル 境界"
+
+msgid "Thick"
+msgstr "太い"
+
+msgid "Thin"
+msgstr "細い"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "接続したUSBデバイスの空き容量が不十分です。メディアライブラリ コンパイルには記憶容量がさらに必要です。"
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "接続したUSBデバイスはHFS+Journalingファイルシステムを使用しています。再生はできますが、メディアライブラリはこのファイルシステムをサポートしていません。メディアプレイヤーの機能を全て使用するには、Journalingを無効化してください。"
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "接続したUSBデバイスは読み取り専用に設定されています。メディアライブラリ機能は実行されません。"
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "接続したUSBデバイスにメディアライブラリを作成できません。デバイスの設定を確認してください。"
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "ファームウェアが無効です。http://www.wdc.comから適切なファームウェアをダウンロードしてください。"
+
+msgid "File Management"
+msgstr "ファイル管理"
+
+msgid "Select source"
+msgstr "ソースを選択"
+
+msgid "Select a destination"
+msgstr "送り先を選択"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "ファイルの移動を実施します。再生中の音楽は停止します。"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Move"
+msgstr "移動"
+
+msgid "Select all"
+msgstr "全てを選択"
+
+msgid "Source"
+msgstr "ソース"
+
+msgid "Destination"
+msgstr "送り先"
+
+msgid "Would you like to delete the selected files?"
+msgstr "選択したファイルを削除しますか?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "選択したファイルをコピーしますか?"
+
+msgid "Would you like to move the selected files?"
+msgstr "選択したファイルを移動しますか?"
+
+msgid "Deleting files..."
+msgstr "ファイルを削除しています..."
+
+msgid "Deleted"
+msgstr "削除しました。"
+
+msgid "Copying files..."
+msgstr "ファイルをコピーしています..."
+
+msgid "Moving files..."
+msgstr "ファイルを移動しています..."
+
+msgid "Moved"
+msgstr "ファイルの移動が完了しました。"
+
+msgid "File delete complete."
+msgstr "ファイルの削除が完了しました。"
+
+msgid "Write fail. Please check the destination device."
+msgstr "書き込みに失敗しました。書き込み先デバイスを確認してください。"
+
+msgid "Read fail. Please check the source device."
+msgstr "読み取りに失敗しました。ソースデバイスを確認してください。"
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "ファイルのコピーまたは移動ができません。コピー/移動先の空き容量が十分ではありません。"
+
+msgid "Unable to write to read-only device at destination."
+msgstr "書き込みできません。書き込み先のデバイスは読み取り専用です。"
+
+msgid "Unable to delete read-only file."
+msgstr "読み取り専用ファイルを削除することはできません。"
+
+msgid "Press [BACK] to cancel."
+msgstr "キャンセルするには[戻る]を押します。"
+
+msgid "Are you sure you want to cancel?"
+msgstr "キャンセルしますか?"
+
+msgid "Auto play"
+msgstr "自動再生"
+
+msgid "Photo auto play"
+msgstr "写真自動再生"
+
+msgid "Video auto play"
+msgstr "ビデオ自動再生"
+
+msgid "Audio track display"
+msgstr "オーディオトラック表示"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "このビデオ設定を変更しますか?"
+
+msgid "Camera"
+msgstr "カメラ"
+
+msgid "Camera 1"
+msgstr "カメラ 1"
+
+msgid "Camera 2"
+msgstr "カメラ 2"
+
+msgid "Chapters"
+msgstr "チャプター"
+
+msgid "file name"
+msgstr "ファイル名"
+
+msgid "Press [RIGHT] to select source."
+msgstr "[右]を押してソースを選択します。"
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "[OPTION]を押してコピー、移動、あるいは削除を選択します。"
+
+msgid "Press [RIGHT] to select destination."
+msgstr "[右]を押して送り先を選択します。"
+
+msgid "Press [OPTION] to confirm."
+msgstr "[OPTION]を押して決定します。"
+
+msgid "This folder cannot be accessed."
+msgstr "このフォルダにはアクセスできません。"
+
+msgid "Standby mode"
+msgstr "スタンバイモード"
+
+msgid "Action cancelled."
+msgstr "操作をキャンセル"
+
+msgid "Arabic"
+msgstr "アラビア語"
+
+msgid "Hindu"
+msgstr "ヒンディー語"
+
+msgid "Thailand"
+msgstr "タイ"
+
+msgid "Preview mode"
+msgstr "プレビューモード"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "ファームウェアのアップグレードに失敗しました。 デバイスが再起動します。"
+
+msgid "Empty"
+msgstr "空ろ"
+
+msgid "Push"
+msgstr "押す"
+
+msgid "Wipe"
+msgstr "拭く"
+
+msgid "Zoom"
+msgstr "ズーム"
+
+msgid "Access point detecting..."
+msgstr "アクセスポイントを検出する..."
+
+msgid "The network encryption key is not valid."
+msgstr "ネットワーク暗号化キーは有効ではありません。"
+
+msgid "No Chapter"
+msgstr "章ではない"
+
+msgid "Arabic (Windows-1256)"
+msgstr "アラビア語 (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "タイ (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "WDドライブのロック解除"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "このWDドライブをロックを解除しますか? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "パスワードを入力してドライブをロック解除します。"
+
+msgid "Password invalid"
+msgstr "パスワードが無効です"
+
+msgid "Please enter your password again."
+msgstr "パスワードを再入力してください。"
+
+msgid "Too many password attempts"
+msgstr "パスワードの試み回数が多すぎます"
+
+msgid "There were too many password recovery attempts."
+msgstr "パスワードの復元試みが多すぎます。"
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr " WD TVからドライブを取り外し、"
+
+msgid "reconnect it and try again."
+msgstr "再接続してから再実行してください。"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Genre:"
+msgstr "ジャンル:"
+
+msgid "File Size:"
+msgstr "ファイルのサイズ:"
+
+msgid "File Type:"
+msgstr "ファイルのタイプ:"
+
+msgid "Replace"
+msgstr "置換"
+
+msgid "Checker Board"
+msgstr "チェッカーボード"
+
+msgid "Play mode"
+msgstr "再生モード"
+
+msgid "Pan"
+msgstr "動く"
+
+msgid "Zoom in"
+msgstr "拡大"
+
+msgid "Zoom out"
+msgstr "ズームアウト"
+
+msgid "Info bar"
+msgstr "情報バー"
+
+msgid "Chapter"
+msgstr "章"
+
+msgid "Rotate left"
+msgstr "左に回転"
+
+msgid "Rotate right"
+msgstr "右に回転"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "エラー: ソースフォルダとコピー先のフォルダは同じです。"
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "エラー: ソース先のフォルダのサブフォルダのフォルダです。"
+
+msgid "This folder is empty"
+msgstr "現在のフォルダ内にないメディアです。"
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color モード"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "このHDMI deep color モードを変更しますか？"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "WD TVからドライブを取り外してください、"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "アップグレード処理を開始するためメディアプレーヤーが再起動します。新規ファームウェアはパスワード保護されたドライブに>保存されているため、再起動後にドライブのロック解除が必要です。"
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "メディアライブラリのコンパイル中です。メディアのコンテンツはスキャン順に使用可能となります。デバイスナビゲーションはこの処理の間も使用可能です。"
+
+msgid "Copied"
+msgstr "コピー"
+
+msgid "8 bit"
+msgstr "8 ビット"
+
+msgid "10 bit"
+msgstr "10 ビット"
+
+msgid "12 bit"
+msgstr "12 ビット"
+
+msgid "The auto play content could not be accessed."
+msgstr "自動再生のコンテンツにアクセスすることができませんでした。"
+
+msgid "Local device is disconnected."
+msgstr "警告: 取り外す前に、「USBデバイスの取り外し」を実行してください。"
+
+msgid "User interface transition effect"
+msgstr "ユーザーインターフェイスのトランジション効果"
+
+msgid "Fade in and fade out"
+msgstr "フェードインとフェードアウト"
+
+msgid "None"
+msgstr "何もない"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "致命的なシステムエラーが検出されます。デバイスが再起動します..."
+
+msgid "YES"
+msgstr "はい"
+
+msgid "Yes to all"
+msgstr "はい、すべてに"
+
+msgid "NO"
+msgstr "いいえ"
+
+msgid "This folder already contains a file named:"
+msgstr "このフォルダには既に名前のファイルが含まれています："
+
+msgid "Would you like to overwrite it?"
+msgstr "それを上書きしますか？"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "選択されたファイルを再生できません。サポートされるファイル形式のリストについては、ユーザマニュアルを参照してください。"
+
+

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -f /conf/youtube-key ] ; then
+   if [ "`grep YOUTUBE_DEVICEID=\'\(null\)\' /conf/config`" != "" -o "`grep YOUTUBE_DEVICEID=\'\' /conf/config`" != "" -o "`grep YOUTUBE_DEVICE /conf/config`" == "" ] ; then
+	sed -i -e "s/YOUTUBE_DEVICEID=''//" -e "s/YOUTUBE_DEVICEKEY=''//" /conf/config
+	eval `cat /conf/youtube-key`
+	[ "$YOUTUBE_DEVICEID" != ""  ] && config_tool -c YOUTUBE_DEVICEID="$YOUTUBE_DEVICEID" || rm /conf/youtube-key
+	[ "$YOUTUBE_DEVICEKEY" != ""  ] && config_tool -c YOUTUBE_DEVICEKEY="$YOUTUBE_DEVICEKEY" || rm /conf/youtube-key
+   fi	
+fi
+
+eval `grep YOUTUBE /conf/config`
+if [ "$YOUTUBE_DEVICEID" != "(null)" -a "$YOUTUBE_DEVICEID" != "" -a "$YOUTUBE_DEVICEKEY" != "(null)" -a "$YOUTUBE_DEVICEKEY" != "" ] ; then
+	grep YOUTUBE /conf/config > /conf/youtube-key
+elif [ "$YOUTUBE_DEVICEID" == "(null)" -o "$YOUTUBE_DEVICEID" == "" -o "$YOUTUBE_DEVICEKEY" == "(null)" -o "$YOUTUBE_DEVICEKEY" == "" ] ; then
+	logger -t youtube-keys "YouTube keys corrupted, deleting...New keys must be generate from official firmware, root.bin available"
+	sed -i '/YOUTUBE_DEVICE.*/d' /conf/config
+fi

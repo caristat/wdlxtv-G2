@@ -1,0 +1,184 @@
+#!/bin/sh
+
+# Crazy-mounter
+
+[ "`grep -i \^CRAZYBOOT=\'OFF\' /conf/config`" != "" ] && exit 1
+
+[ -f /conf/crazymount.wait ] && crazymountwait="`cat /conf/crazymount.wait`"
+touch /etc/fstab
+[ -f /conf/fstab ] && cat /conf/fstab >> /etc/fstab
+
+echo $crazymountwait | egrep '^[0-9]+$' >/dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+    logger -t crazymount "used additional custom delay of ${crazymountwait}s"
+    sleep $crazymountwait
+fi
+
+blkid | logger -t crazyboot
+touch /tmp/.dontAddMounts /tmp/.addMounts
+
+logger -t crazyboot "mounting app binaries..."
+mkdir -p /tmp/mnt/apps && mount -o bind /tmp/mnt/apps /apps
+
+if [ "`grep -i \^MT-DAAPD=\'OFF\' /conf/config`" != "" ] ; then
+	mount -o bind /bin/true /bin/mt-daapd
+	[ "`grep -i \^PLUGIN_WEBDIRS= /conf/config | grep 'mt-daapd'`" != "" ] && remove.webplugin mt-daapd
+else
+	[ "`grep -i \^PLUGIN_WEBDIRS= /conf/config | grep 'mt-daapd'`" == "" ] && add.webplugin mt-daapd /usr/share/mt-daapd
+fi
+
+mdev -s
+
+[ -f /conf/smb.conf ] && cp /conf/smb.conf /tmp/smb.custom.conf
+
+for device in `cat /tmp/devs`; do
+    LABEL=""
+    eval `blkid /dev/$device | cut -n -d':' -f2-9`
+    [ "$LABEL" == "" ] && LABEL=$device
+    [ "$UUID" == "" ] && UUID=$device
+
+    Mount=""
+    containsAPP=0
+    MP=""
+
+    location="`cat /etc/mtab | grep /dev/$device | grep /tmp/media/usb/ | cut -d' ' -f2 | sed -e 's/\\040/\ /' | tail -n 1`"
+    logger -t crazyboot "checking DEVICE /dev/$device@$location for app.bins"
+    if [ -d "$location" ]; then
+         cd "$location"
+      OPTIONS=''
+      if [ "$TYPE" == "ufsd" ] ; then
+	 [ "$IOCHARSET" != "" ] && OPTIONS="iocharset=$IOCHARSET" || OPTIONS="iocharset=utf8"
+      fi
+      if [ "$TYPE" == "vfat" -o "$TYPE" == "msdos" ] ; then
+	 [ "$CODEPAGE" != "" ] && OPTIONS="codepage=$CODEPAGE"
+	 if [ "$IOCHARSET" != "" ] ; then
+	    if [ "$OPTIONS" == "" ] ; then
+		OPTIONS="iocharset=$IOCHARSET,utf8"
+	    else
+		OPTIONS="$OPTIONS,iocharset=$IOCHARSET,utf8"
+	    fi
+	 else
+	    [ "$OPTIONS" == "" ] && OPTIONS="utf8" || OPTIONS="$OPTIONS,utf8"
+	 fi
+      fi
+
+      Mount="/tmp/mnt/$UUID"
+      for i in `ls *.bin 2>/dev/null` ; do
+          [ ! -f "$i" ] && continue
+          case "$i" in
+            emergency-wdtv.bin)
+                #################### EMERGENCY RECOVERY #####################
+                if [ -f "$location/emergency-flash" ]; then
+                    logger -t crazyboot -p warning "undertaking emergency flash..."
+                    mv "$location/emergency-flash" "$location/emergency-flash.done" 
+                    echo "upgrade /dev/$device emergency-wdtvlive.bin" > /tmp/emergency.flash
+                    mkdir /tmp/init.d
+                    cp /etc/init.d/emergency-flash /tmp/init.d/S00emergency-flash
+                fi
+                ;;
+            wdtv.bin)
+                ;; # no-ops
+            wdlxtv.bin)
+                ;; # no-ops
+            root.bin)
+                ;; # no-ops
+            opt.bin)
+                logger -t crazyboot -p notice "Mounting Optware"
+                [ $containsAPP != 1 ] && mkdir -p $Mount && mount /dev/$device $Mount -o $OPTIONS
+                mount -o loop -t auto $Mount/$i /opt
+                containsAPP=1
+                echo "$Mount/$i /opt auto defaults 0 0" >> /etc/fstab
+                ;;
+            *osd.bin)
+                a="`basename "$i"|sed -e 's/\.osd\.bin$//'`"
+                logger -t crazyboot -p notice "Mounting $a OSD overlay"
+                [ $containsAPP != 1 ] && mkdir -p $Mount && mount /dev/$device $Mount -o $OPTIONS
+                mount -o loop -t auto $Mount/$i /osd
+                containsAPP=1
+		touch /tmp/OSDBIN
+                echo "$Mount/$i /osd auto defaults 0 0" >> /etc/fstab
+                ;;
+            *.app.bin)
+                a="`basename "$i"|sed -e 's/\.app\.bin$//'`"
+                logger -t crazyboot -p notice "$a app found"
+                [ $containsAPP != 1 ] && mkdir -p $Mount && mount /dev/$device $Mount -o $OPTIONS
+                echo $Mount/$a >> /tmp/appsRoot
+                mkdir -p "/apps/$a"
+                logger -t crazyboot "Mounting $i at /apps/$a"
+                mount -o loop -t auto "$Mount/$i" "/apps/$a"
+                echo "$Mount/$i /apps/$a auto defaults 0 0" >> /etc/fstab
+                containsAPP=1
+                ;;
+            *)
+                ;;
+          esac
+     done
+
+        [ -f "$location/net.config" ] && cp "$location/net.config" /tmp && dos2unix /tmp/net.config && chmod a+x /tmp/net.config
+        [ -f "$location/net.mounts" ] && cp "$location/net.mounts" /tmp && dos2unix /tmp/net.mounts && chmod a+x /tmp/net.mounts
+        [ -f "$location/S00custom-options" ] && mkdir -p /tmp/init.d && cp "$location/S00custom-options" /tmp/init.d && dos2unix /tmp/init.d/S00custom-options && chmod a+x /tmp/init.d/S00custom-options
+        [ -f "$location/villa_bg.jpg" ] && cp "$location/villa_bg.jpg" /tmp && mount -o bind /tmp/villa_bg.jpg /osd/image/villa_bg.jpg
+        [ -f "$location/screen_saver.png" ] && cp "$location/screen_saver.png" /tmp && mount -o bind /tmp/screen_saver.png /osd/image/screen_saver.png
+        [ -f "$location/custom-language-01.mo" ] && cp "$location/custom-language-01.mo" /tmp && mount -o bind /tmp/custom-language-01.mo /osd/mo/cht.mo
+	[ -f "$location/custom-language-01.po" ] && msgfmt "$location/custom-language-01.po" -o /tmp/custom-language-01.mo && mount -o bind /tmp/custom-language-01.mo /osd/mo/cht.mo
+        [ -f "$location/custom-language-02.mo" ] && cp "$location/custom-language-02.mo" /tmp && mount -o bind /tmp/custom-language-02.mo /osd/mo/chs.mo
+	[ -f "$location/custom-language-02.po" ] && msgfmt "$location/custom-language-02.po" -o /tmp/custom-language-02.mo && mount -o bind /tmp/custom-language-02.mo /osd/mo/chs.mo
+        [ -f "$location/custom-language-03.mo" ] && cp "$location/custom-language-03.mo" /tmp && mount -o bind /tmp/custom-language-03.mo /osd/mo/kr.mo
+	[ -f "$location/custom-language-03.po" ] && msgfmt "$location/custom-language-03.po" -o /tmp/custom-language-03.mo && mount -o bind /tmp/custom-language-03.mo /osd/mo/kr.mo
+        [ -f "$location/custom-language-04.mo" ] && cp "$location/custom-language-04.mo" /tmp && mount -o bind /tmp/custom-language-04.mo /osd/mo/jp.mo
+	[ -f "$location/custom-language-04.po" ] && msgfmt "$location/custom-language-04.po" -o /tmp/custom-language-04.mo && mount -o bind /tmp/custom-language-04.mo /osd/mo/jp.mo
+	[ -f "$location/video_resume_point_table" ] && touch /tmp/video_resume_point_table && mount -o bind,sync "$location/video_resume_point_table" /tmp/video_resume_point_table && containsAPP=1
+        [ -f "$location/smbpasswd" ] && cp "$location/smbpasswd" /tmp && dos2unix /tmp/smbpasswd
+        [ -f "$location/smb.conf" ] && cp "$location/smb.conf" /tmp/smb.custom.conf && dos2unix /tmp/smb.custom.conf
+        [ -f "$location/.keepalive" ] && echo "$UUID" >> /tmp/.keepalive
+        if [ -d "$location/.thumbDB" ] ; then
+            [ $containsAPP != 1 ] && mkdir -p "$Mount" && mount /dev/$device "$Mount"
+            mkdir -p /tmp/cache
+            mountpoint -q /tmp/cache
+            [ $? != 0 ] && mount -o bind "$Mount/.thumbDB" /tmp/cache && containsAPP=1 && logger -t crazyboot -p notice "Persistent thumb DB enabled on /dev/$device" 
+        fi
+        if [ -f "$Mount/.addMounts" ]; then
+            echo $UUID >> /tmp/.addMounts
+            mkdir -p "$location/extra-devices"
+            logger -t crazyboot -p notice ".addMounts (Media Library scanning) enabled on /dev/$device"
+        fi
+        if [ $containsAPP == 0 ]; then
+            logger -t crazyboot "no apps found on /dev/$device"
+        else
+            logger -t crazyboot -p notice "extension[s] found on /dev/$device - do not remove device from wdtv"
+	    echo $UUID >> /tmp/.keepalive
+            cat /etc/mtab | grep $Mount | tail -n 1 >> /etc/fstab
+        fi
+        containsAPP=0;
+        sync
+        cd /
+    fi
+done
+cd /
+
+logger -t crazyboot "adjusting LIBPATH"
+mkdir -p /tmp/.root/etc && touch /etc/ld.so.conf 
+for i in `ls -d /opt/lib /osd/lib /apps/*/lib 2>/dev/null` ; do
+  [ -d "$i" ] && echo $i >> /etc/ld.so.conf
+done
+
+ldconfig -C /tmp/ld.so.cache
+
+for i in `ls /apps/*/lib/modules/2.6.22.19-19-4/* 2>/dev/null` ; do
+   if [ "`basename $i`" == "modules.dep" ] ; then
+    cat $i >> /lib/modules/2.6.22.19-19-4/modules.dep
+   else
+    ln -s $i /lib/modules/2.6.22.19-19-4
+   fi
+done
+
+logger "adjusting PATH"
+for i in in `ls -d /opt/bin /opt/sbin /osd/bin /apps/*/sbin /apps/*/bin 2>/dev/null` ; 
+do
+  [ -d "$i" ] && PATH=$i:$PATH
+done
+export PATH=$PATH
+
+logger -t crazyboot "Path set to $PATH"
+echo PATH=$PATH > /tmp/sys.path
+

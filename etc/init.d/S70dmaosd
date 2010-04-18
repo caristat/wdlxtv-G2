@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case "$1" in
+start|upgrade)
+	if [ "$1" == "upgrade" ]; then	
+		run_all $1 $2 $3 &
+		killall mount.watch
+		killall plug.watch
+	else
+		eval `grep -i \^BACKGROUND_IMAGE= /conf/config`
+		if ! `mountpoint -q /osd/image/villa_bg.jpg` && [ "$BACKGROUND_IMAGE" != "" ] ; then
+			if [ -f "$BACKGROUND_IMAGE" -a "$BACKGROUND_IMAGE" != "/osd/image/villa_bg.jpg" ] ; then
+				mount -o bind "$BACKGROUND_IMAGE" /osd/image/villa_bg.jpg
+			elif [ -f "/osd/image/$BACKGROUND_IMAGE" -a "$BACKGROUND_IMAGE" != "villa_bg.jpg" ] ; then
+				mount -o bind "/osd/image/$BACKGROUND_IMAGE" /osd/image/villa_bg.jpg
+			else
+				logger -t S70dmaosd "cannot find BACKGROUND_IMAGE=$BACKGROUND_IMAGE!"
+			fi
+		fi
+
+		run_all &
+		/usr/bin/wdlxtv.watch &
+	fi
+	;;
+esac

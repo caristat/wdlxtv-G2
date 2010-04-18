@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<wrapper>
+  <!--image image="@@info_inforbar" x="340" y="0" w="608" h="174"/>
+   <include filename="./inc_generic_now_playing.xml" />
+   <include filename="./inc_live365_now_playing.xml" />
+   <include filename="./inc_pandora_now_playing.xml" /-->
+   <include filename="./myinfo.xml" />
+</wrapper>

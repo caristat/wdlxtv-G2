@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<wrapper>
+  <wrapper x="40" w="720" h="1">
+    <image image="@@browse_0_line" ymargin="0" bg="1" y="179"/>
+    <image image="@@browse_1_line" ymargin="0" bg="1" y="230"/>
+    <image image="@@browse_2_line" ymargin="0" bg="1" y="281"/>
+    <image image="@@browse_3_line" ymargin="0" bg="1" y="332"/>
+    <image image="@@browse_4_line" ymargin="0" bg="1" y="383"/>
+    <image image="@@browse_5_line" ymargin="0" bg="1" y="434"/>
+    <image image="@@browse_6_line" ymargin="0" bg="1" y="485"/>
+    <image image="@@browse_7_line" ymargin="0" bg="1" y="536"/>
+    <image image="@@browse_8_line" ymargin="0" bg="1" y="587"/>
+    <image image="@@browse_9_line" ymargin="0" bg="1" y="638"/>
+  </wrapper>
+  <table x="40" y="129" w="720" h="510" fontsize="26" selected_fontsize="30"
+         cols="1" rows="10" colspacing="0" rowspacing="0" 
+	 lbimage="image/browser_list_btn_preview.png" clickimage="image/browser_list_btn_preview.png"  
+	 textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" 
+	 activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+    <text text="@@browse_0_text" lmargin="50" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"
+	  selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+    
+	 activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+    <text text="@@browse_1_text" lmargin="50" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1"
+	  selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+    
+    <text text="@@browse_2_text" lmargin="50" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" 
+	  selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+    
+    <text text="@@browse_3_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" 
+	  selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+    
+    <text text="@@browse_4_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" 
+	  selected="@@browse_4_select" speed="@@browse_4_speed" delay="2"/>
+    
+    <text text="@@browse_5_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" 
+	  selected="@@browse_5_select" speed="@@browse_5_speed" delay="2"/>
+    
+    <text text="@@browse_6_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-6" active="@@act-browselist-6" 
+	  selected="@@browse_6_select" speed="@@browse_6_speed" delay="2"/>
+
+    <text text="@@browse_7_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-7" active="@@act-browselist-7" 
+	  selected="@@browse_7_select" speed="@@browse_7_speed" delay="2"/>
+
+    <text text="@@browse_8_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-8" active="@@act-browselist-8" 
+	  selected="@@browse_8_select" speed="@@browse_8_speed" delay="2"/>
+
+    <text text="@@browse_9_text" lmargin="50" ymargin="5" rmargin="5" 
+	  lightbar="@@lightbar-browselist-9" active="@@act-browselist-9" 
+	  selected="@@browse_9_select" speed="@@browse_9_speed" delay="2"/>
+
+  </table>
+  
+  <table x="40" y="129" w="50" h="510"
+           cols="1" rows="10" colspacing="0" rowspacing="0" >
+    <image image="@@browse_0_icon" ymargin="0" />
+    <image image="@@browse_1_icon" ymargin="0" />
+    <image image="@@browse_2_icon" ymargin="0" />
+    <image image="@@browse_3_icon" ymargin="0" />
+    <image image="@@browse_4_icon" ymargin="0" />
+    <image image="@@browse_5_icon" ymargin="0" />
+    <image image="@@browse_6_icon" ymargin="0" />
+    <image image="@@browse_7_icon" ymargin="0" />
+    <image image="@@browse_8_icon" ymargin="0" />
+    <image image="@@browse_9_icon" ymargin="0" />
+  </table>
+  <wrapper  x="780" y="0" w="1280" h="720" align="top,right" scale="100" scale_type="fixratio" >
+    <image lbimage="@@browse_0_text" clickimage="@@browse_0_text"  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" bg="1"/>
+    <image lbimage="@@browse_1_text" clickimage="@@browse_1_text"  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" bg="1"/>
+    <image lbimage="@@browse_2_text" clickimage="@@browse_2_text"  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" bg="1"/>
+    <image lbimage="@@browse_3_text" clickimage="@@browse_3_text"  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" bg="1"/>
+    <image lbimage="@@browse_4_text" clickimage="@@browse_4_text"  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" bg="1"/>
+    <image lbimage="@@browse_5_text" clickimage="@@browse_5_text"  lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" bg="1"/>
+    <image lbimage="@@browse_6_text" clickimage="@@browse_6_text"  lightbar="@@lightbar-browselist-6" active="@@act-browselist-6" bg="1"/>
+    <image lbimage="@@browse_7_text" clickimage="@@browse_7_text"  lightbar="@@lightbar-browselist-7" active="@@act-browselist-7" bg="1"/>
+    <image lbimage="@@browse_8_text" clickimage="@@browse_8_text"  lightbar="@@lightbar-browselist-8" active="@@act-browselist-8" bg="1"/>
+    <image lbimage="@@browse_9_text" clickimage="@@browse_9_text"  lightbar="@@lightbar-browselist-9" active="@@act-browselist-9" bg="1"/>
+  </wrapper>
+
+ 
+  <text text="@@pagecounter" x="290" y="665" h="28" w="200" fontsize="26" align="hcenter" textcolor="0xe2e2e2" />
+  <image image="@@moreprev" x="190" y="665" w="38" h="27"/>
+  <image image="@@morenext" x="590" y="665" w="38" h="27"/>
+</wrapper>

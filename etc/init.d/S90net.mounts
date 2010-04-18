@@ -1,0 +1,36 @@
+#!/bin/sh
+
+case "$1" in
+start)
+{
+	[ ! -f /conf/net.mounts -a ! -f /tmp/net.mounts ] && exit 1
+
+	online.delayer 20 # pause until online
+        [ $? = 2 ] && logger -t S90net.mounts "online.delayer says offline, trying anyways!"
+
+	eval `grep \^NET_MOUNTS_DELAY= /conf/config`
+	echo $NET_MOUNTS_DELAY | egrep '^[0-9]*$' -q
+	if [ $? == 0 ] && [ "$NET_MOUNTS_DELAY" != "" ] ; then 
+		sleep $NET_MOUNTS_DELAY
+	fi
+
+	[ -f /conf/net.mounts ] && dos2unix /conf/net.mounts && . /conf/net.mounts
+	[ -f /tmp/net.mounts ] && . /tmp/net.mounts
+} &
+	;;
+stop)
+	for i in /tmp/media/usb/* ; do
+	   if [ "`grep " $i " /proc/mounts | grep '^/dev/sd'`" == "" ] ; then
+	       mountpoint -q "$i"
+	       if [ $? -eq 0 ] ; then
+		  bname="`basename $i`"
+		  umount "/tmp/media/usb/USB*/$bname"
+		  rmdir "/tmp/media/usb/USB1/$bname" 2>/dev/null
+		  rmdir "/tmp/media/usb/USB2/$bname" 2>/dev/null
+		  umount /tmp/media/
+		  umount -f "$i" && rmdir "$i"
+		fi
+	   fi
+	done
+	;;
+esac

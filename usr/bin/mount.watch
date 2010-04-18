@@ -1,0 +1,118 @@
+#!/bin/sh
+logger -t mount.watch "starting"
+sleep 2
+ROOT=/tmp/media/usb
+addMounts=`cat /tmp/.addMounts`
+CONFIGMODTIME=0
+
+### mount.watch main process
+cd $ROOT
+while [ 1 = 1 ] ; do
+
+    NEWCONFIGMODTIME=`stat -t /conf/config | cut -d' ' -f13`
+    if [ $CONFIGMODTIME != $NEWCONFIGMODTIME ] ; then
+        CONFIGMODTIME=$NEWCONFIGMODTIME
+        eval `grep \^DMA_CONTENT_AGGREGATION= /conf/config`
+    fi
+
+    for f in * ; do
+        if [ -d "$f" -a "$f" != "USB1" -a "$f" != "USB2" ] ; then
+            MOUNTED=0
+            mLoc=""
+
+            UUID=''
+            eval `blkid | egrep "LABEL=\"$f\"|^/dev/$f" | cut -n -d':' -f2-9`
+            device=`blkid | egrep "LABEL=\"$f\"|^/dev/$f" | cut -n -d':' -f1 | cut -d'/' -f3`
+            if [ "$UUID" != "" ] ; then
+                if [ -e "$ROOT/USB1/$UUID" ] && mountpoint -q "$ROOT/USB1/$UUID" ; then
+                    mLoc="$ROOT/USB1/$UUID"
+                    MOUNTED=1
+                elif [ -e "$ROOT/USB2/$UUID" ] && mountpoint -q "$ROOT/USB2/$UUID" ; then
+                    mLoc="$ROOT/USB2/$UUID"
+                    MOUNTED=1
+                fi
+            else
+                mLoc=`cat /proc/mounts | egrep "^/dev/$device" | egrep -i "/tmp/media/usb/USB[1-2]/nouuid[0-9] " -m1 | cut -d' ' -f2`
+                [ "$device" != "" ] && mountpoint -q $mLoc && MOUNTED=1
+            fi            
+            doneDBadd=0
+            doneMount=0
+            
+            for usb in USB1 USB2 ; do
+                ROOT_USB=$ROOT/$usb              
+                if [ -e $ROOT_USB ] ; then
+                    if [ $MOUNTED == 1 ] ; then
+                        logger -t mount.watch -p notice "Unmounting official device $ROOT/$f"
+                        umount "$ROOT_USB/$f" && sleep 3 && rmdir "$ROOT_USB/$f"
+                        umount "$ROOT/$f" && sleep 3 && rmdir "$ROOT/$f"
+			echo "linksheets \"$mLoc\" 0" > /tmp/sheetQueue/x.`echo $mLoc 0 | md5sum | cut -d' ' -f1`
+			DEVICE="`cat /proc/mounts | grep "$mLoc" | egrep '^/dev/' | cut -d' ' -f1`"
+			PARTITION="`basename $DEVICE`"
+			rm -f /tmp/export.adds/$PARTITION
+			if [ "$FW_VERSION" == "WDLXTV_G2" ] ; then
+			   eval `blkid $DEVICE | cut -d':' -f2`
+			   [ "$LABEL" == "" ] && LABEL=$UUID
+			   [ "$LABEL" == "" ] && LABEL=$i				
+			   echo -e "[$LABEL]\n   comment         = $LABEL\n   path            = $mLoc\n   read only       = no\n   guest ok        = yes\n   use sendfile    = yes" > "/tmp/export.adds/$PARTITION"
+			fi
+                        for addMount in $addMounts; do
+                            mLoc=`cat /proc/mounts | egrep "^/dev/$addMount|/USB[1-2]/$addMount " | egrep -i "/tmp/media/usb/USB[1-2]/nouuid[0-9] |/tmp/media/usb/USB[1-2]/$addMount " | cut -d' ' -f2`
+                            mountpoint -q "$mLoc/extra-devices/$f" 2> /dev/null
+                            if [ $? -eq 0 ] ; then 
+                                logger -t mount.watch "Unmounting library device $mLoc/extra-devices/$f"
+                                umount "$mLoc/extra-devices/$f"
+                                sleep 2
+                                rmdir "$mLoc/extra-devices/$f"
+                            fi
+                        done
+                        MOUNTED=0
+                    else
+                        if [ $doneMount -eq 0 -a ! -e "$ROOT_USB/$f" -a "$DMA_CONTENT_AGGREGATION" == "0" ] ; then
+			    if [ "$usb" == "USB1" ] && mountpoint -q "$ROOT/USB2/$f" ; then
+				## $f already mounted in USB2!
+				doNothing=''
+#				logger -t mount.watch "$f already mounted in USB2, moving to USB1!"
+#				umount "$ROOT/USB2/$f"
+#				rmdir "$ROOT/USB2/$f"
+			    else
+                                logger -t mount.watch "Create \"$ROOT_USB/$f\""
+                                mkdir -p "$ROOT_USB/$f"
+                                mount -o bind "$ROOT/$f" "$ROOT_USB/$f" && doneMount=1
+			    fi
+                        fi
+                        ### don't include Apple Trailers because Apple Trailers create it always
+                        if [ -e "$ROOT_USB/$f" -a "$DMA_CONTENT_AGGREGATION" == "1" -a "$f" != "Apple Trailers" ] ; then
+                            logger -t mount.watch "Suppress \"$ROOT_USB/$f\""
+                            umount "$ROOT_USB/$f"
+                            rmdir "$ROOT_USB/$f"
+                        fi
+                    fi
+                fi
+            done
+
+            ### bind extra devices to official mounted disk for scanning
+            ### don't include official devices and addmount device
+            ### skip directories configured in /conf/config IGNORE_SCANDIR : ex Apple Trailers and uPnP
+            for addMount in $addMounts; do
+                if [ $doneDBadd -eq 0 ] ; then
+                    mLoc=`cat /proc/mounts | egrep "^/dev/$addMount|/USB[1-2]/$addMount " | egrep -i "/tmp/media/usb/USB[1-2]/nouuid[0-9] |/tmp/media/usb/USB[1-2]/$addMount " | cut -d' ' -f2`
+                    labelAddMount=`blkid | egrep "UUID=\"$addMount\"|^/dev/$addMount" | sed -e 's/^.*LABEL=\"//' -e 's/\".*$//'`
+                    ignoreScanDir=`egrep "^IGNORE_SCANDIR=.*[\',]$f[\',]" /conf/config`
+                    ### logger "AddMount / label Addmount : $addMount / $labelAddMount / $f / $ignoreScanDir"
+                    if [ -d "$mLoc" ] && [ $MOUNTED == 0 ] && [ "$ignoreScanDir" == "" ] && 
+                       [ "`cat /tmp/.dontAddMounts | grep $addMount`" == "" ] && [ "$f" != "$labelAddMount" ] && [ "$f" != "$addMount" ] ; then
+                        mountpoint -q "$mLoc/extra-devices/$f" 2> /dev/null
+                        if [ $? != 0 ] && [ "`cat /proc/mounts | grep -i "$f" | cut -d':' -f1 | egrep '^/dev/sr'`" == "" ] ; then
+                            logger -t mount.watch "Mounting library device $mLoc/extra-devices/$f"
+                            mkdir -p "$mLoc/extra-devices/$f" && mount -o bind "$ROOT/$f" "$mLoc/extra-devices/$f"
+                            doneDBadd=1
+                        fi
+                    fi
+                fi
+            done
+
+	fi
+    done
+                        
+    sleep 5
+done

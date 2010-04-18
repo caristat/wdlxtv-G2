@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+   start|startNFS)
+        if [ "`grep -i \^NFSD=\'OFF\' /conf/config`" == "" -o "$1" == "startNFS" ] ; then
+		[ -z "`pidof portmap`" ] && portmap
+	fi
+	;;
+restart|forcestart)
+	if [ "`grep -i \^NFSD=\'OFF\' /conf/config`" == "" -o "$1" == "forcestart" ] ; then
+	   if [ -n "`pidof portmap`" ] ; then
+	    	killall portmap 2>/dev/null
+	    	sleep 2
+	   fi
+	   portmap
+	fi
+	;;
+   stop)
+	if [ -n "`pidof portmap`" ] ; then
+       		killall portmap 2>/dev/null
+        fi
+	;;
+esac

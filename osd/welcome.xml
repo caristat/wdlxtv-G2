@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.jpg" wait_seconds="3">
+  <image image="image/welcome_logo.png" x="503" y="239" w="280" h="187"/>
+  <text text="Loading WDLXTV-G2 firmware..." x="290" y="420" w="720" h="38" fontsize="36" textcolor="0xFFFFFF" align="hcenter"/>
+  <text id="headline" text="http://b-rad.cc" x="490" y="470" w="330" h="44" fontsize="36" textcolor="0xFFFFFF" align="hcenter"/>
+  <!-- fixed -->
+  <include filename="./decoration.xml" />
+</page>

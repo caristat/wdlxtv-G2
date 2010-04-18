@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page background="image/browser_list_background_bg_n.png" type="basic">
+  <ctrlgrp>
+    <button valkey="FW_UPGRADING_FAIL_OK"
+      	focused_bg="image/common_button_B_btn_f.png"
+      	normal_bg="image/common_button_B_btn_n.png"
+      	click_bg="image/common_button_B_btn_p.png" />
+  </ctrlgrp>
+
+  <include filename="./inc_upgrade_title.xml" />
+
+  <text text="@@upgrading_fail_msg" x="122" y="190" w="477" h="90" fontsize="20" numlines="3"/>
+
+  <imgbtn x="126" y="350" w="468" h="36" image="@@bg-FW_UPGRADING_FAIL_OK" text="$$Ok" align="hcenter" fontsize="24" textcolor="0xEDC831" active="@@act-FW_UPGRADING_FAIL_OK" actnoseltextcolor="0x3333333"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

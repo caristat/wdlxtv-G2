@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<wrapper>
+  <text id="pagecounter" text="@@pagecounter" />
+  <image image="@@moreprev" x="619" y="184" w="38" h="27"/>
+  <wrapper x="124" w="1030" h="1">
+    <image image="@@browse_0_line" ymargin="0" bg="1" y="310"/>
+    <image image="@@browse_1_line" ymargin="0" bg="1" y="403"/>
+    <image image="@@browse_2_line" ymargin="0" bg="1" y="501"/>
+    <image image="@@browse_3_line" ymargin="0" bg="1" y="600"/>
+  </wrapper>
+  <table x="121" y="215" w="1041" h="393" fontsize="60" selected_fontsize="72"
+         cols="1" rows="4" colspacing="0" rowspacing="0" 
+	 lbimage="image/browser_list_btn.long.tall.png" clickimage="image/browser_list_btn.long.tall.png"  
+	 textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" 
+	 activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+    <text text="@@browse_0_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"
+	  selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+    
+    <text text="@@browse_1_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" 
+	  selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+    
+    <text text="@@browse_2_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" 
+	  selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+    
+    <text text="@@browse_3_text" lmargin="65" rmargin="5" ymargin="5"
+	  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" 
+	  selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+  </table>
+  
+  <table x="133" y="215" w="50" h="393"
+           cols="1" rows="4" colspacing="0" rowspacing="0" >
+    <image image="@@browse_0_icon" ymargin="0" />
+    <image image="@@browse_1_icon" ymargin="0" />
+    <image image="@@browse_2_icon" ymargin="0" />
+    <image image="@@browse_3_icon" ymargin="0" />
+  </table>
+  
+  <image image="@@morenext" x="619" y="625" w="38" h="27"/>
+</wrapper>

@@ -1,0 +1,38 @@
+#!/bin/sh
+#   Copyright (C) 2009 Brad Love
+#     http://b-rad.cc/cd-manager
+#       This program is free software; you can redistribute it and/or
+#       modify it under the terms of the GNU General Public License
+#       as published by the Free Software Foundation; either version 2
+#       of the License, or (at your option) any later version.
+
+if [[ "$1" == "" ]]; then
+  echo 'Proper usage is cd.eject <device>'
+  exit
+fi
+
+if [ "`cat /proc/mounts | grep $1`" != "" ]; then
+    mountPoint=`cat /proc/mounts | grep $1 | grep '/tmp/media/usb' | cut -d' ' -f2`
+    LABEL=`echo $mountPoint | cut -d' ' -f 2`
+    LABEL=`basename $LABEL`
+    umount $1 && umount $1 2>/dev/null
+    rmdir $mountPoint
+    rm -rf /tmp/optical-drive/*
+    cat /etc/fstab | grep -v $1 > /tmp/fstab.new
+    cat /tmp/fstab.new > /etc/fstab
+    rm "/tmp/cache/tmp/media/usb/${LABEL}.thumb"
+    rm "/tmp/cache/tmp/media/usb/USB1/${LABEL}.thumb"
+    rm "/tmp/cache/tmp/media/usb/USB2/${LABEL}.thumb"
+fi
+
+tryEjects=0
+while [ $tryEjects != 50 ]; do
+	logger "ejecting $1, try $tryEjects"
+	eject -s $1
+	[ $? == 0 ] && exit 0
+	tryEjects=`expr $tryEjects + 1`
+	logger "cd.eject: optical drive reset? $tryEjects" 
+	usleep 200000
+done
+
+exit 1

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page background="image/browser_list_background_bg_n.png" type="basic">
+  <include filename="./inc_upgrade_title.xml" />
+
+  <text text="$$Upgrade complete!" x="122" y="190" w="477" h="30" fontsize="24" align="hcenter"/>
+
+  <text text="$$Your media player will now restart ..." x="150" y="230" w="420" h="80" fontsize="20" numlines="3" align="hcenter"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

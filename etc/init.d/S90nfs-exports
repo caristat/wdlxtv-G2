@@ -1,0 +1,14 @@
+#!/bin/sh
+
+eval `grep \^NFSD= /conf/config`
+eval `grep \^NFSD_AUTO= /conf/config`
+
+case "$1" in
+start)
+   if [ "$NFSD" == "ON" -a "$NFSD_AUTO" != "ON" ]; then
+	touch /etc/exports
+	[ -f /conf/exports ] && cat /conf/exports > /etc/exports
+	cat /etc/exports | gen-hosts-allow
+   fi ;;
+esac
+

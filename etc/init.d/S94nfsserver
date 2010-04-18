@@ -1,0 +1,149 @@
+#!/bin/sh
+
+eval `grep \^NFSD= /conf/config`
+
+#
+# Startup script for nfs-utils
+#
+#
+# The environment variable NFS_SERVERS may be set in /etc/default/nfsd
+# Other control variables may be overridden here too
+test -r /conf/nfsd.conf && . /conf/nfsd.conf
+
+[ ! -f /conf/exports -a "`grep -i NFSD_AUTO=\'ON\' /conf/config`" == "" ] && logger -t S44nfsserver "No /conf/exports, make one first or set auto mode (NFSD_AUTO & NFSD_AUTO_DEFAULT)" && echo "No /conf/exports, make one first or set auto mode (NFSD_AUTO & NFSD_AUTO_DEFAULT)" && exit 1
+
+#
+# Location of executables:
+test -x "$NFS_MOUNTD" || NFS_MOUNTD=/usr/sbin/rpc.mountd
+test -x "$NFS_NFSD" || NFS_NFSD=/usr/sbin/rpc.nfsd
+test -x "$NFS_STATD" || NFS_STATD=/sbin/rpc.statd
+#
+# The user mode program must also exist (it just starts the kernel
+# threads using the kernel module code).
+test -x "$NFS_MOUNTD" || exit 0
+test -x "$NFS_NFSD" || exit 0
+#
+# Default is 4 threads, value is settable between 1 and the truely
+# ridiculous 99
+test "$NFS_SERVERS" -gt 0 && test "$NFS_SERVERS" -lt 100 || NFS_SERVERS=4
+#
+# The default state directory is /var/lib/nfs
+test -n "$NFS_STATEDIR" || NFS_STATEDIR=/var/lib/nfs
+#
+#----------------------------------------------------------------------
+# Startup and shutdown functions.
+#  Actual startup/shutdown is at the end of this file.
+
+case "$1" in
+start|forcestart)	echo Starting NFS Server...
+   if [ "$NFSD" == "ON" -o "$1" == "forcestart" ]; then
+	[ -n "`pidof nfsd`" -a -n "`pidof rpc.statd`" -a -n "`pidof rpc.mountd`" ] && echo "NFSD already running!" && logger -t S94nfsserver "NFSD already running!" && exit 1
+	/etc/init.d/S10portmap forcestart
+	online.delayer 10
+	[ $? -ne 0 ] && logger -t S94nfsserver "`hostname` not online, NFSD cannot start!" && exit 1
+	config_tool -c NFSD=ON
+        echo -n 'creating NFS state directory: '
+        mkdir -p "$NFS_STATEDIR"
+        (       cd "$NFS_STATEDIR"	# subshell
+                umask 077
+                mkdir -p sm sm.bak
+                test -w sm/state || {
+                        rm -f sm/state
+                        touch sm/state
+                }
+                umask 022
+                for file in xtab etab smtab rmtab ; do
+                        test -w "$file" || {
+                                rm -f "$file"
+                                touch "$file"
+                        }
+                done
+                mkdir -p rpc_pipefs
+                mountpoint rpc_pipefs > /dev/null
+		if [ $? != 0 ]; then
+			mount -t rpc_pipefs rpc_pipefs rpc_pipefs
+		fi
+		mountpoint /proc/fs/nfsd > /dev/null
+		if [ $? != 0 ]; then
+                	mount -t nfsd nfsd /proc/fs/nfsd
+                fi
+        )
+        echo done
+
+        echo -n "starting $NFS_SERVERS nfsd kernel threads: "
+        start-stop-daemon --start --exec "$NFS_NFSD" -- "$NFS_SERVERS"
+	[ $? -ne 0 ] && logger -t S44nfsserver "nfsd failed"
+        echo done
+
+        echo -n 'starting mountd: '
+        start-stop-daemon --start --exec "$NFS_MOUNTD" -- "-f /etc/exports"
+	[ $? -ne 0 ] && logger -t S44nfsserver "rpc.mountd failed"
+        echo done
+
+        echo -n "starting statd: "
+        start-stop-daemon --start --exec "$NFS_STATD"
+	[ $? -ne 0 ] && logger -t S44nfsserver "rpc.statd failed"
+        echo done
+
+        test -r /etc/exports && exportfs -a
+
+   fi ;;
+reload) 
+   if [ "$NFSD" == "ON" ]; then
+	test -r /etc/exports && exportfs -r
+   fi ;;
+stop)   
+   if [ "$NFSD" == "ON" ]; then
+	echo Stopping NFS server...
+	logger -t S94nfsserver "Stopping NFS server..."
+	exportfs -ua
+
+        # WARNING: this kills any process with the executable
+        # name 'statd'.
+        echo -n 'stopping statd: '
+        start-stop-daemon --stop --quiet --signal 1 --name rpc.statd
+        echo done
+
+        echo -n 'stopping mountd: '
+        start-stop-daemon --stop --quiet --name rpc.mountd
+        echo done
+
+        # WARNING: this kills any process with the executable
+        # name 'nfsd'.
+        echo -n 'stopping nfsd: '
+        start-stop-daemon --stop --quiet --signal 1 --name nfsd
+
+        for delay in 0 1 2 3 4 5 6 7 8 9 ; do
+                if pidof nfsd >/dev/null ; then
+                        echo -n .
+                        sleep 1
+                fi
+        done
+
+        if pidof nfsd >/dev/null ; then
+                echo failed
+                echo ' using signal 9: '
+                start-stop-daemon --stop --quiet --signal 9 --name nfsd
+
+	        for delay in 0 1 2 3 4 5 6 7 8 9 ; do
+	                if pidof nfsd >/dev/null ; then
+	                        echo -n .
+	                        sleep 1
+	                fi
+	        done
+        fi
+	umount /proc/fs/nfsd
+	umount $NFS_STATEDIR/rpc_pipefs
+        echo done #;;
+    fi	;;
+remove)
+	$0 stop
+        # This will remove, recursively, dependencies
+        modprobe -r nfsd 
+        ;;
+restart)
+	$0 stop
+	sleep 1
+	$0 start
+	;;
+esac

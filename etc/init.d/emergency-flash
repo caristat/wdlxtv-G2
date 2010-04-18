@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -f /tmp/init.d/S10portmap /tmp/init.d/S75net-services
+

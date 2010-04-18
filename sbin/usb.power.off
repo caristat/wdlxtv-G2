@@ -1,0 +1,61 @@
+#!/bin/sh
+
+[ "`grep -i \^DELUGE=\'ON\' /conf/config`" != "" ] && echo "Deluge enabled, cannot turn off USB bus power!" && logger -t "usb.power.off" "Deluge enabled, cannot turn off USB bus power!" && exit 1
+[ "`grep -i \^NZBGET=\'ON\' /conf/config`" != "" ] && echo "NZBget enabled, cannot turn off USB bus power!" && logger -t "usb.power.off" "NZBget enabled, cannot turn off USB bus power!" && exit 1
+
+mountpoint -q /boot
+[ $? -eq 0 ] && echo "root.bin or live FS active, cannot turn off USB bus power!" && logger -t "usb.power.off" "root.bin or live FS active, cannot turn off USB bus power!" && exit 1
+
+apps="`ls /apps 2>/dev/null`"
+[ "$apps" != "" ] && echo "app.bins are active, cannot turn off USB bus power!" && logger -t "usb.power.off" "app.bins are active, cannot turn off USB bus power!" && exit 1
+
+if [ "$1" != "2" -a -f /tmp/OSDBIN ] ; then
+    echo "OSD Theme active, cannot turn off USB bus power!" && logger -t "usb.power.off" "OSD Theme active, cannot turn off USB bus power!" && exit 1
+elif [ "$1" == "2" -a -f /tmp/OSDBIN ] ; then
+    echo "USB_POWER_OFF=2, shutting down with OSD.bin active!!!" && logger -t "usb.power.off" "USB_POWER_OFF=2, shutting down with OSD.bin active!!!"
+fi
+
+mountpoint -q /opt
+[ $? -eq 0 ] && echo "Optware active, cannot turn off USB bus power!" && logger -t "usb.power.off" "Optware active, cannot turn off USB bus power!" && exit 1
+
+logger -t "usb.power.off" "USB Bus 5V Power shutting off"
+
+sync && sync
+run_samba force-stop
+/etc/init.d/S94nfsserver stop
+
+for i in /tmp/media/usb/USB*/* ; do
+	# cleanup extra-devices
+	umount -f "$i/extra-devices/*" 2>/dev/null
+done
+
+echo 'sleeping 3s...'
+sleep 3
+
+for i in /tmp/media/usb/* ; do
+	#if sd device then umount
+	if [ "`grep " $i " /proc/mounts | grep '^/dev/sd'`" != "" ] ; then
+	   DEVICE="`grep " $i " /proc/mounts | grep '^/dev/sd' | cut -d' ' -f1`"
+	   DEVICE=`basename $DEVICE`
+	   [ -f /tmp/export.adds/$DEVICE ] && rm /tmp/export.adds/$DEVICE
+	   dname="`basename $i`"
+	   umount "/tmp/media/usb/*/$dname" 2>/dev/null
+	   rmdir "/tmp/media/usb/USB1/$dname" 2>/dev/null
+	   rmdir "/tmp/media/usb/USB2/$dname" 2>/dev/null
+	   umount -f $i 2>/dev/null && rmdir $i
+	   [ $? -ne 0 ] && umount -l $i && rmdir $i
+	fi
+done
+
+### don't spin down officially mounted devices
+offDevs=`cat /proc/mounts | grep '/tmp/media/usb/USB' | cut -d' ' -f1`
+offDevs=${offDevs//[0-9]/}
+echo $offDevs | tr ' ' '\n' > /tmp/.off-devs
+awk ' !x[$0]++' /tmp/.off-devs > /tmp/off-devs-u && mv /tmp/off-devs-u /tmp/.off-devs
+
+for i in `blkid | grep '/sd' | cut -d':' -f1` ; do
+	dev=${i/[0-9]/}
+	[ -z "`grep $dev /tmp/.off-devs`" ] && sdparm --command=stop $i
+done
+echo 'force usb power off' > /proc/led
+exit 0

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+eval `grep \^DEVICE_NAME= /conf/config`
+eval `grep \^TIMEZONE= /conf/config`
+
+if [ "$TIMEZONE" != "" ]; then
+  echo $TIMEZONE > /etc/TZ
+  export TZ=$TIMEZONE
+fi
+
+if [ "$DEVICE_NAME" != "" ]; then
+    hostname $DEVICE_NAME
+else
+    a=`head -1 /dev/urandom|md5sum|cut -c1-5`
+    defaultHOST="WDTVLIVE-$a"
+    config_tool -c DEVICE_NAME=$defaultHOST
+    logger -t host-config Generated new DEVICE_NAME=$defaultHOST
+    hostname $DEVICE_NAME
+fi
+
+if [ -f /conf/hosts ] ; then
+  cat /etc/hosts > /tmp/hosts~
+  cat /conf/hosts >> /tmp/hosts~ 
+  awk ' !x[$0]++' /tmp/hosts~ > /etc/hosts
+  rm /tmp/hosts~
+fi
+
+touch /etc/resolv.conf

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dropbearkey  -y -f /conf/rsa_key | grep ssh-rsa

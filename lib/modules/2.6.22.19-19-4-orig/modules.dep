@@ -1,0 +1,150 @@
+xfs.ko
+
+wd_led_rst.ko
+
+usbnet.ko symbol:usbnet_resume symbol:usbnet_suspend symbol:usbnet_probe symbol:usbnet_disconnect symbol:usbnet_set_msglevel symbol:usbnet_get_msglevel symbol:usbnet_get_drvinfo symbol:usbnet_nway_reset symbol:usbnet_get_link symbol:usbnet_set_settings symbol:usbnet_get_settings symbol:usbnet_unlink_rx_urbs symbol:usbnet_defer_kevent symbol:usbnet_skb_return symbol:usbnet_get_endpoints
+
+uirkernel.ko
+
+softcursor.ko symbol:soft_cursor
+
+scsi_wait_scan.ko
+
+rtl8187.ko usb:v0846p6A00d*dc*dsc*dp*ic*isc*ip* usb:v0846p6100d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8187d*dc*dsc*dp*ic*isc*ip*
+eeprom_93cx6
+
+rtl8150.ko usb:v0586p401Ad*dc*dsc*dp*ic*isc*ip* usb:v1557p8150d*dc*dsc*dp*ic*isc*ip* usb:v07B8p401Ad*dc*dsc*dp*ic*isc*ip* usb:v3980p0003d*dc*dsc*dp*ic*isc*ip* usb:v0411p0012d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8150d*dc*dsc*dp*ic*isc*ip*
+
+rt73.ko usb:v1740p7100d*dc*dsc*dp*ic*isc*ip* usb:v2019pAB50d*dc*dsc*dp*ic*isc*ip* usb:v2019pAB01d*dc*dsc*dp*ic*isc*ip* usb:v0769p31F3d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p90ACd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p9712d*dc*dsc*dp*ic*isc*ip* usb:v18E8p6238d*dc*dsc*dp*ic*isc*ip* usb:v18E8p6229d*dc*dsc*dp*ic*isc*ip* usb:v18E8p6196d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2671d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2573d*dc*dsc*dp*ic*isc*ip* usb:v04BBp093Dd*dc*dsc*dp*ic*isc*ip* usb:v0DB0pA874d*dc*dsc*dp*ic*isc*ip* usb:v0DB0pA861d*dc*dsc*dp*ic*isc*ip* usb:v0DB0p6874d*dc*dsc*dp*ic*isc*ip* usb:v0DB0p6877d*dc*dsc*dp*ic*isc*ip* usb:v13B1p0023d*dc*dsc*dp*ic*isc*ip* usb:v13B1p0020d*dc*dsc*dp*ic*isc*ip* usb:v06F8pE020d*dc*dsc*dp*ic*isc*ip* usb:v06F8pE010d*dc*dsc*dp*ic*isc*ip* usb:v1472p0009d*dc*dsc*dp*ic*isc*ip* usb:v1044p800Ad*dc*dsc*dp*ic*isc*ip* usb:v1044p8008d*dc*dsc*dp*ic*isc*ip* usb:v15A9p0004d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C07d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C06d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C04d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C03d*dc*dsc*dp*ic*isc*ip* usb:v07AAp002Ed*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C22d*dc*dsc*dp*ic*isc*ip* usb:v1371p9032d*dc*dsc*dp*ic*isc*ip* usb:v1371p9022d*dc*dsc*dp*ic*isc*ip* usb:v1631pC019d*dc*dsc*dp*ic*isc*ip* usb:v050Dp905Cd*dc*dsc*dp*ic*isc*ip* usb:v050Dp905Bd*dc*dsc*dp*ic*isc*ip* usb:v050Dp705Ad*dc*dsc*dp*ic*isc*ip* usb:v050Dp7050d*dc*dsc*dp*ic*isc*ip* usb:v0411p00F4d*dc*dsc*dp*ic*isc*ip* usb:v0411p00D8d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1724d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1723d*dc*dsc*dp*ic*isc*ip* usb:v1690p0722d*dc*dsc*dp*ic*isc*ip* usb:v07B8pB21Dd*dc*dsc*dp*ic*isc*ip*
+
+rt3572sta.ko usb:v1737p0079d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p0041d*dc*dsc*dp*ic*isc*ip* usb:v1740p9801d*dc*dsc*dp*ic*isc*ip* usb:v148Fp3572d*dc*dsc*dp*ic*isc*ip* usb:v050Dp815Cd*dc*dsc*dp*ic*isc*ip* usb:v0411p00E8d*dc*dsc*dp*ic*isc*ip* usb:v1737p0071d*dc*dsc*dp*ic*isc*ip* usb:v1737p0070d*dc*dsc*dp*ic*isc*ip* usb:v7392p7717d*dc*dsc*dp*ic*isc*ip* usb:v7392p7718d*dc*dsc*dp*ic*isc*ip* usb:v5A57p0282d*dc*dsc*dp*ic*isc*ip* usb:v5A57p0280d*dc*dsc*dp*ic*isc*ip* usb:v04E8p2018d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C09d*dc*dsc*dp*ic*isc*ip* usb:v1482p3C09d*dc*dsc*dp*ic*isc*ip* usb:v050Dp815Cd*dc*dsc*dp*ic*isc*ip* usb:v050Dp805Cd*dc*dsc*dp*ic*isc*ip* usb:v157Ep300Ed*dc*dsc*dp*ic*isc*ip* usb:v129Bp1828d*dc*dsc*dp*ic*isc*ip* usb:v0E66p0003d*dc*dsc*dp*ic*isc*ip* usb:v0E66p0001d*dc*dsc*dp*ic*isc*ip* usb:v15C5p0008d*dc*dsc*dp*ic*isc*ip* usb:v083Ap6618d*dc*dsc*dp*ic*isc*ip* usb:v13D3p3247d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C25d*dc*dsc*dp*ic*isc*ip* usb:v0471p200Fd*dc*dsc*dp*ic*isc*ip* usb:v1740p9702d*dc*dsc*dp*ic*isc*ip* usb:v1740p9701d*dc*dsc*dp*ic*isc*ip* usb:v0CDEp0025d*dc*dsc*dp*ic*isc*ip* usb:v0586p3416d*dc*dsc*dp*ic*isc*ip* usb:v0CDEp0022d*dc*dsc*dp*ic*isc*ip* usb:v083Ap7522d*dc*dsc*dp*ic*isc*ip* usb:v083Ap8522d*dc*dsc*dp*ic*isc*ip* usb:v083ApA618d*dc*dsc*dp*ic*isc*ip* usb:v083ApB522d*dc*dsc*dp*ic*isc*ip* usb:v15A9p0006d*dc*dsc*dp*ic*isc*ip* usb:v1044p800Bd*dc*dsc*dp*ic*isc*ip* usb:v07AAp003Fd*dc*dsc*dp*ic*isc*ip* usb:v07AAp003Cd*dc*dsc*dp*ic*isc*ip* usb:v07AAp002Fd*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C27d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C23d*dc*dsc*dp*ic*isc*ip* usb:v050Dp8053d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C07d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C11d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C09d*dc*dsc*dp*ic*isc*ip* usb:v2019pED06d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C28d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C06d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p002Dd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p002Cd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p002Bd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p0017d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1742d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1732d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1731d*dc*dsc*dp*ic*isc*ip* usb:v177Fp0302d*dc*dsc*dp*ic*isc*ip* usb:v0789p0164d*dc*dsc*dp*ic*isc*ip* usb:v0789p0163d*dc*dsc*dp*ic*isc*ip* usb:v0789p0162d*dc*dsc*dp*ic*isc*ip* usb:v083Ap7512d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p0039d*dc*dsc*dp*ic*isc*ip* usb:v07B8p2770d*dc*dsc*dp*ic*isc*ip* usb:v07B8p2870d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2870d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2770d*dc*dsc*dp*ic*isc*ip*
+
+rt3070sta.ko usb:v1737p0078d*dc*dsc*dp*ic*isc*ip* usb:v0586p341Ad*dc*dsc*dp*ic*isc*ip* usb:v0411p0158d*dc*dsc*dp*ic*isc*ip* usb:v0411p015Dd*dc*dsc*dp*ic*isc*ip* usb:v050Dp935Ad*dc*dsc*dp*ic*isc*ip* usb:v050Dp825Bd*dc*dsc*dp*ic*isc*ip* usb:v1D4Dp000Cd*dc*dsc*dp*ic*isc*ip* usb:v1D4Dp000Cd*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C0Dd*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C0Ad*dc*dsc*dp*ic*isc*ip* usb:v1EDAp2310d*dc*dsc*dp*ic*isc*ip* usb:v1A32p0304d*dc*dsc*dp*ic*isc*ip* usb:v7392p7711d*dc*dsc*dp*ic*isc*ip* usb:v07B8p3072d*dc*dsc*dp*ic*isc*ip* usb:v07B8p3071d*dc*dsc*dp*ic*isc*ip* usb:v07B8p3070d*dc*dsc*dp*ic*isc*ip* usb:v2019pED14d*dc*dsc*dp*ic*isc*ip* usb:v2019pAB25d*dc*dsc*dp*ic*isc*ip* usb:v1044p800Dd*dc*dsc*dp*ic*isc*ip* usb:v13D3p3273d*dc*dsc*dp*ic*isc*ip* usb:v1740p9706d*dc*dsc*dp*ic*isc*ip* usb:v1740p9705d*dc*dsc*dp*ic*isc*ip* usb:v1740p9703d*dc*dsc*dp*ic*isc*ip* usb:v083Ap7511d*dc*dsc*dp*ic*isc*ip* usb:v18C5p0012d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C12d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p003Ed*dc*dsc*dp*ic*isc*ip* usb:v148Fp3072d*dc*dsc*dp*ic*isc*ip* usb:v148Fp3071d*dc*dsc*dp*ic*isc*ip* usb:v148Fp3070d*dc*dsc*dp*ic*isc*ip*
+
+rt2870sta.ko usb:v157Ep3013d*dc*dsc*dp*ic*isc*ip* usb:v050Dp815Cd*dc*dsc*dp*ic*isc*ip* usb:v0411p0148d*dc*dsc*dp*ic*isc*ip* usb:v0411p00E8d*dc*dsc*dp*ic*isc*ip* usb:v1737p0071d*dc*dsc*dp*ic*isc*ip* usb:v1737p0070d*dc*dsc*dp*ic*isc*ip* usb:v7392p7717d*dc*dsc*dp*ic*isc*ip* usb:v7392p7718d*dc*dsc*dp*ic*isc*ip* usb:v5A57p0282d*dc*dsc*dp*ic*isc*ip* usb:v5A57p0280d*dc*dsc*dp*ic*isc*ip* usb:v04E8p2018d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C09d*dc*dsc*dp*ic*isc*ip* usb:v1482p3C09d*dc*dsc*dp*ic*isc*ip* usb:v050Dp815Cd*dc*dsc*dp*ic*isc*ip* usb:v050Dp805Cd*dc*dsc*dp*ic*isc*ip* usb:v157Ep300Ed*dc*dsc*dp*ic*isc*ip* usb:v129Bp1828d*dc*dsc*dp*ic*isc*ip* usb:v0E66p0003d*dc*dsc*dp*ic*isc*ip* usb:v0E66p0001d*dc*dsc*dp*ic*isc*ip* usb:v15C5p0008d*dc*dsc*dp*ic*isc*ip* usb:v083Ap6618d*dc*dsc*dp*ic*isc*ip* usb:v13D3p3247d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C25d*dc*dsc*dp*ic*isc*ip* usb:v0471p200Fd*dc*dsc*dp*ic*isc*ip* usb:v1740p9702d*dc*dsc*dp*ic*isc*ip* usb:v1740p9701d*dc*dsc*dp*ic*isc*ip* usb:v0CDEp0025d*dc*dsc*dp*ic*isc*ip* usb:v0586p3416d*dc*dsc*dp*ic*isc*ip* usb:v0CDEp0022d*dc*dsc*dp*ic*isc*ip* usb:v083Ap7522d*dc*dsc*dp*ic*isc*ip* usb:v083Ap8522d*dc*dsc*dp*ic*isc*ip* usb:v083ApA618d*dc*dsc*dp*ic*isc*ip* usb:v083ApB522d*dc*dsc*dp*ic*isc*ip* usb:v15A9p0006d*dc*dsc*dp*ic*isc*ip* usb:v1044p800Bd*dc*dsc*dp*ic*isc*ip* usb:v07AAp003Fd*dc*dsc*dp*ic*isc*ip* usb:v07AAp003Cd*dc*dsc*dp*ic*isc*ip* usb:v07AAp002Fd*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C27d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C23d*dc*dsc*dp*ic*isc*ip* usb:v050Dp825Ad*dc*dsc*dp*ic*isc*ip* usb:v050Dp8053d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C07d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C11d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C09d*dc*dsc*dp*ic*isc*ip* usb:v2019pED06d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C28d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C06d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p002Dd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p002Cd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p002Bd*dc*dsc*dp*ic*isc*ip* usb:v0DF6p0017d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1742d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1732d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1731d*dc*dsc*dp*ic*isc*ip* usb:v177Fp0302d*dc*dsc*dp*ic*isc*ip* usb:v0789p0164d*dc*dsc*dp*ic*isc*ip* usb:v0789p0163d*dc*dsc*dp*ic*isc*ip* usb:v0789p0162d*dc*dsc*dp*ic*isc*ip* usb:v083Ap7512d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p0039d*dc*dsc*dp*ic*isc*ip* usb:v07B8p2770d*dc*dsc*dp*ic*isc*ip* usb:v07B8p2870d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2870d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2770d*dc*dsc*dp*ic*isc*ip*
+
+rt2570.ko usb:v5A57p0260d*dc*dsc*dp*ic*isc*ip* usb:v0EB0p9020d*dc*dsc*dp*ic*isc*ip* usb:v114Bp0110d*dc*dsc*dp*ic*isc*ip* usb:v0707pEE13d*dc*dsc*dp*ic*isc*ip* usb:v0681p3C06d*dc*dsc*dp*ic*isc*ip* usb:v148Fp9020d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2573d*dc*dsc*dp*ic*isc*ip* usb:v148Fp2570d*dc*dsc*dp*ic*isc*ip* usb:v148Fp1706d*dc*dsc*dp*ic*isc*ip* usb:v0DB0p6869d*dc*dsc*dp*ic*isc*ip* usb:v0DB0p6865d*dc*dsc*dp*ic*isc*ip* usb:v0DB0p6861d*dc*dsc*dp*ic*isc*ip* usb:v0411p0097d*dc*dsc*dp*ic*isc*ip* usb:v0411p008Bd*dc*dsc*dp*ic*isc*ip* usb:v0411p0067d*dc*dsc*dp*ic*isc*ip* usb:v0411p0066d*dc*dsc*dp*ic*isc*ip* usb:v0411p005Ed*dc*dsc*dp*ic*isc*ip* usb:v06F8pE000d*dc*dsc*dp*ic*isc*ip* usb:v1044p8007d*dc*dsc*dp*ic*isc*ip* usb:v1044p8001d*dc*dsc*dp*ic*isc*ip* usb:v2001p3C00d*dc*dsc*dp*ic*isc*ip* usb:v14B2p3C02d*dc*dsc*dp*ic*isc*ip* usb:v13B1p001Ad*dc*dsc*dp*ic*isc*ip* usb:v13B1p0011d*dc*dsc*dp*ic*isc*ip* usb:v13B1p000Dd*dc*dsc*dp*ic*isc*ip* usb:v050Dp705Ad*dc*dsc*dp*ic*isc*ip* usb:v050Dp7051d*dc*dsc*dp*ic*isc*ip* usb:v050Dp7050d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1707d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1706d*dc*dsc*dp*ic*isc*ip*
+
+reiserfs.ko
+
+pegasus.ko usb:v067Cp1001d*dc*dsc*dp*ic*isc*ip* usb:v15E8p9110d*dc*dsc*dp*ic*isc*ip* usb:v15E8p9100d*dc*dsc*dp*ic*isc*ip* usb:v0707p0201d*dc*dsc*dp*ic*isc*ip* usb:v0707p0200d*dc*dsc*dp*ic*isc*ip* usb:v08D1p0003d*dc*dsc*dp*ic*isc*ip* usb:v0B39p0901d*dc*dsc*dp*ic*isc*ip* usb:v0B39p0109d*dc*dsc*dp*ic*isc*ip* usb:v0846p1020d*dc*dsc*dp*ic*isc*ip* usb:v045Ep007Ad*dc*dsc*dp*ic*isc*ip* usb:v0411p0009d*dc*dsc*dp*ic*isc*ip* usb:v0411p0005d*dc*dsc*dp*ic*isc*ip* usb:v0411p0001d*dc*dsc*dp*ic*isc*ip* usb:v066Bp200Cd*dc*dsc*dp*ic*isc*ip* usb:v066Bp400Bd*dc*dsc*dp*ic*isc*ip* usb:v077Bp08B4d*dc*dsc*dp*ic*isc*ip* usb:v066Bp2206d*dc*dsc*dp*ic*isc*ip* usb:v066Bp2204d*dc*dsc*dp*ic*isc*ip* usb:v066Bp2203d*dc*dsc*dp*ic*isc*ip* usb:v066Bp2202d*dc*dsc*dp*ic*isc*ip* usb:v056Ep200Cd*dc*dsc*dp*ic*isc*ip* usb:v056EpABC1d*dc*dsc*dp*ic*isc*ip* usb:v056Ep400Bd*dc*dsc*dp*ic*isc*ip* usb:v056Ep4005d*dc*dsc*dp*ic*isc*ip* usb:v056Ep4002d*dc*dsc*dp*ic*isc*ip* usb:v0951p000Ad*dc*dsc*dp*ic*isc*ip* usb:v04BBp0913d*dc*dsc*dp*ic*isc*ip* usb:v04BBp0904d*dc*dsc*dp*ic*isc*ip* usb:v03F0p811Cd*dc*dsc*dp*ic*isc*ip* usb:v0E66p400Cd*dc*dsc*dp*ic*isc*ip* usb:v1044p8002d*dc*dsc*dp*ic*isc*ip* usb:v05CCp3000d*dc*dsc*dp*ic*isc*ip* usb:v1342p0304d*dc*dsc*dp*ic*isc*ip* usb:v056Ep4010d*dc*dsc*dp*ic*isc*ip* usb:v0DB7p0002d*dc*dsc*dp*ic*isc*ip* usb:v2001pABC1d*dc*dsc*dp*ic*isc*ip* usb:v2001p4003d*dc*dsc*dp*ic*isc*ip* usb:v2001p200Cd*dc*dsc*dp*ic*isc*ip* usb:v2001p400Bd*dc*dsc*dp*ic*isc*ip* usb:v2001p4102d*dc*dsc*dp*ic*isc*ip* usb:v2001p4002d*dc*dsc*dp*ic*isc*ip* usb:v2001p4001d*dc*dsc*dp*ic*isc*ip* usb:v07AAp000Dd*dc*dsc*dp*ic*isc*ip* usb:v07AAp0004d*dc*dsc*dp*ic*isc*ip* usb:v08DDp8511d*dc*dsc*dp*ic*isc*ip* usb:v08DDp0988d*dc*dsc*dp*ic*isc*ip* usb:v049Fp8511d*dc*dsc*dp*ic*isc*ip* usb:v08DDp0987d*dc*dsc*dp*ic*isc*ip* usb:v08DDp0986d*dc*dsc*dp*ic*isc*ip* usb:v050Dp0121d*dc*dsc*dp*ic*isc*ip* usb:v07C9pB100d*dc*dsc*dp*ic*isc*ip* usb:v3334p1701d*dc*dsc*dp*ic*isc*ip* usb:v07A6p07C2d*dc*dsc*dp*ic*isc*ip* usb:v07A6p0986d*dc*dsc*dp*ic*isc*ip* usb:v07A6p8515d*dc*dsc*dp*ic*isc*ip* usb:v07A6p8513d*dc*dsc*dp*ic*isc*ip* usb:v07A6p8511d*dc*dsc*dp*ic*isc*ip* usb:v083ApB004d*dc*dsc*dp*ic*isc*ip* usb:v083Ap5046d*dc*dsc*dp*ic*isc*ip* usb:v083Ap1046d*dc*dsc*dp*ic*isc*ip* usb:v07B8p200Cd*dc*dsc*dp*ic*isc*ip* usb:v07B8pABC1d*dc*dsc*dp*ic*isc*ip* usb:v07B8p400Cd*dc*dsc*dp*ic*isc*ip* usb:v07B8p400Bd*dc*dsc*dp*ic*isc*ip* usb:v07B8p4002d*dc*dsc*dp*ic*isc*ip* usb:v07B8p4102d*dc*dsc*dp*ic*isc*ip* usb:v07B8p4007d*dc*dsc*dp*ic*isc*ip* usb:v07B8p4004d*dc*dsc*dp*ic*isc*ip* usb:v07B8p4104d*dc*dsc*dp*ic*isc*ip* usb:v07B8p110Cd*dc*dsc*dp*ic*isc*ip* usb:v0557p2007d*dc*dsc*dp*ic*isc*ip* usb:v0506p4601d*dc*dsc*dp*ic*isc*ip*
+
+oprofile.ko
+
+nls_koi8-u.ko
+
+nls_koi8-ru.ko
+
+nls_koi8-r.ko
+
+nls_iso8859-9.ko
+
+nls_iso8859-7.ko
+
+nls_iso8859-6.ko
+
+nls_iso8859-5.ko
+
+nls_iso8859-4.ko
+
+nls_iso8859-3.ko
+
+nls_iso8859-2.ko
+
+nls_iso8859-15.ko
+
+nls_iso8859-14.ko
+
+nls_iso8859-13.ko
+
+nls_euc-jp.ko
+
+nls_cp950.ko nls_big5
+
+nls_cp949.ko nls_euc-kr
+
+nls_cp936.ko nls_gb2312
+
+nls_cp932.ko nls_sjis
+
+nls_cp874.ko nls_tis-620
+
+nls_cp869.ko
+
+nls_cp866.ko
+
+nls_cp865.ko
+
+nls_cp864.ko
+
+nls_cp863.ko
+
+nls_cp862.ko
+
+nls_cp861.ko
+
+nls_cp860.ko
+
+nls_cp857.ko
+
+nls_cp855.ko
+
+nls_cp852.ko
+
+nls_cp850.ko
+
+nls_cp775.ko
+
+nls_cp737.ko
+
+nls_cp1255.ko nls_iso8859-8
+
+nls_cp1251.ko
+
+nls_cp1250.ko
+
+nls_ascii.ko
+
+nfsd.ko
+exportfs
+
+net1080.ko usb:v06D0p0622d*dc*dsc*dp*ic*isc*ip* usb:v0525p1080d*dc*dsc*dp*ic*isc*ip*
+usbnet
+
+kaweth.ko usb:v2001p4000d*dc*dsc*dp*ic*isc*ip* usb:v1668p0323d*dc*dsc*dp*ic*isc*ip* usb:v1645p8005d*dc*dsc*dp*ic*isc*ip* usb:v1645p0008d*dc*dsc*dp*ic*isc*ip* usb:v1645p0005d*dc*dsc*dp*ic*isc*ip* usb:v1485p0002d*dc*dsc*dp*ic*isc*ip* usb:v1485p0001d*dc*dsc*dp*ic*isc*ip* usb:v13D2p0400d*dc*dsc*dp*ic*isc*ip* usb:v1342p0204d*dc*dsc*dp*ic*isc*ip* usb:v10BDp1427d*dc*dsc*dp*ic*isc*ip* usb:v095Ap3003d*dc*dsc*dp*ic*isc*ip* usb:v0951p0008d*dc*dsc*dp*ic*isc*ip* usb:v087Dp5704d*dc*dsc*dp*ic*isc*ip* usb:v085Ap0009d*dc*dsc*dp*ic*isc*ip* usb:v085Ap0008d*dc*dsc*dp*ic*isc*ip* usb:v0846p1002d*dc*dsc*dp*ic*isc*ip* usb:v0846p1001d*dc*dsc*dp*ic*isc*ip* usb:v07B8p4000d*dc*dsc*dp*ic*isc*ip* usb:v07AAp0001d*dc*dsc*dp*ic*isc*ip* usb:v0707p0100d*dc*dsc*dp*ic*isc*ip* usb:v06E1p0009d*dc*dsc*dp*ic*isc*ip* usb:v06E1p0008d*dc*dsc*dp*ic*isc*ip* usb:v066Bp2202d*dc*dsc*dp*ic*isc*ip* usb:v05E9p0009d*dc*dsc*dp*ic*isc*ip* usb:v05E9p0008d*dc*dsc*dp*ic*isc*ip* usb:v0565p0005d*dc*dsc*dp*ic*isc*ip* usb:v0565p0003d*dc*dsc*dp*ic*isc*ip* usb:v0565p0002d*dc*dsc*dp*ic*isc*ip* usb:v0557p4000d*dc*dsc*dp*ic*isc*ip* usb:v0557p2002d*dc*dsc*dp*ic*isc*ip* usb:v0506p11F8d*dc*dsc*dp*ic*isc*ip* usb:v0506p03E8d*dc*dsc*dp*ic*isc*ip* usb:v04BBp0901d*dc*dsc*dp*ic*isc*ip* usb:v03E8p0008d*dc*dsc*dp*ic*isc*ip*
+
+irkernel.ko
+
+font.ko symbol:get_default_font symbol:find_font
+
+fbcon.ko
+bitblit font
+
+exportfs.ko symbol:find_exported_dentry symbol:export_op_default
+
+eeprom_93cx6.ko symbol:eeprom_93cx6_multiread symbol:eeprom_93cx6_read
+
+cifs.ko
+
+cdc_subset.ko usb:v0525pA4A2d0203dc*dsc*dp*ic*isc*ip* usb:v8086p07D3d*dc*dsc*dp*ic*isc*ip* usb:v0E7Ep1001d*dc*dsc*dp*ic*isc*ip* usb:v049Fp505Ad*dc*dsc*dp*ic*isc*ip* usb:v0525p9901d*dc*dsc*dp*ic*isc*ip* usb:v056Cp8100d*dc*dsc*dp*ic*isc*ip* usb:v050Dp0004d*dc*dsc*dp*ic*isc*ip*
+usbnet
+
+cdc_ether.ko usb:v*p*d*dc*dsc*dp*ic02isc06ip00* usb:v07B4p0F02d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp9050d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp9032d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp9031d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp8007d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp8006d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp8005d*dc*dsc*dp*ic02isc06ip00* usb:v04DDp8004d*dc*dsc*dp*ic02isc06ip00* symbol:usbnet_cdc_unbind symbol:usbnet_generic_cdc_bind
+usbnet
+
+catc.ko usb:v08D1p0001d*dc*dsc*dp*ic*isc*ip* usb:v0423p000Cd*dc*dsc*dp*ic*isc*ip* usb:v0423p000Ad*dc*dsc*dp*ic*isc*ip*
+
+bitblit.ko symbol:fbcon_set_bitops
+softcursor
+
+autofs4.ko
+
+asix.ko usb:v050Dp5055d*dc*dsc*dp*ic*isc*ip* usb:v04BBp0930d*dc*dsc*dp*ic*isc*ip* usb:v1737p0039d*dc*dsc*dp*ic*isc*ip* usb:v2001p3C05d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C05d*dc*dsc*dp*ic*isc*ip* usb:v1557p7720d*dc*dsc*dp*ic*isc*ip* usb:v13B1p0018d*dc*dsc*dp*ic*isc*ip* usb:v0B95p1780d*dc*dsc*dp*ic*isc*ip* usb:v0B95p7720d*dc*dsc*dp*ic*isc*ip* usb:v04F1p3008d*dc*dsc*dp*ic*isc*ip* usb:v1631p6200d*dc*dsc*dp*ic*isc*ip* usb:v1189p0893d*dc*dsc*dp*ic*isc*ip* usb:v07AAp0017d*dc*dsc*dp*ic*isc*ip* usb:v6189p182Dd*dc*dsc*dp*ic*isc*ip* usb:v0411p003Dd*dc*dsc*dp*ic*isc*ip* usb:v0557p2009d*dc*dsc*dp*ic*isc*ip* usb:v08DDp90FFd*dc*dsc*dp*ic*isc*ip* usb:v07B8p420Ad*dc*dsc*dp*ic*isc*ip* usb:v0B95p1720d*dc*dsc*dp*ic*isc*ip* usb:v2001p1A00d*dc*dsc*dp*ic*isc*ip* usb:v0846p1040d*dc*dsc*dp*ic*isc*ip* usb:v077Bp2226d*dc*dsc*dp*ic*isc*ip*
+usbnet
+
+arusb_lnx.ko usb:v0586p3417d*dc*dsc*dp*ic*isc*ip* usb:v0ACEp1221d*dc*dsc*dp*ic*isc*ip* usb:v0CDEp0026d*dc*dsc*dp*ic*isc*ip* usb:v0CDEp0023d*dc*dsc*dp*ic*isc*ip* usb:v2019p5304d*dc*dsc*dp*ic*isc*ip* usb:v0846p9001d*dc*dsc*dp*ic*isc*ip* usb:v04BBp093Fd*dc*dsc*dp*ic*isc*ip* usb:vCACEp0300d*dc*dsc*dp*ic*isc*ip* usb:v057Cp8402d*dc*dsc*dp*ic*isc*ip* usb:v057Cp8401d*dc*dsc*dp*ic*isc*ip* usb:v0CF3p1002d*dc*dsc*dp*ic*isc*ip* usb:v0CF3p1001d*dc*dsc*dp*ic*isc*ip* usb:v083ApF522d*dc*dsc*dp*ic*isc*ip* usb:v0846p9010d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3C10d*dc*dsc*dp*ic*isc*ip* usb:v0CF3p9170d*dc*dsc*dp*ic*isc*ip*
+built_in built_in built_in built_in built_in built_in
+
+8712u.ko usb:v13D3p3310d*dc*dsc*dp*ic*isc*ip* usb:v13D3p3309d*dc*dsc*dp*ic*isc*ip* usb:v13D3p3306d*dc*dsc*dp*ic*isc*ip* usb:v0B05p1786d*dc*dsc*dp*ic*isc*ip* usb:v0E66p0016d*dc*dsc*dp*ic*isc*ip* usb:v0E66p0015d*dc*dsc*dp*ic*isc*ip* usb:v0DF6p0045d*dc*dsc*dp*ic*isc*ip* usb:v7392p7622d*dc*dsc*dp*ic*isc*ip* usb:v7392p7612d*dc*dsc*dp*ic*isc*ip* usb:v7392p7611d*dc*dsc*dp*ic*isc*ip* usb:v06F8pE031d*dc*dsc*dp*ic*isc*ip* usb:v050Dp815Fd*dc*dsc*dp*ic*isc*ip* usb:v1740p9605d*dc*dsc*dp*ic*isc*ip* usb:v1740p9603d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3300d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3302d*dc*dsc*dp*ic*isc*ip* usb:v07D1p3303d*dc*dsc*dp*ic*isc*ip* usb:v07AAp0047d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8713d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8712d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8174d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8173d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8172d*dc*dsc*dp*ic*isc*ip* usb:v0BDAp8171d*dc*dsc*dp*ic*isc*ip*
+
+eiri_dev.ko

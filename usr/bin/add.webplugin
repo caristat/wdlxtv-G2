@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ "$2" == "" ] ; then
+	echo "proper usage:"
+	echo "    add.webplugin <pluginname> <pluginlocation>"
+	exit 1
+fi
+
+eval `grep '^PLUGIN_WEBDIRS=' /conf/config`
+found=`echo $PLUGIN_WEBDIRS | grep $2`
+if [ "$found" == "" ] ; then
+   if [ "$PLUGIN_WEBDIRS" == "" ] ; then 
+      config_tool -c PLUGIN_WEBDIRS="$1|$2"
+   else
+      config_tool -c PLUGIN_WEBDIRS="$PLUGIN_WEBDIRS,$1|$2"
+   fi
+fi

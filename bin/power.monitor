@@ -1,0 +1,61 @@
+#!/bin/sh
+
+OLDSTATUS="ON"
+while true ; do
+        NEWSTATUS="`cat /proc/led`" 
+        if [ "$OLDSTATUS" != "$NEWSTATUS" ] ; then
+		logger -t power.monitor "status: $NEWSTATUS"
+		case "$NEWSTATUS" in
+		   OFF)
+			########### commands to execute on OSD suspend
+			if [ "`grep -i \^POWER_DOWN_ACTION[0-9]* /conf/config`" != "" ] ; then 
+			   grep -i \^POWER_DOWN_ACTION[0-9]* /conf/config | sort | cut -d '=' -f2-20 > /tmp/.power_actions
+			   while read action; do
+				doAction=${action%\'}
+				doAction=${doAction#\'}
+				eval $doAction
+			   done < /tmp/.power_actions
+			fi
+			########### Bring down network interface & net.mounts on OSD suspend (WDLXTV-G2)
+			if [ -f /tmp/ifup -a "$FW_VERSION" == "WDLXTV_G2" ] ; then
+			   if [ "`grep -i \^DISABLE_ETHERNET_ON_STANDBY=\'YES\' /conf/config`" != "" -o "`grep USB_POWER_OFF=\'1\' /conf/config`" != "" ] ; then
+				/etc/init.d/S90net.mounts stop
+			   	. /tmp/ifup
+			   	INTERFACE=$INTERFACE ACTION=remove /etc/hotplug/net.agent
+			   fi
+			fi
+			########### Turn off 5V USB bus power on OSD suspend
+			eval "`grep -i USB_POWER_OFF= /conf/config`" 
+			[ "$USB_POWER_OFF" == "1" -o "$USB_POWER_OFF" == "2" ] && logger -t power.monitor "attempting to shut off power to USB bus" && usb.power.off $USB_POWER_OFF
+			;;
+		   ON)
+			########### turn on power to usb bus on OSD resume
+			logger -t power.monitor "powering up USB bus..."
+			usb.power.on
+
+			########### bring up interface on OSD resume (WDLXTV-G2)
+			if [ -f /tmp/ifup -a "$FW_VERSION" == "WDLXTV_G2" ] ; then
+			   if [ "`grep -i \^DISABLE_ETHERNET_ON_STANDBY=\'YES\' /conf/config`" != "" -o "`grep USB_POWER_OFF=\'1\' /conf/config`" != "" ] ; then
+			   	. /tmp/ifup
+			   	INTERFACE=$INTERFACE ACTION=add /etc/hotplug/net.agent
+				/etc/init.d/S90net.mounts start
+				[ "$FW_VERSION" == "WDLXTV_G2" ] && run_samba start
+				/etc/init.d/S94nfsserver start &
+			   fi
+			fi
+			########### commands to execute on OSD resume
+			if [ "`grep -i \^POWER_UP_ACTION[0-9]* /conf/config`" != "" ] ; then 
+			   grep -i \^POWER_UP_ACTION[0-9]* /conf/config | sort | cut -d '=' -f2-20 > /tmp/.power_actions
+			   while read action; do
+				doAction=${action%\'}
+				doAction=${doAction#\'}
+				( eval $doAction )
+			   done < /tmp/.power_actions
+			fi
+			;;
+		esac		
+		OLDSTATUS=$NEWSTATUS
+        fi
+        sleep 1
+done
+

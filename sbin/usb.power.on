@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo 'usb power on' > /proc/led
+

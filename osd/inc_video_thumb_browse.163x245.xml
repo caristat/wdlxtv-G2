@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<wrapper>
+<text text="@@pagecounter" x="856" y="93" h="28" w="200" fontsize="28" align="right" textcolor="0xe2e2e2"/>
+  <table x="205" y="122" w="922" h="255" cols="4" rows="1" colspacing="2" align="hcenter">
+    <image image="@@thumb_active_0" w="173" h="255" scale="100"/>
+    <image image="@@thumb_active_1" w="173" h="255" scale="100"/>
+    <image image="@@thumb_active_2" w="173" h="255" scale="100"/>
+    <image image="@@thumb_active_3" w="173" h="255" scale="100"/>
+  </table>
+
+  <table x="205" y="387" w="922" h="255" cols="4" rows="1" colspacing="2" align="hcenter">
+    <image image="@@thumb_active_4" w="173" h="255" scale="100"/>
+    <image image="@@thumb_active_5" w="173" h="255" scale="100"/>
+    <image image="@@thumb_active_6" w="173" h="255" scale="100"/>
+    <image image="@@thumb_active_7" w="173" h="255" scale="100"/>
+  </table>
+
+  <table x="205" y="122" w="900" h="220" cols="4" rows="1" colspacing="2" align="hcenter">
+    <image image="@@browse_0_icon"/>
+    <image image="@@browse_1_icon"/>
+    <image image="@@browse_2_icon"/>
+    <image image="@@browse_3_icon"/>
+  </table>
+
+  <table x="205" y="387" w="900" h="220" cols="4" rows="1" colspacing="2" align="hcenter">
+    <image image="@@browse_4_icon"/>
+    <image image="@@browse_5_icon"/>
+    <image image="@@browse_6_icon"/>
+    <image image="@@browse_7_icon"/>
+  </table>
+
+  <table x="210" y="127" w="900" h="255" cols="4" rows="1" colspacing="25" align="hcenter" scale_type="fixratio">
+    <image name="th0" image="@@browse_0_thumbnail" default_image="@@browse_0_default_image" w="163" h="245" scale="100"/>
+    <image name="th1" image="@@browse_1_thumbnail" default_image="@@browse_1_default_image" w="163" h="245" scale="100"/>
+    <image name="th2" image="@@browse_2_thumbnail" default_image="@@browse_2_default_image" w="163" h="245" scale="100"/>
+    <image name="th3" image="@@browse_3_thumbnail" default_image="@@browse_3_default_image" w="163" h="245" scale="100"/>
+  </table>
+
+  <table x="210" y="392" w="900" h="255" cols="4" rows="1" colspacing="25" align="hcenter" scale_type="fixratio">
+    <image name="th4" image="@@browse_4_thumbnail" default_image="@@browse_4_default_image" w="163" h="245" scale="100"/>
+    <image name="th5" image="@@browse_5_thumbnail" default_image="@@browse_5_default_image" w="163" h="245" scale="100"/>
+    <image name="th6" image="@@browse_6_thumbnail" default_image="@@browse_6_default_image" w="163" h="245" scale="100"/>
+    <image name="th7" image="@@browse_7_thumbnail" default_image="@@browse_7_default_image" w="163" h="245" scale="100"/>
+  </table>
+
+  <table x="172" y="136" w="900" h="255" cols="4" rows="1" colspacing="25" align="right,bottom" scale="33">
+	 <image image="thumb_folder_icon://th0" default_image="@@thumb_folder_0_default_image"/>
+	 <image image="thumb_folder_icon://th1" default_image="@@thumb_folder_1_default_image"/>
+	 <image image="thumb_folder_icon://th2" default_image="@@thumb_folder_2_default_image"/>
+	 <image image="thumb_folder_icon://th3" default_image="@@thumb_folder_3_default_image"/>
+  </table>
+
+  <table x="172" y="401" w="900" h="255" cols="4" rows="1" colspacing="25" align="right,bottom" scale="33">
+	 <image image="thumb_folder_icon://th4" default_image="@@thumb_folder_4_default_image"/>
+	 <image image="thumb_folder_icon://th5" default_image="@@thumb_folder_5_default_image"/>
+	 <image image="thumb_folder_icon://th6" default_image="@@thumb_folder_6_default_image"/>
+	 <image image="thumb_folder_icon://th7" default_image="@@thumb_folder_7_default_image"/>
+  </table>
+
+    <table x="210" y="122" w="922" h="192" 
+         cols="4" rows="1" colspacing="2" align="hcenter">
+                 <image image="@@browse_0_mask" w="163" h="245" scale="100"/>
+                 <image image="@@browse_1_mask" w="163" h="245" scale="100"/>
+                 <image image="@@browse_2_mask" w="163" h="245" scale="100"/>
+                 <image image="@@browse_3_mask" w="163" h="245" scale="100"/>
+  </table>
+  <table x="205" y="387" w="922" h="192"
+         cols="4" rows="1" colspacing="2" align="hcenter">
+                 <image image="@@browse_4_mask" w="163" h="245" scale="100"/>
+                 <image image="@@browse_5_mask" w="163" h="245" scale="100"/>
+                 <image image="@@browse_6_mask" w="163" h="245" scale="100"/>
+                 <image image="@@browse_7_mask" w="163" h="245" scale="100"/>
+  </table>
+
+  <image image="image/photo_thumb_line_01.png" x="371" y="643" w="555" h="5" bg="1"/>
+  <image image="image/photo_thumb_line_01.png" x="371" y="683" w="555" h="5" bg="1"/>
+  <text text="@@file_info" selected="@@file_info_selected" x="100" y="650" w="1080" h="34" fontsize="32" textcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" align="hcenter" speed="1" delay="2" auto_translate="1"/>
+
+  <image  x="1100" y="173" w="38" h="27" image="@@moreprev"/>
+  <image  x="1100" y="552" w="38" h="27" image="@@morenext"/>
+</wrapper>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<wrapper>
+  <widget_keyboard ctrlname="keyboard" x="261" y="182" h="275" w="753" cols="14" rows="5"
+		   align="hcenter" textcolor="0xb3b3b3"  activetextcolor="0x09a7ea"
+		   changed="@@keyboard_changed" extra_height="10" extra_index="0"/>
+</wrapper>

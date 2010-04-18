@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ "$1" == "" ] ; then
+	echo "proper usage:"
+	echo "    remove.webplugin <pluginname>"
+	exit 1
+fi
+
+eval `grep '^PLUGIN_WEBDIRS=' /conf/config`
+PLUGIN_WEBDIRS="`echo $PLUGIN_WEBDIRS | tr ',' ' '`"
+NEW_PLUGIN_WEBDIRS=""
+for i in $PLUGIN_WEBDIRS ; do
+	link="`echo $i | cut -d'|' -f1`"
+	location="`echo $i | cut -d'|' -f2`"
+	if [ "$link" != "$1" ] ; then
+		if [ "$NEW_PLUGIN_WEBDIRS" == "" ] ; then
+			NEW_PLUGIN_WEBDIRS="$link|$location"
+		else
+			NEW_PLUGIN_WEBDIRS="$NEW_PLUGIN_WEBDIRS,$link|$location"
+		fi
+	fi
+done
+
+if [ "$NEW_PLUGIN_WEBDIRS" != "$PLUGIN_WEBDIRS" ] ; then
+      config_tool -c PLUGIN_WEBDIRS="$NEW_PLUGIN_WEBDIRS"
+fi

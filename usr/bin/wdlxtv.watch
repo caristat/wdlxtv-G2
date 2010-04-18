@@ -1,0 +1,341 @@
+#!/bin/sh
+
+OLDTHUMBRESO=0
+OLDLISTNUM=0
+OLDGENTHUMBS=0
+OLDUSBICONS=no
+CONFIGMODTIME=0
+OLDEXPORTSLIST='x x x'
+YOUTUBE_SWITCHER=''
+OLDYOUTUBE_SWITCHER=''
+OLDLIVE365_SWITCHER=''
+configsave=0
+DELAY=0
+CONFMODTIME=''
+NEWCONFMODTIME=''
+
+eval `grep \^NFSD= /conf/config`
+eval `grep \^NFSD_AUTO= /conf/config`
+eval `grep \^NFSD_AUTO_DEFAULT= /conf/config`
+eval `grep \^ENABLE_SAMBA_SHARE= /conf/config`
+eval `grep \^SMBD_AUTO= /conf/config`
+eval `grep \^YOUTUBE_SWITCHER= /conf/config`
+eval `grep \^LIVE365_SWITCHER= /conf/config`
+eval `grep SHEET /conf/config`
+eval `grep \^VIDEO_INFO_BAR= /conf/config`
+[ -f "/osd/video_run.${VIDEO_INFO_BAR}.xml" ] && mount -o bind "/osd/video_run.${VIDEO_INFO_BAR}.xml" /osd/video_run.xml
+OLDMSHEETMODE=$MSHEETMODE
+OLDVIDMSHEET=$VIDMSHEET
+OLDGENMSHEET=$GENMSHEET
+OLDLISTMSHEET=$LISTMSHEET
+
+while [ true ]; do
+#########################################################################
+#########################################################################
+######################OSD View manipulations#############################
+
+   NEWCONFIGMODTIME=`stat -t /conf/config | cut -d' ' -f13`
+   if [ "$CONFIGMODTIME" != "$NEWCONFIGMODTIME" ] ; then
+	CONFIGMODTIME=$NEWCONFIGMODTIME
+	eval `grep \^THUMBRESO= /conf/config`
+	eval `grep \^GENTHUMBS= /conf/config`
+	eval `grep \^LISTNUM= /conf/config`
+	eval `grep SHEET /conf/config`
+	eval `grep \^USBICONS= /conf/config`
+	eval `grep \^YOUTUBE_SWITCHER= /conf/config`
+	eval `grep \^LIVE365_SWITCHER= /conf/config`
+	[ "$THUMBRESO" == "" ] && config_tool -c THUMBRESO=163x245 && THUMBRESO=163x245
+	[ "$GENTHUMBS" == "" ] && config_tool -c GENTHUMBS=15 && GENTHUMBS=15
+	[ "$LISTNUM" == "" ] && config_tool -c LISTNUM=10 && LISTNUM=8
+	[ "$MSHEETMODE" == "" ] && config_tool -c MSHEETMODE='' && MSHEETMODE=''
+	[ "$GENMSHEET" == "" ] && config_tool -c GENMSHEET=OFF && GENMSHEET=OFF
+	[ "$LISTMSHEET" == "" ] && config_tool -c LISTMSHEET=OFF && LISTMSHEET=OFF
+	[ "$VIDMSHEET" == "" ] && config_tool -c VIDMSHEET=OFF && VIDMSHEET=OFF
+   fi
+#########################################################################
+################### Custom USB 1/2 thumbnails
+
+	if [ "$OLDUSBICONS" != "$USBICONS" ] ; then
+		if [ "$USBICONS" == "yes" ] ; then
+		    mkdir -p /tmp/cache/tmp/media/usb
+		    cp -f /osd/image/USB1.thumb /tmp/cache/tmp/media/usb/USB1.thumb
+		    cp -f /osd/image/USB2.thumb /tmp/cache/tmp/media/usb/USB2.thumb
+		else
+			rm -f /tmp/cache/tmp/media/usb/USB1.thumb
+			rm -f /tmp/cache/tmp/media/usb/USB2.thumb
+		fi
+	fi		
+
+#########################################################################
+############## Generate new movie sheets for mode change ################
+
+if [ "$OLDMSHEETMODE" != "$MSHEETMODE" ] ; then
+	[ -n "`grep SHOW_FILESIZE_SETTING=\'1\' /conf/config`" ] && logger -t wdlxtv.watch "SHOW_FILESIZE_SETTING=1, turn off file size display or sheets will ONLY work for directories!!!"
+	rm -f /tmp/sheetQueue/x.*
+	touch /tmp/linksheets.stop.5
+	echo 'linksheets /tmp/media/usb 0' > /tmp/sheetQueue/x.`echo /tmp/media/usb 0 | md5sum | cut -d' ' -f1`
+fi
+
+#########################################################################
+###################### linksheets Queue Monitor #########################
+
+for i in `ls /tmp/sheetQueue/ -cr | head -n 1` ; do
+	[ -z "`pidof linksheets`" ] && rm -f /tmp/linksheets.stop* && mv /tmp/sheetQueue/$i /tmp/sheetQueue/.processing && . /tmp/sheetQueue/.processing &
+done
+
+#########################################################################
+################### Change thumbnail resolution / number ################
+
+	if [ "$THUMBRESO" != "$OLDTHUMBRESO" -o "$OLDMSHEETMODE" != "$MSHEETMODE" -o "$OLDVIDMSHEET" != "$VIDMSHEET" ]; then
+		if [ "$VIDMSHEET" != "ON" -a -f /osd/basic_browse_thumb_video.${THUMBRESO}.xml ] ; then
+			umount /osd/basic_browse_thumb_video.xml 2> /dev/null
+                        mount -o bind /osd/basic_browse_thumb_video.${THUMBRESO}.xml /osd/basic_browse_thumb_video.xml
+                        logger -t wdlxtv.watch "Switching to $THUMBRESO thumb view"
+		elif [ "$VIDMSHEET" == "ON" -a -f /osd/basic_browse_thumb_video.$MSHEETMODE.xml -o "$MSHEETMODE" == "std" ] ; then
+			if [ "$MSHEETMODE" == "std" ] ; then
+			    [ -f /osd/basic_browse_thumb_video.${THUMBRESO}.xml ] && cp /osd/basic_browse_thumb_video.${THUMBRESO}.xml /tmp/basic_browse_thumb_video.xml || cp /osd/basic_browse_thumb_video.xml /tmp/basic_browse_thumb_video.xml
+			    sed -i 's/.*<\/page>/<image image="@@file_info" x="0" y="0" w="640" h="720" align="top,left" \/><image image="@@file_info" x="640" y="0" w="640" h="720" align="top,right" \/><\/page>/' /tmp/basic_browse_thumb_video.xml
+			else
+			    cp /osd/basic_browse_thumb_video.$MSHEETMODE.xml /tmp/basic_browse_thumb_video.xml
+			fi
+			umount /osd/basic_browse_thumb_video.xml 2> /dev/null
+			mount -o bind /tmp/basic_browse_thumb_video.xml /osd/basic_browse_thumb_video.xml
+		else
+			umount /osd/basic_browse_thumb_video.xml 2> /dev/null
+                        logger -t wdlxtv.watch "Switching to default 163x245 thumb view"
+		fi
+	fi
+
+#########################################################################
+################### Change amount of thumbs in photo / music
+
+	if [ "$GENTHUMBS" != "$OLDGENTHUMBS" -o "$OLDMSHEETMODE" != "$MSHEETMODE" -o "$OLDGENMSHEET" != "$GENMSHEET" ]; then
+		if [ "$GENMSHEET" != "ON" -a -f /osd/basic_browse_thumb.${GENTHUMBS}.xml ]; then
+			umount /osd/basic_browse_thumb.xml 2> /dev/null
+			mount -o bind /osd/basic_browse_thumb.${GENTHUMBS}.xml /osd/basic_browse_thumb.xml
+			logger -t wdlxtv.watch "Switching to $GENTHUMBS music/photo thumb view"
+		elif [ "$GENMSHEET" == "ON" -a -f /osd/basic_browse_thumb.$MSHEETMODE.xml -o "$MSHEETMODE" == "std" ] ; then
+			if [ "$MSHEETMODE" == "std" ] ; then
+			   [ -f /osd/basic_browse_thumb.${GENTHUMBS}.xml ] && cp /osd/basic_browse_thumb.${GENTHUMBS}.xml /tmp/basic_browse_thumb.xml || cp /osd/basic_browse_thumb.xml /tmp/basic_browse_thumb.xml
+			   sed -i 's/.*<\/page>/<image image="@@file_info" x="0" y="0" w="640" h="720" align="top,left" \/><image image="@@file_info" x="640" y="0" w="640" h="720" align="top,right" \/><\/page>/' /tmp/basic_browse_thumb.xml
+			else
+			   cp /osd/basic_browse_thumb.$MSHEETMODE.xml /tmp/basic_browse_thumb.xml
+			fi
+			umount /osd/basic_browse_thumb.xml 2> /dev/null
+			mount -o bind /tmp/basic_browse_thumb.xml /osd/basic_browse_thumb.xml
+		else
+			umount /osd/basic_browse_thumb.xml 2> /dev/null
+                        logger -t wdlxtv.watch "Switching to default 10 music/photo thumb view"
+                fi
+	fi
+
+#########################################################################
+################### Change amount of list items
+
+	if [ "$LISTNUM" != "$OLDLISTNUM" -o "$OLDMSHEETMODE" != "$MSHEETMODE" -o "$OLDLISTMSHEET" != "$LISTMSHEET" ]; then
+		if [ "$LISTMSHEET" != "ON" -a -f /osd/basic_browse.${LISTNUM}.xml ]; then
+			umount /osd/basic_browse.xml 2> /dev/null
+			mount -o bind /osd/basic_browse.${LISTNUM}.xml /osd/basic_browse.xml			   
+			logger -t wdlxtv.watch "Switching to $LISTNUM item list view"
+		elif [ "$LISTMSHEET" == "ON" -a -f /osd/basic_browse.$MSHEETMODE.xml -o "$MSHEETMODE" == "std" ] ; then
+			if [ "$MSHEETMODE" == "std" ] ; then
+			   [ -f /osd/basic_browse.${LISTNUM}.xml ] && cp /osd/basic_browse.${LISTNUM}.xml /tmp/basic_browse.xml || cp /osd/basic_browse.xml /tmp/basic_browse.xml
+			   sed -i 's/.*<\/page>/<wrapper  x="0" y="0" w="1280" h="720" align="hcenter" scale="100" scale_type="fixratio" ><image lbimage="@@browse_0_text" clickimage="@@browse_0_text"  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" \/><image lbimage="@@browse_1_text" clickimage="@@browse_1_text"  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" \/><image lbimage="@@browse_2_text" clickimage="@@browse_2_text"  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" \/><image lbimage="@@browse_3_text" clickimage="@@browse_3_text"  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" \/><image lbimage="@@browse_4_text" clickimage="@@browse_4_text"  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" \/><image lbimage="@@browse_5_text" clickimage="@@browse_5_text"  lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" \/><image lbimage="@@browse_6_text" clickimage="@@browse_6_text"  lightbar="@@lightbar-browselist-6" active="@@act-browselist-6" \/><image lbimage="@@browse_7_text" clickimage="@@browse_7_text"  lightbar="@@lightbar-browselist-7" active="@@act-browselist-7" \/><image lbimage="@@browse_8_text" clickimage="@@browse_8_text"  lightbar="@@lightbar-browselist-8" active="@@act-browselist-8" \/><image lbimage="@@browse_9_text" clickimage="@@browse_9_text"  lightbar="@@lightbar-browselist-9" active="@@act-browselist-9" \/><image lbimage="@@browse_10_text" clickimage="@@browse_10_text"  lightbar="@@lightbar-browselist-10" active="@@act-browselist-10" \/><image lbimage="@@browse_11_text" clickimage="@@browse_11_text"  lightbar="@@lightbar-browselist-11" active="@@act-browselist-11" \/><\/wrapper><\/page>/' /tmp/basic_browse.xml 
+			else
+			   cp /osd/basic_browse.$MSHEETMODE.xml /tmp/basic_browse.xml
+			fi
+			umount /osd/basic_browse.xml 2> /dev/null
+			mount -o bind /tmp/basic_browse.xml /osd/basic_browse.xml
+		else
+			umount /osd/basic_browse.xml 2> /dev/null
+			logger -t wdlxtv.watch "Switching to default 8 item list view"
+		fi
+	fi
+
+	OLDLISTNUM=$LISTNUM
+	OLDTHUMBRESO=$THUMBRESO
+	OLDGENTHUMBS=$GENTHUMBS
+	OLDMSHEETMODE=$MSHEETMODE
+	OLDMVIDSHEET=$VIDMSHEET
+	OLDMGENSHEET=$GENMSHEET
+	OLDMLISTSHEET=$LISTMSHEET
+
+#########################################################################
+#########################################################################
+################ automatically add new mounts to exports ################
+
+for i in `find /tmp/export.adds/` ; do
+	partition="`basename $i`"
+	partition=${partition/[0-9]/}
+	[ ! -e /sys/block/$partition -a -f $i ] && rm -f $i
+done
+
+#########################################################################
+############################ SMBD auto mode
+
+NEWEXPORTSLIST="`ls -la /tmp/export.adds/ | grep -v '\.\.' | md5sum | cut -d' ' -f1`"
+NEWSMBCONFMD5="`md5sum /tmp/smb.conf 2>dev/null | cut -d' ' -f1`"
+
+if [ "$OLDEXPORTSLIST" != "$NEWEXPORTSLIST" -o "$NEWSMBCONFMD5" != "$OLDSMBCONFMD5" ] ; then
+ if [ "$ENABLE_SAMBA_SHARE" == "1" ] ; then  # -a "$SMBD_AUTO" != "OFF" ] ; then
+   if [ -f /tmp/smb.custom.conf ] ; then
+     cat /tmp/smb.custom.conf 2>/dev/null > /tmp/smb.new.conf
+     eval `grep WORKGROUP= /conf/config`
+     [ "$WORKGROUP" == "" ] && WORKGROUP="Workgroup"
+     sed -i "s/xxxWorkgroupxxx/$WORKGROUP/" /tmp/smb.new.conf
+     hn="`hostname`"
+     sed -i "s/xxxHOSTNAMExxx/$hn/" /tmp/smb.new.conf
+   else
+	if [ "$FW_VERSION" == "WDLXTV_G2" ] ; then
+	   cat /tmp/smb.conf | head -n 14 > /tmp/smb.new.conf
+	else
+	   cat /tmp/smb.conf | head -n 11 > /tmp/smb.new.conf
+           eval `grep WORKGROUP= /conf/config`
+           [ "$WORKGROUP" == "" ] && WORKGROUP="Workgroup"
+   	   sed -i "s/   Workgroup       = Workgroup/   Workgroup       = $WORKGROUP/" /tmp/smb.new.conf
+	   echo "   encrypt passwords = True" >> /tmp/smb.new.conf
+	   echo "   smb passwd file = /tmp/private/smbpasswd" >> /tmp/smb.new.conf
+	   echo "" >> /tmp/smb.new.conf
+	fi
+   fi
+   extraDevs="`find /tmp/export.adds/ 2>/dev/null`"
+   if [ "`grep -i \^SMB_NOGUEST=\'ON\' /conf/config`" != "" -a "$SMBD_AUTO" != "OFF" ] ; then
+     if [ "$FW_VERSION" != "WDLXTV_G2" ] ; then
+	tail -n +13 /tmp/smb.conf 2>/dev/null >> /tmp/smb.new.conf
+        private="   valid users     = `smbusers`\n   write list      = `smbusers`"
+        sed -i "s/   guest ok        = yes/$private/g" /tmp/smb.new.conf
+     fi
+     for ed in $extraDevs ; do
+	if [ -f $ed ] ; then
+	   cat $ed | grep -v 'guest ok' >> /tmp/smb.new.conf
+	   echo "   valid users     = `smbusers`" >> /tmp/smb.new.conf
+	   echo "   write list      = `smbusers`" >> /tmp/smb.new.conf
+	fi
+     done
+   elif [ "$SMBD_AUTO" != "OFF" ] ; then
+     [ "$FW_VERSION" != "WDLXTV_G2" ] && tail -n +13 /tmp/smb.conf 2>/dev/null >> /tmp/smb.new.conf
+     cat $extraDevs 2>/dev/null >> /tmp/smb.new.conf
+   fi
+   eval "`grep -i \^SMB_RESOLVEORDER /conf/config`"
+   [ "$SMB_RESOLVEORDER" != "" ] && sed -i "s/name resolve order.*=.*$/name resolve order = $SMB_RESOLVEORDER/" /tmp/smb.new.conf
+   diff -q /tmp/smb.new.conf /tmp/smb2.conf
+   [ $? -ne 0 ] && mv /tmp/smb.new.conf /tmp/smb2.conf && run_samba reload && logger -t wdlxtv.watch "Samba exports reloaded" && touch /tmp/.reload
+ fi
+
+#########################################################################
+############################ NFSD auto mode  ( overrides /conf/exports )
+
+ if [ "$NFSD" == "ON" -a "$NFSD_AUTO" == "ON" ] ; then
+   if [ "$NFSD_AUTO_DEFAULT" == "" ] ; then
+	logger -t wdlxtv.watch "NFSD_AUTO enabled, but NFSD_AUTO_DEFAULT not set!!!" && NFSD_AUTO=OFF
+   else
+	echo -n '' > /tmp/tmp-exports
+	if [ "$FW_VERSION" != "WDLXTV_G2" ] ; then
+	   for i in `tail +13 /tmp/smb.conf | grep path | cut -d'=' -f2` ; do
+		partition=`grep " $i " /proc/mounts | cut -d' ' -f1`
+		if [ -z "`blkid $partition | egrep 'TYPE=\"hfs|TYPE=\"ntfs'`" ] ; then
+		   echo $i $NFSD_AUTO_DEFAULT >> /tmp/tmp-exports
+		else
+		   [ ! -f /tmp/.kernel-export-warning ] && logger -t wdlxtv.watch "Cannot export NTFS/HFS/HFS+/Fuse filesystems due to kernel restriction!" && touch /tmp/.kernel-export-warning
+		fi
+	   done
+	fi
+	for i in `find /tmp/export.adds/` ; do
+	   if [ -f $i ] ; then
+		path="`cat $i | grep path | cut -d'=' -f2`"
+		partition=`basename $i`
+		if [ -z "`blkid /dev/$partition | egrep 'TYPE=\"hfs|TYPE=\"ntfs'`" ] ; then
+		   echo $path $NFSD_AUTO_DEFAULT >> /tmp/tmp-exports
+		else
+		   [ ! -f /tmp/.kernel-export-warning ] && logger -t wdlxtv.watch "Cannot export NTFS/HFS/HFS+/Fuse filesystems due to kernel restriction!" && touch /tmp/.kernel-export-warning
+		fi
+	   fi
+	done
+	diff -q /tmp/tmp-exports /etc/exports
+	[ $? -ne 0 -o -f /tmp/.reload ] && cat /tmp/tmp-exports > /etc/exports && cat /etc/exports | gen-hosts-allow && /etc/init.d/S94nfsserver reload && logger -t wdlxtv.watch "NFSD exports reloaded" && rm -f /tmp/.reload
+   fi
+ fi
+ OLDEXPORTSLIST=$NEWEXPORTSLIST
+ OLDSMBCONFMD5=$NEWSMBCONFMD5
+fi
+
+#########################################################################
+#########################################################################
+########################### YouTube switcher ############################
+
+if [ "$OLDYOUTUBE_SWITCHER" != "$YOUTUBE_SWITCHER" ] ; then
+	if [ "$YOUTUBE_SWITCHER" != "" ] ; then
+	   if [ -f /var/www/proxy/${YOUTUBE_SWITCHER}.php ] ; then
+		if [ "`grep -i \^LIGHTTPD=\'OFF\' /conf/config`" != "" ] ; then
+		    logger -t wdlxtv.watch "cannot use YouTube Switcher with lighttpd webserver disabled!!!"
+		else
+		    logger -t wdlxtv.watch "Switching YouTube to $YOUTUBE_SWITCHER"
+		    unlink /var/www/proxy/youtube-proxy.php
+		    ln -s /var/www/proxy/${YOUTUBE_SWITCHER}.php /var/www/proxy/youtube-proxy.php
+		    [ "`grep gdata.youtube.com /etc/hosts`" == "" ] && echo '127.0.0.1 gdata.youtube.com' >> /etc/hosts
+		    umount /osd/image/youtube_logo.png 2>/dev/null
+		    mount -o bind /osd/image/${YOUTUBE_SWITCHER}_logo.png /osd/image/youtube_logo.png 2>/dev/null
+		fi
+	   else
+		logger -t wdlxtv.watch "invalid YouTube Switcher script!"
+		sed -i '/127.0.0.1 gdata.youtube.com/d' /tmp/hosts
+		umount /osd/image/youtube/youtube_home_Thumbnails_youtube_icon_f.png /osd/image/youtube/youtube_home_Thumbnails_youtube_icon_n.png /osd/image/youtube/youtube_logo.png 2>/dev/null
+	   fi
+	else
+	    umount /osd/image/youtube/youtube_home_Thumbnails_youtube_icon_f.png /osd/image/youtube/youtube_home_Thumbnails_youtube_icon_n.png /osd/image/youtube/youtube_logo.png 2>/dev/null
+	    sed -i '/127.0.0.1 gdata.youtube.com/d' /tmp/hosts
+	fi
+	OLDYOUTUBE_SWITCHER=$YOUTUBE_SWITCHER
+fi
+
+#########################################################################
+#########################################################################
+########################### live365 switcher ############################
+
+if [ "$OLDLIVE365_SWITCHER" != "$LIVE365_SWITCHER" ] ; then
+	if [ "$LIVE365_SWITCHER" != "" ] ; then
+	   if [ -f /var/www/proxy/${LIVE365_SWITCHER}.php ] ; then
+		if [ "`grep -i \^LIGHTTPD=\'OFF\' /conf/config`" != "" ] ; then
+		    logger -t wdlxtv.watch "cannot use Live365 Switcher with lighttpd webserver disabled!!!"
+		else
+		    logger -t wdlxtv.watch "Switching live365 to $LIVE365_SWITCHER"
+		    unlink /var/www/proxy/live365-proxy.php
+		    ln -s /var/www/proxy/${LIVE365_SWITCHER}.php /var/www/proxy/live365-proxy.php
+		    [ "`grep '127.0.0.1 www.live365.com' /etc/hosts`" == "" ] && echo '127.0.0.1 www.live365.com' >> /etc/hosts
+		    [ "`grep '127.0.0.1 live365.com /etc/hosts'`" == "" ] && echo '127.0.0.1 live365.com' >> /etc/hosts
+		    umount /osd/image/live365_loading_logo.png /osd/image/live365_logo.png /osd/image/villa/home_live365_icon_n.png /osd/image/villa/home_live365_icon_f.png 2>/dev/null
+		    mount -o bind /osd/image/${LIVE365_SWITCHER}_logo.png /osd/image/live365_logo.png 2>/dev/null
+		fi
+	   else
+		logger -t wdlxtv.watch "invalid live365 Switcher script!"
+		umount /osd/image/live365_loading_logo.png /osd/image/live365_logo.png /osd/image/villa/home_live365_icon_n.png /osd/image/villa/home_live365_icon_f.png 2>/dev/null
+		sed -i '/127.0.0.1 www.live365.com/d' /tmp/hosts
+		sed -i '/127.0.0.1 live365.com/d' /tmp/hosts
+	   fi
+	else
+	    umount /osd/image/live365_loading_logo.png /osd/image/live365_logo.png /osd/image/villa/home_live365_icon_n.png /osd/image/villa/home_live365_icon_f.png 2>/dev/null
+	    sed -i '/127.0.0.1 www.live365.com/d' /tmp/hosts
+	    sed -i '/127.0.0.1 live365.com/d' /tmp/hosts
+	fi
+	OLDLIVE365_SWITCHER=$LIVE365_SWITCHER
+fi
+
+#########################################################################
+############################ /conf/ monitor #############################
+  RECFILE="`ls /conf/ -c | head -n 1`"
+  NEWCONFMODTIME="`stat -t /conf/$RECFILE  | cut -d' ' -f13`"
+  if [ "$NEWCONFMODTIME" != "$CONFMODTIME" -a $configsave -gt 10 ] ; then
+	if [ $DELAY -eq 5 ] ; then
+		config_tool -s 2>&1 >/dev/null
+		configsave=0
+		CONFMODTIME=$NEWCONFMODTIME
+		DELAY=0
+	else
+		DELAY=`expr $DELAY + 1`
+	fi
+  fi
+  [ $configsave -gt 43200 ] && config_tool -s 2>&1 >/dev/null && configsave=0 && CONFMODTIME=$NEWCONFMODTIME
+  configsave=`expr $configsave + 1`
+
+  sleep 2
+done

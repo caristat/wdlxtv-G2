@@ -1,0 +1,259 @@
+#!/bin/sh
+
+. ./sysconfig 
+
+echo "===================ROOTFS==================================="
+cat ./sysconfig
+echo "============================================================"
+
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+mount -t proc none /proc
+mount -t sysfs sysfs /sys
+mount -t tmpfs mdev /dev
+mdev -s
+
+### test for ext3-boot on /dev/sda1 ###
+mountpoint -q /boot/mnt
+if [ $? -ne 0 -a "$1" != "upgrade" -a "$1" != "liveFS" ] ; then
+	echo "Searching for root.bin or active filesystem..."
+	mount -v /dev/sda1 /mnt -o nodiratime,noatime,sync
+	if [ -f /mnt/root.bin ]; then
+		echo "Mounting root.bin image:"
+		mount -o loop,nodiratime,noatime,rw /mnt/root.bin /boot
+		umount /sys
+		umount /dev
+		umount /proc
+		pivot_root /boot /boot/boot
+		cd /
+		exec /init
+	elif [ -x /mnt/.rootFS/init ]; then
+		echo "Active filesystem detected on boot drive."
+		mount -o move /mnt /boot
+		umount /sys
+		umount /dev
+		umount /proc
+		PATH=/.rootFS/bin:/.rootFS/sbin:/.rootFS/usr/bin:/.rootFS/usr/sbin:$PATH
+		cd /boot
+		ln -s .rootFS/lib
+		pivot_root /boot/ /boot/.rootFS/boot
+		cd /
+		exec busybox chroot /.rootFS /init
+	else
+		echo "Not found, umounting and continuing..."
+		umount /mnt 2>/dev/null
+	fi
+fi
+#########################################
+
+mount -t usbfs usb /proc/bus/usb
+mount -t tmpfs none /tmp
+chmod 777 /tmp
+mkdir -p /tmp/.root/etc
+chmod 666 /dev/null
+
+mountpoint -q /boot/mnt
+if [ $? == 0 ]; then
+ # move around some mountpoints...
+ busybox mount -o move /boot/mnt /mnt/boot
+ busybox mount -o move /boot /mnt/fwup
+ busybox umount /mnt/fwup/tmp/media/usb/* 2>/dev/null
+ busybox umount /mnt/fwup
+ busybox mount -o move /mnt/boot /boot
+ busybox mount -o remount,rw /
+else
+ mountpoint -q /boot && busybox umount /boot && busybox mount -o remount,rw / && busybox rm /boot/lib
+fi
+
+cp /etc/mdev.conf /tmp/.root/etc/mdev.conf
+busybox mount -o bind /tmp/.root/etc/mdev.conf /etc/mdev.conf
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mkdir /dev/pts
+busybox mount -t devpts devpts /dev/pts
+
+ln -s $SYSCONF_BOOTLOADER_MTD_PARTITION /dev/mtdblock_bootloader
+ln -s $SYSCONF_KERNEL_MTD_PARTITION /dev/mtdblock_kernel
+ln -s $SYSCONF_FIRMWARE_MTD_PARTITION /dev/mtdblock_romfs
+
+mkdir -p /tmp/.root/lib/modules/2.6.22.19-19-4
+cp -s -f /lib/modules/2.6.22.19-19-4-orig/*.ko /lib/modules/2.6.22.19-19-4
+cp -f /lib/modules/2.6.22.19-19-4-orig/modules.dep /lib/modules/2.6.22.19-19-4/modules.dep
+mkdir -p /tmp/.root/lib/firmware
+cp -s -f /lib/firmware-orig/* /lib/firmware
+
+cp /etc/securetty.ori /tmp
+/sbin/ldconfig -C /tmp/ld.so.cache
+
+if [ "$1" == "upgrade" ]; then
+	/sbin/config_tool -l 
+	touch /tmp/STOP_DMARENDER
+	touch /tmp/STOP_PICRENDER
+else
+	config_tool -l
+fi
+
+if [ "x$1" != "xf1f1" ]; then
+	if [ x$SYSCONF_LAST_PARTITION_NODE_NAME != "x" ]; then
+		dd if=$SYSCONF_LAST_PARTITION_NODE_NAME of=/tmp/lastblock bs=1024
+		mkdir $SYSCONF_STATIC_CONFIG_MOUNT_POINT
+		mount -t minix -o loop /tmp/lastblock $SYSCONF_STATIC_CONFIG_MOUNT_POINT
+	fi
+fi
+
+
+export EM8XXX_SERVER=":0"
+
+mknod /dev/mum0 c 126 0
+mknod /dev/em8xxx0 c 127 0
+mknod /dev/mtdblock3 b 254 6
+mknod /dev/mtdblock2 b 254 3
+mknod /dev/mtdblock0 b 254 0
+mknod /dev/sda1 b 8 1
+
+#mknod /dev/loop0 b 7 0
+#mknod /dev/loop1 b 7 1
+#mknod /dev/loop2 b 7 2
+#mknod /dev/loop3 b 7 3
+mknod /dev/loop8 b 7 8
+mknod /dev/loop9 b 7 9
+mknod /dev/loop10 b 7 10
+mknod /dev/loop11 b 7 11
+mknod /dev/loop12 b 7 12
+mknod /dev/loop13 b 7 13
+mknod /dev/loop14 b 7 14
+mknod /dev/loop15 b 7 15
+mknod /dev/loop16 b 7 16
+
+fw_reload_t3.sh
+ln -s /dev/ir /dev/irda
+
+MAJOR=254
+while [ -f /lib/modules/irkernel.ko ]; do
+	insmod /lib/modules/irkernel.ko major_num=$MAJOR;
+	if [ $? == 0 ]; then
+		mknod /dev/ir c $MAJOR 0
+		break;
+	fi
+	MAJOR=`expr $MAJOR - 1`
+done
+
+MAJOR=254
+while [ -f /lib/modules/2.6.22.19-19-4/wd_led_rst.ko ]; do
+	insmod /lib/modules/2.6.22.19-19-4/wd_led_rst.ko major_num=$MAJOR;
+	if [ $? == 0 ]; then
+		mknod /dev/led_rst c $MAJOR 0
+		break;
+	fi
+	MAJOR=`expr $MAJOR - 1`
+done
+
+if [ -f /lib/modules/proc_pipe.ko ]; then
+	insmod /lib/modules/proc_pipe.ko
+fi
+
+MAJOR=254
+while [ -f /lib/modules/lmp555_gpio.ko ]; do
+	insmod /lib/modules/lmp555_gpio.ko major_num=$MAJOR;
+	if [ $? == 0 ]; then
+		mknod /dev/led_rst c $MAJOR 0
+		break;
+	fi
+	MAJOR=`expr $MAJOR - 1`
+done
+
+if [ -f /lib/modules/tntfs.ko ]; then
+	insmod /lib/modules/tntfs.ko
+fi
+
+if [ -f /lib/modules/ufsd.ko ]; then
+	insmod /lib/modules/ufsd.ko
+fi
+
+if [ -f /lib/modules/fctrl.ko ]; then
+	insmod /lib/modules/fctrl.ko
+fi
+
+if [ -f /ir_table ]; then
+	cat /ir_table > /proc/tangoxfreq/ir_table 
+fi
+
+if [ -f /lib/modules/i2c_hal.ko ]; then
+	insmod /lib/modules/i2c_hal.ko
+fi
+
+if [ -f /lib/modules/thermal_g751.ko ]; then
+	insmod /lib/modules/thermal_g751.ko
+fi
+
+. /bin/set-nls-codepage
+mkdir -p /tmp/media/usb /tmp/export.adds /tmp/sheetQueue
+. /etc/init.d/host-config
+ifconfig lo 127.0.0.1
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "127.0.0.1 support.wdc.com" >> /etc/hosts
+
+if [ "$1" == "f1f1" ]; then
+	echo "enter f1 test ..."
+	/bin/sh
+fi
+
+if [ "$1" == "sisi" ]; then
+	echo "enter si test ..."
+	mount /dev/sda /tmp/media/usb
+	if [ $? != 0 ]; then
+		echo "Mounting /dev/sda fail, try to mount /dev/sda1 to /tmp/media/usb"
+		mount /dev/sda1 /tmp/media/usb
+		if [ $? != 0 ]; then
+			echo "Mounting /dev/sda1 still fail, abort!!!"
+			/bin/sh
+		fi
+	fi
+	/tmp/media/usb/runsit.sh
+	/bin/sh
+fi
+
+syslogd -O /tmp/messages.txt 
+klogd
+VER=`cat /conf_src/version`
+logger "${VER}"
+lsusb | logger &
+mkdir -p /tmp/media/usb
+
+power.monitor &
+
+mountpoint -q /boot
+[ $? == 0 ] && logger -t init "root.bin or active filesystem loaded"
+
+. /bin/crazymount
+
+# bring up network devices
+[ -e /conf/net.config ] && dos2unix /conf/net.config && . /conf/net.config
+[ -e /tmp/net.config ] && . /tmp/net.config
+
+tail -f /tmp/messages.txt | plug.watch 2>/dev/null &
+mount.watch 2>/dev/null &
+youtube-keys
+
+[ ! -f "/conf/shadow" ] && cp /etc/shadow.orig /conf/shadow && chmod 600 /conf/shadow
+[ ! -f "/conf/passwd" ] && cp /etc/passwd.orig /conf/passwd
+[ ! -f "/conf/group" ] && cp /etc/group.orig /conf/group
+chmod 755 /tmp/conf
+
+if [ -f /tmp/emergency.flash ]; then
+        killall config_tool
+        /sbin/config_tool -l &
+        touch /tmp/STOP_DMARENDER
+        touch /tmp/STOP_PICRENDER
+        sh /etc/init.d/rcS `cat /tmp/emergency.flash` &
+#elif [ "$1" == "upgrade" ]; then  # debug
+#       sh /etc/init.d/rcS &
+else
+       sh /etc/init.d/rcS $1 $2 $3 &
+fi
+
+/bin/memory_cache_server &
+
+while [ 1 ]; do 
+		/bin/sh ;
+done
+

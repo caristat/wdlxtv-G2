@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<page background="image/browser_list_background_bg_n.png" type="basic">
+  <text text="@@msg_title" x="122" y="190" w="477" h="60" fontsize="24" align="hcenter" textcolor="0xEDC831" numlines="2" />
+  <motion_icon x="306" y="263" w="109" h="163" count="9" base_filename="image/settings_wait_progress_n" suffix_name="png"/>
+</page>

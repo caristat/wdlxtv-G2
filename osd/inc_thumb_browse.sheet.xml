@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<wrapper>
+
+    <table x="52" y="490" w="1174" h="174" cols="6" rows="1" colspacing="26" align="hcenter" scale="100" >
+        <image image="@@thumb_active_0" w="174" h="174" />
+        <image image="@@thumb_active_1" w="174" h="174" />
+        <image image="@@thumb_active_2" w="174" h="174" />
+        <image image="@@thumb_active_3" w="174" h="174" />
+        <image image="@@thumb_active_4" w="174" h="174" />
+        <image image="@@thumb_active_5" w="174" h="174" />
+    </table>
+    <table x="59" y="497" w="1160" h="160" cols="6" rows="1" colspacing="40" align="hcenter" scale_type="fixratio" >
+        <image name="th0" image="@@browse_0_thumbnail" default_image="@@browse_0_default_image" w="160" h="160" scale="100" />
+        <image name="th1" image="@@browse_1_thumbnail" default_image="@@browse_1_default_image" w="160" h="160" scale="100" />
+        <image name="th2" image="@@browse_2_thumbnail" default_image="@@browse_2_default_image" w="160" h="160" scale="100" />
+        <image name="th3" image="@@browse_3_thumbnail" default_image="@@browse_3_default_image" w="160" h="160" scale="100" />
+        <image name="th4" image="@@browse_4_thumbnail" default_image="@@browse_4_default_image" w="160" h="160" scale="100" />
+        <image name="th5" image="@@browse_5_thumbnail" default_image="@@browse_5_default_image" w="160" h="160" scale="100" />
+    </table>
+
+    <image image="image/browser_list_arrow_left.png" x="41" y="665" w="27" h="38"  /> 
+    <image image="image/browser_list_arrow_right.png" x="1212" y="665" w="27" h="38" /> 
+    <text text="@@file_info" x="80" y="662" w="1120" h="30" selected="@@file_info_selected" textcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" align="hcenter" speed="1" delay="2" auto_translate="1" /> 
+</wrapper>

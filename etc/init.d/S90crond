@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ "`grep -i \^CROND=\'ON\' /conf/config`" != "" ] ; then
+	case "$1" in
+	start)
+		mkdir -p /var/spool/cron
+		ln -s /conf /var/spool/cron/crontabs
+		crond &
+		;;
+	restart)
+		killall crond
+		crond &
+		;;
+	stop)
+		killall crond
+		;;
+	esac
+fi

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2006, ALPHA Networks, inc. -->
+<!-- Author: Charles Wang <cwang@alphanetworks.com> -->
+<page background="image/blank.jpg" numitems="7">
+  <ctrlgrp>
+    <listbox valkey="browselist" autoenter="1" autoswitch="0" move="row" cols="7" rows="1" lbmask="HT" loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+	<linebreak/>
+  </ctrlgrp>
+
+  <image image="@@file_info" x="0" y="0" w="640" h="720" align="top,left" bg="1"/>
+  <image image="@@file_info" x="640" y="0" w="640" h="720" align="top,right" bg="1"/>
+
+  <include filename="./inc_video_thumb_browse.sheet.xml"/>
+
+  <!-- PIP window -->
+  <include filename="./inc_pip.xml"/>
+  <!-- fixed -->
+  <include filename="./myinfo.xml"/>
+  <include filename="./decoration.xml"/>
+</page>

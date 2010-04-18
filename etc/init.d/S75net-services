@@ -1,0 +1,20 @@
+#!/bin/sh
+
+
+case "$1" in
+start)
+	[ "`grep -i \^TELNETD=\'OFF\' /conf/config`" == "" ] && telnetd -K -l login &
+	[ "`grep -i \^FTPD=\'OFF\' /conf/config`" == "" ] && pure-ftpd -D -B -H
+	;;
+restart)
+        killall telnetd
+        killall ftpd
+        killall tcpsvd
+        [ "`grep -i \^TELNETD=\'OFF\' /conf/config`" == "" ] && telnetd -K -l login &
+        [ "`grep -i \^FTPD=\'OFF\' /conf/config`" == "" ] && pure-ftpd -D -B
+        ;;
+stop)
+	killall telnetd
+	killall pure-ftpd
+	;;
+esac

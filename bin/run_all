@@ -1,0 +1,24 @@
+#!/bin/sh
+cd /bin
+if [ -f /tmp/STOP_DMARENDER ]; then 
+	echo "/tmp/STOP_DMARENDER exists, DMARender spawn stopped"; 
+else
+	exec MediaLogic AV MSGL_FATAL &
+	exec dmarender.sh &
+fi
+
+if [ -f /tmp/STOP_PICRENDER ]; then 
+	echo "/tmp/STOP_PICRENDER exists, PICRender spawn stopped"; 
+else
+	exec MediaLogic_PIC PC MSGL_FATAL &
+	exec picrender.sh &
+fi
+
+
+if [ -f /tmp/STOP_OSD ]; then 
+	echo "/tmp/STOP_DMARENDER exists, DMARender spawn stopped"; 
+	exec sleep 10000;
+else
+	cd /osd
+	exec /bin/dmaosd.sh $1 $2 $3 &
+fi

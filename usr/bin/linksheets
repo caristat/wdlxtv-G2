@@ -1,0 +1,79 @@
+#!/usr/bin/bash
+
+## linksheets <location> <mode>
+##  recursively searches and symlinks movie sheets into /msheets
+##  /msheets is joined with /osd via unionfs
+##  -- if <mode> == 2 then max-levels=2
+##
+## valid types
+##  video thumb view:
+##  audio thumb view:
+##  list mode:
+##   - STD
+##   - SHEET
+##   - WALL
+##
+
+[ -e /tmp/STOP_DMARENDER ] && exit 55
+eval `egrep 'LISTNUM|GENTHUMBS|THUMBRESO|MSHEET' /conf/config`
+MODE=$2
+
+if [ "$MSHEETMODE" == "wall" -o "$MSHEETMODE" == "sheet" -o "$MSHEETMODE" == "std" -a "$GENMSHEET" == "ON" -o "$VIDMSHEET" == "ON" -o "$LISTMSHEET" == "ON" -o "$MODE" == "5" ] ; then
+  SEARCHSTRING=".*_sheet.$MSHEETMODE.jpg"
+else
+  exit 3
+fi
+
+[ ! -e "$1" ] && echo "PATH: $1 does not exist!" && exit 2
+[ "$MODE" == "1" -o "$MODE" == "2" ] && DEPTH="-maxdepth $MODE" || DEPTH=""
+logger -t linksheets "Generating MovieSheets for $1, mode $2"
+
+echo "power led blink on" >> /proc/led
+
+cd /msheets
+find "$1/" -type f -regextype posix-egrep -iregex ".*_sheet.jpg|.*wd_tv.jpg|$SEARCHSTRING" $DEPTH 2>/dev/null | while read msheet ; do
+  if [ "`basename "$msheet"`" == "wd_tv.jpg" -a "$MSHEETMODE" != "std" ] ; then
+    DIRNAME="`basename "${msheet/wd_tv.jpg/}"`"
+    BASELINK="`readlink "$DIRNAME"`"
+    BASELINK="`basename "$BASELINK"`"
+    [ -n "$BASELINK" -a "$MSHEETMODE" == "std" -a "$BASELINK" == "`basename "$msheet"`" ] && unlink "$DIRNAME" && [ -n "$LDEBUG" ] && echo "ul1  `basename "$msheet"` >- $DIRNAME"
+    [ "$MSHEETMODE" != "std" ] && ln -fs "$msheet" "$DIRNAME" && [ -n "$LDEBUG" ] && echo "l1  `basename "$msheet"` -> $DIRNAME"
+  elif [ "`basename "$msheet"`" == "folder.jpg_sheet.jpg" -a "$MSHEETMODE" != "std" ] ; then
+    DIRNAME="`basename "${msheet/folder.jpg_sheet.jpg/}"`"
+    NOEXT="`${msheet/.jpg/}`"
+    BASELINK="`readlink "$DIRNAME"`"
+    BASELINK="`basename "$BASELINK"`"
+    [ -n "$BASELINK" -a "$MSHEETMODE" == "std" -a "$BASELINK" == "`basename "$msheet"`" ] && unlink "$DIRNAME" && [ -n "$LDEBUG" ] && echo "ul2  `basename "$msheet"` -> $DIRNAME"
+    [ "$MSHEETMODE" != "std" -a ! -f "$NOEXT.$MSHEETMODE.jpg" ] && ln -fs "$msheet" "$DIRNAME" && [ -n "$LDEBUG" ] && echo "l2  `basename "$msheet"` -> $DIRNAME"
+  elif [ "${msheet/_sheet.jpg/}" != "$msheet" ] ; then
+    BASENAME="`basename "${msheet/_sheet.jpg/}"`"
+    NOEXT=${msheet/.jpg/}
+    DIRNAME="`dirname "$msheet"`"
+    DIRPATH=$DIRNAME
+    DIRNAME="`basename "$DIRNAME"`"
+    BASELINK="`readlink "$DIRNAME"`"
+    BASELINK="`basename "$BASELINK"`"
+    [ -n "$BASELINK" -a "$MSHEETMODE" == "std" -a "${BASELINK/_sheet.jpg/}" != "$DIRNAME" ] && unlink $DIRNAME && [ -n "$LDEBUG" ] && echo "ul3  `basename "$msheet"` -> $DIRNAME"
+    if [ ! -f "$NOEXT.$MSHEETMODE.jpg" -a ! -f "$DIRPATH/folder.jpg_sheet.jpg" -a ! -f "$DIRPATH/folder.jpg_sheet.$MSHEETMODE.jpg" ] ; then
+       [ "$MSHEETMODE" != "std" ] && ln -fs "$msheet" "$DIRNAME" && [ -n "$LDEBUG" ] && echo "l3  `basename "$msheet"` -> $DIRNAME"
+    fi
+    [ ! -f "$NOEXT.$MSHEETMODE.jpg" ] && ln -fs "$msheet" "`basename "${msheet/_sheet.jpg/}"`" && [ -n "$LDEBUG" ] && echo "l3a $BASENAME -> `basename "$msheet"`"
+  else    
+    BASENAME="`basename "${msheet/_sheet.$MSHEETMODE.jpg/}"`"
+    DIRNAME="`dirname "$msheet"`"
+    DIRPATH=$DIRNAME
+    DIRNAME="`basename "$DIRNAME"`"
+    BASELINK="`readlink "$DIRNAME"`"
+    BASELINK="`basename "$BASELINK"`"
+    [ -n "$BASELINK" -a "$MSHEETMODE" == "std" -a "${BASELINK/_sheet.$MSHEETMODE.jpg/}" != "$DIRNAME" ] && unlink "$DIRNAME" && [ -n "$LDEBUG" ] && echo "ul4  `basename "$msheet"` -> $DIRNAME"
+    if [ "$MSHEETMODE" != "std" -a "$BASENAME" == "folder.jpg" -o "$MSHEETMODE" != "std" ] ; then
+	[ ! -f "$DIRPATH/folder.jpg_sheet.jpg" -a ! -f "$DIRPATH/folder.jpg_sheet.$MSHEETMODE.jpg" ] && ln -fs "$msheet" "$DIRNAME" && [ -n "$LDEBUG" ] && echo "l4  `basename "$msheet"` -> $DIRNAME"
+    fi
+    ln -fs "$msheet" "$BASENAME" && [ -n "$LDEBUG" ] && echo "l4a `basename "$msheet"` -> $BASENAME"
+  fi
+  [ -f /tmp/linksheets.stop.$MODE -o -f /tmp/linksheets.stop ] && echo "power led blink off" >> /proc/led && echo "power led on" >> /proc/led && exit 3
+  usleep 750
+done
+
+echo "power led blink off" >> /proc/led
+echo "power led on" >> /proc/led

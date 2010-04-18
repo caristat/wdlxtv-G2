@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.jpg">
+  <ctrlgrp>
+    <eventbox_keyboard valkey="keyboard" autoenter="1"/>
+  </ctrlgrp>
+
+
+  <include filename="./search_page_title.xml" />
+  
+  <image image="image/keyboard_search_box.png" x="268" y="182" w="660" h="61" bg="1"/>
+
+  <include filename="./inc_setup_keyboard.xml" />
+
+  <texttail text="@@input_01_text" x="286" y="199" w="554" h="28" textcolor="0x07b5ff" fontsize="26"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+  <include filename="./decoration.xml"/>
+</page>

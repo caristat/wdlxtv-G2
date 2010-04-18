@@ -1,0 +1,17 @@
+#!/bin/sh
+
+suspend
+
+for i in /apps/* ; do
+        umount -f $i 2>/dev/null
+done
+
+for i in "`cat /etc/mtab | egrep '^/dev/sd' | cut -d' ' -f 2`"; do
+        umount -f $i 2>/dev/null
+done
+
+umount -l /osd
+
+OPTS=$*
+[ "$OPTS" == "" ] && OPTS="-f"
+busybox reboot $OPTS

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -f /tmp/private/smbpasswd ] && cat /tmp/private/smbpasswd | cut -d':' -f1 | tr '\n' ' ' || echo ''

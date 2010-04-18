@@ -1,0 +1,829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "视频"
+
+msgid "Music"
+msgstr "音乐"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "All Video"
+msgstr "全部视频"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Folders"
+msgstr "文件夹"
+
+msgid "Recent"
+msgstr "最近"
+
+msgid "Playlist"
+msgstr "播放列表"
+
+msgid "All Music"
+msgstr "全部音乐"
+
+msgid "Artist"
+msgstr "艺术家"
+
+msgid "Genre"
+msgstr "流派"
+
+msgid "Album"
+msgstr "专辑"
+
+msgid "Now Playing"
+msgstr "现在播放"
+
+msgid "New firmware found"
+msgstr "找到新固件"
+
+msgid "No storage present"
+msgstr "未发现存储设备"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "媒体库编辑需要更多存储空间: "
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "扫描所连存储设备。第一次扫描可能需要较长时间。请稍候…"
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "请选择 [确定] 继续播放视频, 或选择 [取消] 重新启动它"
+
+msgid "Audio/Video"
+msgstr "音频/视频"
+
+msgid "Movie"
+msgstr "电影"
+
+msgid "System"
+msgstr "系统"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "间隔时间"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Normal"
+msgstr "正常"
+
+msgid "Widescreen"
+msgstr "宽屏幕"
+
+msgid "Composite"
+msgstr "编辑"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "自动"
+
+msgid "Stereo"
+msgstr "立体声"
+
+msgid "Digital"
+msgstr "数字"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "您确定要更改视频分辨率吗?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "您确定要更改视频输出格式吗?"
+
+msgid "Repeat one"
+msgstr "重复一个"
+
+msgid "Repeat all"
+msgstr "重复全部"
+
+msgid "Repeat all and shuffle"
+msgstr "乱序重复全部"
+
+msgid "Keep as original"
+msgstr "保持原始"
+
+msgid "Fit to screen"
+msgstr "适合屏幕"
+
+msgid "Shuffle"
+msgstr "乱序"
+
+msgid "Fade"
+msgstr "淡出"
+
+msgid "Random"
+msgstr "随机"
+
+msgid "3 Seconds"
+msgstr "3 秒"
+
+msgid "5 Seconds"
+msgstr "5 秒"
+
+msgid "10 Seconds"
+msgstr "10 秒"
+
+msgid "20 Seconds"
+msgstr "20 秒"
+
+msgid "30 Seconds"
+msgstr "30 秒"
+
+msgid "1 Minute"
+msgstr "1 分"
+
+msgid "3 Minutes"
+msgstr "3 分"
+
+msgid "5 Minutes"
+msgstr "5 分"
+
+msgid "10 Minutes"
+msgstr "10 分"
+
+msgid "15 Minutes"
+msgstr "15 分"
+
+msgid "20 Minutes"
+msgstr "20 分"
+
+msgid "30 Minutes"
+msgstr "30 分"
+
+msgid "English"
+msgstr "英文"
+
+msgid "French"
+msgstr "法文"
+
+msgid "Italian"
+msgstr "意大利文"
+
+msgid "German"
+msgstr "德文"
+
+msgid "Spanish"
+msgstr "西班牙文"
+
+msgid "Simplified Chinese"
+msgstr "简体中文"
+
+msgid "Traditional Chinese"
+msgstr "繁体中文"
+
+msgid "Korean"
+msgstr "韩文"
+
+msgid "Japanese"
+msgstr "日文"
+
+msgid "On"
+msgstr "开"
+
+msgid "Off"
+msgstr "关"
+
+msgid "CAS_On"
+msgstr "开"
+
+msgid "CAS_Off"
+msgstr "关"
+
+msgid "Never"
+msgstr "从不"
+
+msgid "List mode"
+msgstr "列表模式"
+
+msgid "Thumbnail mode"
+msgstr "缩图模式"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "您确定要将此设备恢复到出厂设置吗?"
+
+msgid "WD TV HD Media Player"
+msgstr "WD TV 高清媒体播放器"
+
+msgid "version"
+msgstr "版本"
+
+msgid "Current version"
+msgstr "当新版本"
+
+msgid "New version"
+msgstr "新版本"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "找到新固件。您要升级吗?"
+
+msgid "Rebooting"
+msgstr "重新引导中"
+
+msgid "Invalid firmware"
+msgstr "无效固件"
+
+msgid "Contains"
+msgstr "包含"
+
+msgid "Starts with"
+msgstr "开始于"
+
+msgid "Loading"
+msgstr "加载中"
+
+msgid "Loading..."
+msgstr "加载中..."
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "无法识别 USB 端口上所连的设备"
+
+msgid "Storage can not aggregate"
+msgstr "存储不能聚集"
+
+msgid "Next Song:"
+msgstr "下一首歌曲:"
+
+msgid "Current Song"
+msgstr "当前歌曲"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "All Photos"
+msgstr "所有照片"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "媒体库不支持日志型文件系统。但仍支持回放。"
+
+msgid "Unable to create media library on read only storage."
+msgstr "无法在只读存储设备上创建媒体库。"
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "无法创建媒体库。请检查您的存储设置。"
+
+msgid "Unrecognized USB device"
+msgstr " USB 设备无法识别"
+
+msgid "Scanning the attached USB device..."
+msgstr "正在扫描连接的 USB 设备…"
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "您尝试播放的视频文件包含系统不支持的多音频通道输出。请切换到数字音频输出, 并将高清媒体播放器连接到支持音频编解码器的 AV 接收器上。"
+
+msgid "Unsupported subtitle"
+msgstr "不支持的字幕"
+
+msgid "Audio Channel"
+msgstr "音频通道"
+
+msgid "Audio channel"
+msgstr "音频通道"
+
+msgid "Photos"
+msgstr "照片"
+
+msgid "Firmware upgrade"
+msgstr "固件升级"
+
+msgid "Video output"
+msgstr "视频输出"
+
+msgid "Display resolution"
+msgstr "显示分辨率"
+
+msgid "Aspect ratio"
+msgstr "长宽比"
+
+msgid "Audio output"
+msgstr "音频输出"
+
+msgid "Video sequence"
+msgstr "视频顺序"
+
+msgid "Music sequence"
+msgstr "音频顺序"
+
+msgid "Slideshow sequence"
+msgstr "幻灯片顺序"
+
+msgid "Photo scaling"
+msgstr "相片缩放比例"
+
+msgid "Transition effect"
+msgstr "转场效果"
+
+msgid "Screensaver delay"
+msgstr "屏幕保护程序延迟"
+
+msgid "Browser display"
+msgstr "浏览器显示"
+
+msgid "System reset"
+msgstr "系统重置"
+
+msgid "Display in full screen"
+msgstr "全屏幕显示"
+
+msgid "Wipe right"
+msgstr "向右擦除"
+
+msgid "Wipe left"
+msgstr "向左擦除"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "正在升级您的高清媒体播放器。请勿切断电源或连接的存储设备。"
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "升级完成。媒体播放器将重新启动。"
+
+msgid "Please select the device you would like to eject."
+msgstr "请选择弹出的设备。"
+
+msgid "Are you sure you want to remove this device?"
+msgstr "您确定要删除此设备吗?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "在数字音频输出设置下, 需要有一个支持相应音频格式的 AV 接收器, 才能播放含环绕声的音乐曲目。"
+
+msgid "Subtitle off"
+msgstr "不显示字幕"
+
+msgid "No subtitle"
+msgstr "无字幕"
+
+msgid "Media library"
+msgstr "媒体库"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "有关高清媒体播放器的详情, 请参阅用户手册或访问"
+
+msgid "Subtitle"
+msgstr "字幕"
+
+msgid "Firmware Version"
+msgstr "固件版本"
+
+msgid "Title"
+msgstr "标题"
+
+msgid "File name"
+msgstr "文件名"
+
+msgid "Search completed. No results found."
+msgstr "搜索完成。找不到结果。"
+
+msgid "Unsupported"
+msgstr "不支持"
+
+msgid "Space"
+msgstr "空格"
+
+msgid "No audio channel"
+msgstr "无音频通道"
+
+msgid "Untitled volume"
+msgstr "无标题的磁盘区"
+
+msgid "Subtitle font size"
+msgstr "字幕字体大小"
+
+msgid "Additional encoding support"
+msgstr "附加编码支持"
+
+msgid "Western Europe (ISO)"
+msgstr "西欧 (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "繁体中文 (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "简体中文 (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "日文 (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "韩文 (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "西里尔文 (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "西里尔文 (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "希腊文 (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "希腊文 (Windows-1253)"
+
+msgid "All"
+msgstr "全部"
+
+msgid "Equal to"
+msgstr "等於"
+
+msgid "Not Equal to"
+msgstr "不等於"
+
+msgid "Central Europe (ISO)"
+msgstr "中歐 (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "中欧 ((Windows-1250)"
+
+msgid "Does not contain"
+msgstr "不包含"
+
+msgid "Display file size"
+msgstr "顯示檔案大小"
+
+msgid "Display file size during navigation"
+msgstr "浏览时显示文件大小"
+
+msgid "Western Europe"
+msgstr "西欧"
+
+msgid "Turkish"
+msgstr "土耳其文"
+
+msgid "Subtitle default"
+msgstr "小标题缺省设置"
+
+msgid "Subtitle border"
+msgstr "小标题边框"
+
+msgid "Thick"
+msgstr "粗"
+
+msgid "Thin"
+msgstr "细"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "所插入 USB 设备上空间不足。媒体库编辑需要更多存储空间。"
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "所插入 USB 设备使用的是 HFS+ 日记文件系统。在此文件系统下媒体库无法工作, 但仍支持播放。请禁用“日记”系统以使媒体播放器能够正常工作。"
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "所插入 USB 设备被设置为“只读”。这将不支持媒体库功能。"
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "无法在所插入 USB 设备中创建媒体库。请检查设备设置。"
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "无效固件。请从 http://www.wdc.com 下载正确的固件。"
+
+msgid "File Management"
+msgstr "文件管理"
+
+msgid "Select source"
+msgstr "选择一个来源"
+
+msgid "Select a destination"
+msgstr "选择一个目标"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "正在启用文件移动, 背景音乐现在将停止..."
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Move"
+msgstr "移动"
+
+msgid "Select all"
+msgstr "全选"
+
+msgid "Source"
+msgstr "来源"
+
+msgid "Destination"
+msgstr "目标"
+
+msgid "Would you like to delete the selected files?"
+msgstr "您要删除所选文件吗?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "您要复制所选文件吗?"
+
+msgid "Would you like to move the selected files?"
+msgstr "您要移动所选文件吗?"
+
+msgid "Deleting files..."
+msgstr "正在删除文件..."
+
+msgid "Deleted"
+msgstr "已删除"
+
+msgid "Copying files..."
+msgstr "正在复制文件..."
+
+msgid "Moving files..."
+msgstr "正在移动文件..."
+
+msgid "Moved"
+msgstr "已移动"
+
+msgid "File delete complete."
+msgstr "文件删除完成。"
+
+msgid "Write fail. Please check the destination device."
+msgstr "写入失败。请检查目标设备。"
+
+msgid "Read fail. Please check the source device."
+msgstr "读取失败。请检查来源设备。"
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "无法复制或移动文件。目标设备上空间不足。"
+
+msgid "Unable to write to read-only device at destination."
+msgstr "无法写入到只读目标设备。"
+
+msgid "Unable to delete read-only file."
+msgstr "无法删除只读文件。"
+
+msgid "Press [BACK] to cancel."
+msgstr "按[向后]取消。"
+
+msgid "Are you sure you want to cancel?"
+msgstr "您确定要取消吗?"
+
+msgid "Auto play"
+msgstr "自动播放"
+
+msgid "Photo auto play"
+msgstr "相片自动播放"
+
+msgid "Video auto play"
+msgstr "视频自动播放"
+
+msgid "Audio track display"
+msgstr "音频曲目显示"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "您确定要更改视频设置吗?"
+
+msgid "Camera"
+msgstr "相机"
+
+msgid "Camera 1"
+msgstr "相机 1"
+
+msgid "Camera 2"
+msgstr "相机 2"
+
+msgid "Chapters"
+msgstr "片段"
+
+msgid "file name"
+msgstr "文件名"
+
+msgid "Press [RIGHT] to select source."
+msgstr "按[右]选择来源。"
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "按[OPTION]复制, 移动或删除。"
+
+msgid "Press [RIGHT] to select destination."
+msgstr "按[右]选择目标。"
+
+msgid "Press [OPTION] to confirm."
+msgstr "按[OPTION]确认。"
+
+msgid "This folder cannot be accessed."
+msgstr "无法访问此文件夹。"
+
+msgid "Standby mode"
+msgstr "待机模式"
+
+msgid "Action cancelled."
+msgstr "动态取消"
+
+msgid "Arabic"
+msgstr "阿拉伯语"
+
+msgid "Hindu"
+msgstr "印度语"
+
+msgid "Thailand"
+msgstr "泰文"
+
+msgid "Preview mode"
+msgstr "预览模式"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "固件升级失败。装置将重新启动。"
+
+msgid "Empty"
+msgstr "空的"
+
+msgid "Push"
+msgstr "推压"
+
+msgid "Wipe"
+msgstr "擦拭"
+
+msgid "Zoom"
+msgstr "变焦"
+
+msgid "Access point detecting..."
+msgstr "访问点检测..."
+
+msgid "The network encryption key is not valid."
+msgstr "网络加密密钥无效。"
+
+msgid "No Chapter"
+msgstr "无章节"
+
+msgid "Arabic (Windows-1256)"
+msgstr "阿拉伯语 (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "泰国语 (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "解锁 WD 盘"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "您想解锁此 WD 盘吗? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "请输入此盘的解锁密码。"
+
+msgid "Password invalid"
+msgstr "密码无效"
+
+msgid "Please enter your password again."
+msgstr "请重新输入密码。"
+
+msgid "Too many password attempts"
+msgstr "密码重试次数太多"
+
+msgid "There were too many password recovery attempts."
+msgstr "尝试输入密码的次数太多。"
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "请从 WD TV 中删除您的硬盘, "
+
+msgid "reconnect it and try again."
+msgstr "然后重新连接它后再试一次。"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Genre:"
+msgstr "流派:"
+
+msgid "File Size:"
+msgstr "文件大小:"
+
+msgid "File Type:"
+msgstr "文件类型:"
+
+msgid "Replace"
+msgstr "替换"
+
+msgid "Checker Board"
+msgstr "棋盘"
+
+msgid "Play mode"
+msgstr "播放模式"
+
+msgid "Pan"
+msgstr "移动"
+
+msgid "Zoom in"
+msgstr "放大"
+
+msgid "Zoom out"
+msgstr "缩小"
+
+msgid "Info bar"
+msgstr "信息栏"
+
+msgid "Chapter"
+msgstr "章"
+
+msgid "Rotate left"
+msgstr "向左旋转"
+
+msgid "Rotate right"
+msgstr "向右旋转"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "错误: 源文件夹和文件夹目标相同。"
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "错误: 目标文件夹是源文件夹的一个子文件夹。"
+
+msgid "This folder is empty"
+msgstr "没有任何媒体在当前文件夹中。"
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color模式"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "您确定要更改HDMI deep color模式？"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "请从 WD TV 中删除您的磁盘，"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "媒体播放器现在将重新启动来开始升级进程。由于新固件是在一个有密码保护的磁盘上，因此，请在重新启动后再次解锁磁盘。"
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "媒体库编辑正在进行中。在扫描到媒体内容的同时，它们也相应变为可用。在此进程中仍支持设备导航。"
+
+msgid "Copied"
+msgstr "复制"
+
+msgid "8 bit"
+msgstr "8 位元"
+
+msgid "10 bit"
+msgstr "10 位元"
+
+msgid "12 bit"
+msgstr "12 位元"
+
+msgid "The auto play content could not be accessed."
+msgstr "自动播放内容不能访问。"
+
+msgid "Local device is disconnected."
+msgstr "警告：请在移除 USB 设备之前，应安全弹出该设备。"
+
+msgid "User interface transition effect"
+msgstr "用户界面切换效果"
+
+msgid "Fade in and fade out"
+msgstr "淡入淡出"
+
+msgid "None"
+msgstr "不要"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "检测到致命系统错误。设备将重新启动..."
+
+msgid "YES"
+msgstr "是"
+
+msgid "Yes to all"
+msgstr "是的，所有"
+
+msgid "NO"
+msgstr "否"
+
+msgid "This folder already contains a file named:"
+msgstr "此文件夹已包含一个文件名为："
+
+msgid "Would you like to overwrite it?"
+msgstr "您要覆盖它吗？"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "无法播放所选文件。请参阅用户手册支持的文件格式列表。"
+
+

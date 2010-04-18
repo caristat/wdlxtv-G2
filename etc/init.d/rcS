@@ -1,0 +1,51 @@
+#!/bin/sh
+
+
+# Start all init scripts in /etc/init.d and friends
+# executing them in numerical order.
+#
+mkdir /tmp/init.d 2> /dev/null
+
+for i in /etc/init.d/S??* /osd/etc/init.d/S??* /opt/etc/init.d/S??* /apps/*/etc/init.d/S??* ;do
+     [ -f "$i" ] && ln -s $i /tmp/init.d/`basename $i`
+done
+[ ! -f /tmp/init.d/S99post-init ] && cp /etc/init.d/s99post-init /tmp/init.d/S99post-init
+
+[ -f /tmp/emergency.flash ] && chmod a+x /tmp/init.d/S00emergency-flash
+[ -f /conf/S00user-script ] && dos2unix /conf/S00user-script && chmod a+x /conf/S00user-script && ln -s /conf/S00user-script /tmp/init.d
+
+for i in /tmp/init.d/* ; do
+     # Ignore dangling symlinks (if any).
+     if [ -f "$i" ]; then
+	     #echo $i
+	     export APATH="`readlink $i|sed -e 's/etc\/init.*$//'`"
+	     # set APATH to the mount location of the application.bin
+		[ "$APATH" != "" ] && app="`basename $APATH`"
+		if [ "$app" != "/" -a -f /tmp/appsRoot -a "$app" != "" ]; then
+			AROOT="`cat /tmp/appsRoot | grep $app`"
+			[ "$AROOT" != "" ] && export AROOT="`dirname "$AROOT"`"
+		        # set AROOT to the actual location of the application.bin
+		fi
+	     case "$i" in
+	        *~)
+	        	;;
+		#*.sh)
+		#    # Source shell script for speed.
+		#    (
+		#	trap - INT QUIT TSTP
+		#	set start
+		#	. $i
+		#    )
+		#    ;; ## disabled: a sytax error will STOP starting programs!
+		*)
+		    # No sh extension, so fork subprocess.
+		    if [ "$i" == "/tmp/init.d/S70dmaosd" ] && [ "$1" == "upgrade" ] ; then
+			$i $1 $2 $3
+		    elif [ "$1" != "upgrade" ] ; then
+			$i start
+		    fi
+		    ;;
+    	esac
+     fi
+done
+
